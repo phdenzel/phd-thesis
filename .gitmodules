@@ -1,0 +1,9 @@
+[submodule "papers/time-delays"]
+	path = papers/time-delays
+	url = git@github.com:phdenzel/time-delays-paper.git
+[submodule "papers/adler"]
+	path = papers/adler
+	url = git@github.com:phdenzel/adler-paper.git
+[submodule "papers/slacs-matching"]
+	path = papers/slacs-matching
+	url = git@github.com:phdenzel/slacs-matching-paper.git
