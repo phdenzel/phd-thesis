@@ -1,0 +1,655 @@
+% phdbyphd.sty
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProvidesPackage{styles/phdbyphd}[2020/06/09 valpha-1.0 phdbyphd]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Load packages
+
+\RequirePackage{etoolbox}  % for programming LaTeX classes
+\RequirePackage{calc}      % for some math
+\RequirePackage{iftex}     % check XeTeX
+\RequirePackage{xifthen}   % for conditionals
+\RequirePackage{xkeyval}   % for defining keys
+\RequirePackage{xparse}    % for \newcommand macros
+\RequirePackage{xpatch}    % for patching macros/commands
+\RequirePackage{xstring}   % for string magic
+\RequirePackage{afterpage} % for \afterpage command
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title & Author
+
+% Command: \title[Short title]{Full title}
+\newcommand{\@plaintitle}{}
+\renewcommand{\title}[2][]{
+	\gdef\@title{#2}
+	\ifthenelse{\isempty{#1}}{
+		\renewcommand{\@plaintitle}{\title}
+	}{
+		\renewcommand{\@plaintitle}{#1}
+    }% also add to metadata
+	\hypersetup{pdftitle={\@plaintitle}}
+}
+
+% Command: \author[Short name]{Full name}
+\newcommand{\@plainauthor}{} % Analogously
+\renewcommand{\author}[2][]{
+	\gdef\@author{#2}
+	\ifthenelse{\isempty{#1}}{
+		\renewcommand{\@plainauthor}{\author}
+  	}{ % If there is a plain author
+		\renewcommand{\@plainauthor}{#1}
+	}% also add to metadata
+	\hypersetup{pdfauthor={\@plainauthor}}
+}
+
+\pretocmd{\maketitle}{\pdfbookmark[1]{\@plaintitle}{title}}{}{}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Paragraphs
+
+\RequirePackage{ragged2e}   % provides \Centering, \Raggedleft \RaggedRight
+\RequirePackage{setspace}	% provides \singlespacing, \doublespacing, \onehalfspacing
+\RequirePackage{hyphenat}	% disable/enable hyphenation
+\RequirePackage{microtype}  % improve typographic spacing
+\RequirePackage{needspace}  % disable pagebreaking
+\RequirePackage{xspace}		% space within commands
+\RequirePackage[usenames,dvipsnames,table]{xcolor}  % prvides basic colors and color related commands
+
+
+\newcommand{\@body@par}{%
+	\justifying
+	\singlespacing
+	\frenchspacing
+	\normalfont
+	\normalsize
+}
+\@body@par
+
+\newcommand{\@margin@par}{
+	\justifying
+	\setlength{\RaggedRightParindent}{0em}
+	\setlength{\parindent}{0em}
+	\setlength{\parskip}{0.5pc}
+	% \singlespacing
+	\frenchspacing
+	\normalfont
+	\footnotesize
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Side notes
+
+\RequirePackage[section]{placeins}
+\extrafloats{100}
+
+\RequirePackage[
+	bottom,
+	symbol*,
+	hang,
+	flushmargin,
+	% perpage,
+	stable,
+]{footmisc}
+\RequirePackage{footnotebackref}
+
+\patchcmd{\footref}{\ref}{\hypersetup{colorlinks=black}\ref}{}{}
+\edef\BackrefFootnoteTag{bhfn:\theBackrefHyperFootnoteCounter}
+
+\RequirePackage{marginnote}  % provides \marginnote ~ \marginpar
+\RequirePackage{marginfix}	 % fix \marginpar for overfull margins
+\RequirePackage{sidenotes}   % main package for sidenotes
+\RequirePackage{chngcntr}	 % provides \counterwithin and \counterwithout
+
+% unset a few defaults
+\renewcommand*{\raggedleftmarginnote}{}
+\renewcommand*{\raggedrightmarginnote}{}
+\renewcommand*{\marginfont}{\@margin@par}  % similar change as \marginnote
+\renewcommand{\marginnotevadjust}{2pt}
+
+
+\def\snotez@if@nblskip#1{%
+	\expandafter\ifx\@car#1\@nil*%
+		\expandafter\@firstoftwo%
+	\else%
+		\expandafter\@secondoftwo%
+	\fi%
+}
+
+\let\originalmarginnote\marginnote%
+\renewcommand{\marginnote}[2][0pt]{%
+	\originalmarginnote{#2}[\snotez@if@nblskip{#1}{\@cdr#1\@nil\baselineskip}{#1}]%
+}
+
+\RenewDocumentCommand \@sidenotes@placemarginal { m m }%
+{%
+	\IfNoValueOrEmptyTF{#1}%
+	{\marginpar{#2}}%
+	{\marginnote[#1]{#2}}%
+}
+
+% count side notes
+\setcounter{sidenote}{0}%
+\RenewDocumentCommand\sidenote{ o o +m }{%
+	\IfNoValueOrEmptyTF{#1}{%
+		\refstepcounter{sidenote}%
+	}{%
+	}%
+	\sidenotemark[#1]%
+	\sidenotetext[#1][#2]{#3}%
+	\@sidenotes@multimarker%
+}
+
+
+\RenewDocumentCommand \@sidenotes@thesidenotemark { m }%
+{%
+	\leavevmode%
+	\ifhmode%
+		\edef\@x@sf{\the\spacefactor}%
+		\nobreak%
+	\fi%
+	\hbox{\@textsuperscript{\normalfont#1}}%
+	\ifhmode%
+		\spacefactor\@x@sf%
+	\fi%
+	\relax%
+	}%
+	\RenewDocumentCommand\sidenotetext{ o o +m }% { number, offset, text }
+	{%
+		\IfNoValueOrEmptyTF{#1}%
+	{%
+		\@sidenotes@placemarginal{#2}{\@margin@par\thesidenote:\enskip#3}%
+	}%
+	{\@sidenotes@placemarginal{#2}{\@margin@par#1:\enskip#3}}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figures, Tables & Captions
+
+\RequirePackage{graphicx}  % for including figures
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\RequirePackage{tikz}
+\RequirePackage{booktabs}   % better tables
+\RequirePackage{multirow}	% multiple rows in tables
+\RequirePackage{multicol}	% multiple column environments
+\RequirePackage{rotating}	% rotation tools
+\RequirePackage[hypcap=true]{caption}   % customizable captions
+
+\let\c@abspage\relax
+
+\RequirePackage{floatrow}      % floating environments
+\RequirePackage{dblfloatfix}   % fixes for floating environments
+
+% figure placing
+\def\topfraction{.9}%
+\def\textfraction{0.35}%
+\def\floatpagefraction{0.8}%
+
+\renewcommand\FBaskip{.4\topskip}%
+\renewcommand\FBbskip{\FBaskip}%
+
+% fix spaces between equations
+\setlength\abovedisplayskip{6pt plus 2pt minus 4pt}%
+\setlength\belowdisplayskip{6pt plus 2pt minus 4pt}%
+\abovedisplayskip 10\p@ \@plus2\p@ \@minus5\p@%
+\abovedisplayshortskip \z@ \@plus3\p@%
+\belowdisplayskip \abovedisplayskip%
+\belowdisplayshortskip 6\p@ \@plus3\p@ \@minus3\p@%
+
+% for rules in tables
+\setlength\columnseprule{.4pt}
+
+
+% margin figures
+\newsavebox{\@phdbyphd@marginfigurebox}%
+\renewenvironment{marginfigure}[1][0pt]{
+	\FloatBarrier
+	\mparshift{\snotez@if@nblskip{#1}{\@cdr#1\@nil\baselineskip}{#1}}  % offset
+	\begin{lrbox}{\@sidenotes@marginfigurebox}%
+		\begin{minipage}{\marginparwidth}%
+			\captionsetup{type=figure}%
+}{%
+		\end{minipage}%
+	\end{lrbox}%
+	\marginpar{\usebox{\@sidenotes@marginfigurebox}} % correctly place figure
+}
+
+
+% margin tables
+\newsavebox{\@phdbyphd@margintablebox}%
+\renewenvironment{margintable}[1][0pt]{
+	\FloatBarrier
+	\mparshift{\snotez@if@nblskip{#1}{\@cdr#1\@nil\baselineskip}{#1}} % offset
+	\begin{lrbox}{\@sidenotes@margintablebox}%
+		\begin{minipage}{\marginparwidth}%
+			\captionsetup{type=table}%
+}{%
+		\end{minipage}%
+	\end{lrbox}%
+	\marginpar{\usebox{\@sidenotes@margintablebox}} % correctly place table
+}
+
+% margin listing
+\newsavebox{\@sidenotes@marginlistingbox}%
+\newenvironment{marginlisting}[1][0pt]{
+	\FloatBarrier
+	\mparshift{\snotez@if@nblskip{#1}{\@cdr#1\@nil\baselineskip}{#1}} % offset
+	\begin{lrbox}{\@sidenotes@marginlistingbox}%
+		\begin{minipage}{\marginparwidth}%
+			\captionsetup{type=lstlisting}%
+}{%
+		\end{minipage}%
+	\end{lrbox}%
+	\marginpar{\usebox{\@sidenotes@marginlistingbox}} % correctly place listing
+}
+
+
+% Change the position of the captions
+\DeclareFloatSeparators{marginparsep}{\hskip\marginparsep}%
+\if@twoside%
+	\floatsetup[figure]{%
+		margins=hangoutside,%
+		facing=yes,%
+		capposition=beside,%
+		capbesideposition={bottom,outside},%
+		capbesideframe=yes,%
+		capbesidewidth=\marginparwidth,%
+		capbesidesep=marginparsep,%
+		floatwidth=\textwidth,%
+	}
+	\floatsetup[widefigure]{%
+		margins=hangoutside,%
+		facing=yes,%
+		capposition=bottom%
+	}
+	\floatsetup[table]{%
+		margins=hangoutside,%
+		facing=yes,%
+		capposition=beside,%
+		capbesideposition={top,outside},%
+		%capbesideposition=outside,
+		capbesideframe=yes,%
+		capbesidewidth=\marginparwidth,%
+		capbesidesep=marginparsep,%
+		floatwidth=\textwidth,%
+	}
+	\floatsetup[widetable]{%
+		margins=hangoutside,%
+		facing=yes,%
+		capposition=above%
+	}
+	\floatsetup[lstlisting]{%
+		margins=hangoutside,%
+		facing=yes,%
+		capposition=beside,%
+		capbesideposition={top,outside},%
+		%capbesideposition=outside,
+		capbesideframe=yes,%
+		capbesidewidth=\marginparwidth,%
+		capbesidesep=marginparsep,%
+		floatwidth=\textwidth,%
+	}
+	\floatsetup[listing]{%
+		margins=hangoutside,%
+		facing=yes,%
+		capposition=beside,%
+		capbesideposition={top,outside},%
+		%capbesideposition=outside,
+		capbesideframe=yes,%
+		capbesidewidth=\marginparwidth,%
+		capbesidesep=marginparsep,%
+		floatwidth=\textwidth,%
+	}
+\else
+	\floatsetup[figure]{%
+		margins=hangright,%
+		facing=yes,%
+		capposition=beside,%
+		capbesideposition={bottom,right},%
+		capbesideframe=yes,%
+		capbesidewidth=\marginparwidth,%
+		capbesidesep=marginparsep,%
+		floatwidth=\textwidth,%
+	}
+	\floatsetup[widefigure]{%
+		margins=hangright,%
+		facing=no,%
+		capposition=bottom%
+	}
+	\floatsetup[table]{%
+		margins=hangright,%
+		facing=yes,%
+		capposition=beside,%
+		capbesideposition={top,right},%
+		%capbesideposition=outside,
+		capbesideframe=yes,%
+		capbesidewidth=\marginparwidth,%
+		capbesidesep=marginparsep,%
+		floatwidth=\textwidth,%
+	}
+	\floatsetup[widetable]{%
+		margins=hangright,%
+		facing=no,%
+		capposition=above%
+	}
+	\floatsetup[lstlisting]{%
+		margins=hangright,%
+		facing=yes,%
+		capposition=beside,%
+		capbesideposition={top,right},%
+		%capbesideposition=outside,
+		capbesideframe=yes,%
+		capbesidewidth=\marginparwidth,%
+		capbesidesep=marginparsep,%
+		floatwidth=\textwidth,%
+	}
+	\floatsetup[listing]{%
+		margins=hangright,%
+		facing=yes,%
+		capposition=beside,%
+		capbesideposition={top,right},%
+		%capbesideposition=outside,
+		capbesideframe=yes,%
+		capbesidewidth=\marginparwidth,%
+		capbesidesep=marginparsep,%
+		floatwidth=\textwidth,%
+	}
+\fi
+
+% Some caption formatting
+\addtokomafont{captionlabel}{\bfseries}
+\DeclareCaptionFormat{margin}{\@margin@par #1#2#3}%
+\captionsetup{
+	format=margin,%
+	strut=no,%
+	singlelinecheck=false,%
+	indention=0pt,%
+	parindent=0pt,%
+	aboveskip=6pt,% more space from figure
+	belowskip=6pt,% more space from table
+}
+
+% Needed to have continued figures and tables
+\DeclareCaptionLabelFormat{cont}{#1~#2\alph{ContinuedFloat}}
+\captionsetup[ContinuedFloat]{labelformat=cont}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TOC
+\RequirePackage{tocbasic}
+\setuptoc{toc}{totoc}
+
+\setcounter{tocdepth}{\subsectiontocdepth}
+
+\DeclareTOCStyleEntry[level=1,indent=0em,numwidth=2em]{tocline}{figure}
+\DeclareTOCStyleEntry[level=1,indent=0em,numwidth=2em]{tocline}{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Side TOC (at the beginning of each chapter)
+\RequirePackage{etoc}
+
+\newcounter{margintocdepth}
+\setcounter{margintocdepth}{\subsectiontocdepth}
+
+\newlength{\mtocshift}
+\setlength{\mtocshift}{-5.2cm}
+
+\newcommand{\margintoc}[1][\mtocshift]{%
+	\begingroup
+		\etocsetstyle{section}%
+		{\parindent -5pt \parskip 0pt}%
+		{\leftskip 0pt}%
+		{\makebox[.5cm]{\etocnumber\autodot}%
+		\etocname\nobreak\leaders\hbox{\hbox to 1.5ex {\hss.\hss}}\hfill\nobreak%
+		\etocpage\par}%
+		{}%
+		\etocsetstyle{subsection}%
+		{\parindent -5pt \parskip 0pt}%
+		{\leftskip 0pt}%
+		{\makebox[.5cm]{}%
+		\etocname\nobreak\leaders\hbox{\hbox to 1.5ex {\hss.\hss}}\hfill\nobreak%
+		\etocpage\par}%
+		{}%
+		\etocsettocstyle{\usekomafont{section}\small}{}%
+		\etocsetnexttocdepth{\themargintocdepth}%
+		\marginnote[#1]{\localtableofcontents}%
+	\endgroup%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Page layout
+
+% default page layout
+\RequirePackage[
+	a4paper,
+	bottom=27.4mm,
+	inner=24.8mm,
+	textwidth=107mm,
+	marginparsep=8.2mm,
+	marginparwidth=49.4mm,
+	includemp
+]{geometry}
+
+% Command to print a blank page
+\newcommand\blankpage{%
+	\null%
+	\thispagestyle{empty}%
+	\newpage%
+}
+
+% Option selector
+\DeclareDocumentCommand{\pagelayout}{m}{%
+	\ifthenelse{\equal{margin}{#1}}{\marginlayout}{}%
+	\ifthenelse{\equal{wide}{#1}}{\widelayout}{}%
+	\ifthenelse{\equal{fullwidth}{#1}}{\fullwidthlayout}{}%
+}
+% Margin option
+\newcommand{\marginlayout}{%
+	\newgeometry{
+		top=27.4mm,
+		bottom=27.4mm,
+		inner=24.8mm,
+		textwidth=107mm,
+		marginparsep=8.2mm,
+		marginparwidth=49.4mm,
+		includemp
+	}%
+}
+% Wide option
+\newcommand{\widelayout}{%
+	\newgeometry{
+		top=27.4mm,
+		bottom=27.4mm,
+		inner=24.8mm,
+		outer=24.8mm,
+		marginparsep=0mm,
+		marginparwidth=0mm,
+		ignoremp,
+	}%
+}
+% Fullwidth option
+\newcommand{\fullwidthpage}{%
+	\newgeometry{
+		top=0cm,
+		bottom=0cm,
+		inner=0cm,
+		outer=0cm,
+		marginparwidth=0cm,
+		marginparsep=0cm,
+		ignoremp
+	}%
+}
+
+
+\AtBeginDocument{\pagelayout{margin}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Headers & Footers
+
+\RequirePackage{scrlayer-scrpage}
+\setlength{\headheight}{115pt}
+
+% default with chapter, page in the header
+\renewpagestyle{scrheadings}{%
+	{\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{%
+		\parbox[t][1.7cm][c]{2em}{\hfill\thepage}%
+		\makebox[2em][c]{\rule[-1.03cm]{1pt}{1.55cm}}%
+		\parbox[t][1.7cm][c]{\textwidth}{\leftmark}}}%
+	{\makebox[\overflowingheadlen][r]{%
+		\parbox[t][1.7cm][c]{\textwidth}{\hfill\rightmark}%
+		\makebox[2em][c]{\rule[-1.03cm]{1pt}{1.55cm}}%
+		\parbox[t][1.7cm][c]{2em}{\thepage}}}%
+	{\makebox[\overflowingheadlen][r]{%
+		\parbox[t][1.7cm][c]{\textwidth}{\hfill\rightmark}%
+		\makebox[2em][c]{\rule[-1.03cm]{1pt}{1.55cm}}%
+		\parbox[t][1.7cm][c]{2em}{\thepage}}}%
+}{%
+	{}%
+	{}%
+	{}%
+}
+
+% empty header and footer
+\renewpagestyle{plain.scrheadings}{%
+	{}%
+	{}%
+	{}%
+}{%
+	{}%
+	{}%
+	{}%
+}
+
+% empty header
+\newpagestyle{pagenum.scrheadings}{%
+	{}%
+	{}%
+	{}%
+}{%
+	{\thepage}%
+	{\hfill\thepage}%
+	{}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fonts
+
+% \newif\ifxetexorluatex
+% \ifxetex
+% 	\xetexorluatextrue
+% \else
+% 	\ifluatex
+% 		\xetexorluatextrue
+% 	\else
+% 		\xetexorluatexfalse
+% 	\fi
+% \fi
+% 
+% 
+% \ifxetexorluatex
+% 	\RequirePackage{unicode-math}
+% 	\setromanfont[
+% 		Scale=1.04
+% 	]{Libertinus Serif}
+% 	\setsansfont[
+% 		Scale=1
+% 	]{Libertinus Sans}
+% 	\setmonofont[
+% 		Scale=.89
+% 	]{Liberation Mono}
+% 	\setmathfont{Libertinus Math}
+% \else
+\RequirePackage[utf8]{inputenc} % utf8 encoding input
+\RequirePackage[T1]{fontenc} % utf8 encoding output
+
+\RequirePackage[scaled=.97,helvratio=.93,p,theoremfont]{newpxtext} % Serif palatino font
+\RequirePackage[vvarbb,bigdelims]{newpxmath} % Math palatino font
+% \RequirePackage[vvarbb,smallerops,bigdelims]{newpxmath} % Math palatino font
+\RequirePackage[scaled=.85]{beramono} % Monospace font
+\RequirePackage[scr=rsfso,cal=boondoxo]{mathalfa} % Mathcal from STIX, unslanted a bit
+\RequirePackage{amsfonts} % Mathematical fonts
+\RequirePackage{amssymb} % Math symbols, including \blacktriangleright, used for bullets
+%\fi
+
+%\setstretch{1.10}
+\linespread{1.07}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hyperrefs
+
+\RequirePackage{hyperref}
+\RequirePackage{bookmark}
+
+\PassOptionsToPackage{hyphens}{url}
+
+\hypersetup{
+	unicode, % Use unicode for links
+	pdfborder={0 0 0}, % Suppress border around pdf
+	%xetex,
+	%pagebackref=true,
+	%hyperfootnotes=false, % We already use footmisc
+	bookmarksdepth=section,
+	bookmarksopen=true, % Expand the bookmarks as soon as the pdf file is opened
+	%bookmarksopenlevel=4,
+	linktoc=all, % Toc entries and numbers links to pages
+	breaklinks=true,
+}
+
+\def\@footnotecolor{black}
+\define@key{Hyp}{footnotecolor}{%
+	\HyColor@HyperrefColor{#1}\@footnotecolor%
+}
+
+\def\@footnotemark{%
+	\leavevmode
+	\ifhmode\edef\@x@sf{\the\spacefactor}\nobreak\fi
+	\stepcounter{Hfootnote}%
+	\global\let\Hy@saved@currentHref\@currentHref
+	\hyper@makecurrent{Hfootnote}%
+	\global\let\Hy@footnote@currentHref\@currentHref
+	\global\let\@currentHref\Hy@saved@currentHref
+	\hyper@linkstart{footnote}{\Hy@footnote@currentHref}%
+	\@makefnmark
+	\hyper@linkend
+	\ifhmode\spacefactor\@x@sf\fi
+	\relax
+}
+\renewcommand\@makefntext[1]{%
+	\renewcommand\@makefnmark{%
+		\mbox{\textsuperscript{\normalfont%
+			\hyperref[\BackrefFootnoteTag]{%
+				\color{\@footnotecolor}{\@thefnmark}%
+			}}\,%
+		}%
+	}%
+	\BHFN@OldMakefntext{#1}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colors
+
+\hypersetup{
+	colorlinks=true,
+	%anchorcolor=Red,
+	%citecolor=DarkOrange!70!black,
+	citecolor=OliveGreen,
+	filecolor=OliveGreen,
+	%linkcolor=DarkBlue,
+	linkcolor=Black,
+	%menucolor=Red,
+	%runcolor=Red,
+	urlcolor=OliveGreen,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Imports
+
+\RequirePackage{styles/phdenvbyphd}
+\RequirePackage{styles/phdpkgsbyphd}
+\RequirePackage{styles/phdrefsbyphd}

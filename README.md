@@ -8,7 +8,7 @@ The thesis by Philipp Denzel using a custom LaTeX class.
 The phdbyphd class is majorly based on the [kaobook-LaTeX class](https://github.com/fmarotta/kaobook). 
 
 
-## Description
+## Design
 
 The striking features of the class are as follows.
 

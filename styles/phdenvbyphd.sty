@@ -1,0 +1,13 @@
+%% phdenvbyphd.sty
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProvidesPackage{styles/phdenvbyphd}[2020/06/09 valpha-1.0 phdenvbyphd]
+
+%\RequirePackage{}
+
+\newenvironment{prequote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\prequote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \prequote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
