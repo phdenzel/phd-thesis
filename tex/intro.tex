@@ -1,7 +1,75 @@
+%% intro.tex
 
-Some text here
+On May 29, 1919 during a total solar eclipse, three scientists, Eddington,
+Dyson, and Davidson, tried to find out what effect, if any, is produced by a
+gravitational field on the path of a light ray traversing
+it~\cite{Eddington1920}.  During a thoroughly prepared expedition, they measured
+the deflection of positions of stars in the previously studied Hyades cluster
+caused by the mass of the Sun as predicted by the theory of gravity, general
+relativity.  This was the first observation of gravitational lensing, as well as
+the first predicted and validated effect of general
+relativity~\sidecite{Einstein1911}.
 
+Effectively, gravitational lensing is entirely analogous to optical lenses. In
+fact, to produce the distorted light signatures like they are observed in
+gravitational lens systems, one only needs a stem from a wine glass and move it
+in front of a light source.  A toy example of such a situation can be found
+under:
+\href{https://phdenzel.github.io/zurich-lens/}{phdenzel.github.io/zurich-lens/}.
+In optics, the lens comprises a glass sheet of variable thickness.  It deflects
+light by an amount proportional to the local thickness.  The physical process
+which causes a change of direction when a ray traverses a glass lens, is called
+refraction.  It describes the delay, i.e. decrease in speed of light, due to the
+change of media and therefore a change in direction.  While the result of
+lensing is the same for both optical and gravitational lenses, the latter causes
+the delay and deflection due to the change of the felt gravitational potential
+as light moves through it.  The rather rare occurrence of a perfect alignment of
+a background source, e.~g. a quasar, and a massive foreground object in which
+the imaged source is distorted in a way such that it can be observed multiple
+times or even as a ring wrapping around the lens, is called \textit{strong}
+gravitational lensing.  \figref{mock-lens} demonstrates such a case with a
+mock lens.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.49\textwidth]{m82-original}\,%
+    \includegraphics[width=0.49\textwidth]{m82-lensmock}
+    \caption[Mock lens image of M82]{Mock lens observation: The left image shows
+    the "Cigar Galaxy" M82 cutout from
+    \href{https://apod.nasa.gov/apod/ap200515.html}{APOD 2020 May 15}. The right
+    image demonstrates what it could look like if for instance a small black
+    hole with a third of the Sun's mass would replace the Moon in front of M82.
+    The right image was generated using my lens mock code: \Code{lensing.js}
+    (\href{https://phdenzel.github.io/lensing.js/}{phdenzel.github.io/lensing.js/}).\\
+    \textit{Image Credit \& Copyright: Dietmar Hager, Torsten Grossmann}}
+    \figlbl{mock-lens}
+\end{figure}
 
-\section{The Expanding Universe}
-\seclbl{exp_universe}
+More specifically, the deflection in gravitational lensing is of the order of
+$4M/R$, where $M$ is the mass of the lens and $R$ its size.  Strong
+gravitational lensing occurs when the apparent size $R/D$ of the aligned lens at
+a distance $D$ is comparable to that deflection.  In fact, although the
+underlying physical process is all the same, gravitational lensing is
+categorized into three types based on the observational techniques and mass or
+size regimes: \textit{strong}, \textit{weak}, and \textit{micro} lensing.
+\begin{align}
+    \text{strong} \hspace{1cm}&\frac{4M}{R} \gtrsim \frac{R}{D}\\
+    \text{weak} \hspace{1cm}&\frac{4M}{R} < \frac{R}{D}\\
+    \text{micro} \hspace{1cm}&\frac{4M}{R} \gg \frac{R}{D}
+\end{align}
+
+\par\noindent\rule{\textwidth}{0.8pt}
+
+Micro lensing is mostly used to
+
+Analysis and research of gravitational lenses\dots
+
+\par\noindent\rule{\textwidth}{0.8pt}
+
+\section{The Expanding Universe}\seclbl{exp_universe}
 \input{tex/exp_universe}
+
+\section{The Solar Neighbourhood}\seclbl{solar_nbhood}
+\input{tex/solar_nbhood}
+
+\section{Number of lensing galaxies}\seclbl{number_lenses}
+\input{tex/number_lenses}

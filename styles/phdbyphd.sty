@@ -201,7 +201,6 @@
 % for rules in tables
 \setlength\columnseprule{.4pt}
 
-
 % margin figures
 \newsavebox{\@phdbyphd@marginfigurebox}%
 \renewenvironment{marginfigure}[1][0pt]{
@@ -539,31 +538,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fonts
 
-% \newif\ifxetexorluatex
-% \ifxetex
-% 	\xetexorluatextrue
-% \else
-% 	\ifluatex
-% 		\xetexorluatextrue
-% 	\else
-% 		\xetexorluatexfalse
-% 	\fi
-% \fi
-% 
-% 
-% \ifxetexorluatex
-% 	\RequirePackage{unicode-math}
-% 	\setromanfont[
-% 		Scale=1.04
-% 	]{Libertinus Serif}
-% 	\setsansfont[
-% 		Scale=1
-% 	]{Libertinus Sans}
-% 	\setmonofont[
-% 		Scale=.89
-% 	]{Liberation Mono}
-% 	\setmathfont{Libertinus Math}
-% \else
 \RequirePackage[utf8]{inputenc} % utf8 encoding input
 \RequirePackage[T1]{fontenc} % utf8 encoding output
 
@@ -634,17 +608,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Colors
 
+\definecolor{awesome}{rgb}{1.0, 0.13, 0.32}
+
 \hypersetup{
 	colorlinks=true,
 	%anchorcolor=Red,
 	%citecolor=DarkOrange!70!black,
-	citecolor=OliveGreen,
-	filecolor=OliveGreen,
+	citecolor=awesome,%OliveGreen,
+	filecolor=awesome,%OliveGreen,
 	%linkcolor=DarkBlue,
 	linkcolor=Black,
 	%menucolor=Red,
 	%runcolor=Red,
-	urlcolor=OliveGreen,
+	urlcolor=awesome,%OliveGreen,
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

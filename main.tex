@@ -2,7 +2,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[
     fontsize=10pt,
-    twoside=false,
+    twoside=true,
     numbers=noenddot,
 ]{cls/phdbyphd}
 
@@ -42,28 +42,27 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \dedication{
-	For the one who...\\
+	For the one who will never read it.\\
 	\flushright -- Philipp Denzel
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \KOMAoptions{twoside=semi}
 \maketitle
-\KOMAoptions{twoside=false}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Inspirational quote
-{\input{tex/prequote}}
+\input{tex/prequote}
+\KOMAoptions{twoside=false}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+    \input{tex/abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter*{Preface}
 \addcontentsline{toc}{chapter}{Preface}
     \input{tex/preface}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter*{Abstract}
-\addcontentsline{toc}{chapter}{Abstract}
-    \input{tex/abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TOC / LOF / LOT
@@ -89,21 +88,24 @@
 \mainmatter
 \setchapterstyle{phdbyphd}
 
-\chapter{Introduction}
 \setchapterpreamble[u]{\margintoc}
-\chlbl{intro}
+\chapter{Introduction}\chlbl{intro}
 \input{tex/intro}
 
-\chapter{SW05}
+\setchapterpreamble[u]{\margintoc}
+\chapter{SW05}\chlbl{sw05}
 \input{tex/sw05}
 
-\chapter{Adler}
+\setchapterpreamble[u]{\margintoc}
+\chapter{Adler}\chlbl{adler}
 \input{tex/adler}
 
-\chapter{SLACS matching}
+\setchapterpreamble[u]{\margintoc}
+\chapter{SLACS matching}\chlbl{slacs_matching}
 \input{tex/slacs_matching}
 
-\chapter{Time delays}
+\setchapterpreamble[u]{\margintoc}
+\chapter{Time delays}\chlbl{time_delays}
 \input{tex/time_delays}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -126,30 +128,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \defbibnote{bibnote}{Here are the references in citation order.\par\bigskip}
 \printbibliography[heading=bibintoc, title=Bibliography, prenote=bibnote]
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \nomenclature{$c$}{Speed of light in a vacuum inertial frame}
-% \nomenclature{$h$}{Planck constant}
-
-% \renewcommand{\nomname}{Notation} % Rename the default 'Nomenclature'
-% \renewcommand{\nompreamble}{The next list describes several symbols that will be later used within the body of the document.} % Prepend this text to the nomenclature
-
-% \printnomenclature % Output the nomenclature
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \newglossaryentry{computer}{
-% 	name=computer,
-% 	description={is a programmable machine that receives input, stores and manipulates data, and provides output in a useful format}
-% }
-% 
-% % Glossary entries (used in text with e.g. \acrfull{fpsLabel} or \acrshort{fpsLabel})
-% \newacronym[longplural={Frames per Second}]{fpsLabel}{FPS}{Frame per Second}
-% \newacronym[longplural={Tables of Contents}]{tocLabel}{TOC}{Table of Contents}
-% 
-% \setglossarystyle{listgroup} % Set the style of the glossary (see https://en.wikibooks.org/wiki/LaTeX/Glossary for a reference)
-% \printglossary[title=Special Terms, toctitle=List of Terms] % Output the glossary, 'title' is the chapter heading for the glossary, toctitle is the table of contents heading
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

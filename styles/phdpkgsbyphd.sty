@@ -5,6 +5,7 @@
 \RequirePackage{pdfpages}
 \RequirePackage{subfiles}
 \RequirePackage{listings}
+\RequirePackage{nicefrac}
 
 \RequirePackage{imakeidx}
 \RequirePackage[xindy,toc]{glossaries}
@@ -12,6 +13,23 @@
 
 \RequirePackage{ccicons}
 
+\newcommand\half{\ensuremath{\mathrm{\nicefrac{1}{2}}}\xspace}
+\newcommand\derivd{\ensuremath{\mathrm{d}}\xspace}
+
+\newcommand\Ho{\ensuremath{\mathrm{H_{0}}}\xspace}
+\newcommand\Grav{\ensuremath{\mathrm{G}}\xspace}
+\newcommand\Msol{\ensuremath{\mathrm{M_{\odot}}}\xspace}
+\newcommand\lspeed{\ensuremath{\mathrm{c}}\xspace}
+% \newcommand\{\ensuremath{\mathrm{}}\xspace}
+
+\newcommand\AU{\ensuremath{\mathrm{AU}}\xspace}
+\newcommand\parsec{\ensuremath{\mathrm{pc}}\xspace}
+\newcommand\secs{\ensuremath{\mathrm{sec}}\xspace}
+\newcommand\lightsec{\ensuremath{\mathrm{lightsec}}\xspace}
+\newcommand\lyr{\ensuremath{\mathrm{lyr}}\xspace}
+\newcommand\arcsec{\ensuremath{\mathrm{arcsec}}\xspace}
+\newcommand\Hunits{\ensuremath{\mathrm{km/s/Mpc}}\xspace}
+\newcommand\Hunitsalt{\ensuremath{\mathrm{km\,s^{-1}\,Mpc^{-1}}}\xspace}
 
 % print current month and year
 \newcommand{\monthyear}{\ifcase\month\or January\or February\or March\or 
