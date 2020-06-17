@@ -14,6 +14,9 @@
 \RequirePackage{xpatch}    % for patching macros/commands
 \RequirePackage{xstring}   % for string magic
 \RequirePackage{afterpage} % for \afterpage command
+\RequirePackage{setspace}  % provides \singlespacing, \doublespacing, \onehalfspacing
+\RequirePackage{suffix}
+\RequirePackage{hyperref}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,12 +48,69 @@
 
 \pretocmd{\maketitle}{\pdfbookmark[1]{\@plaintitle}{title}}{}{}%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter cover page commands
+
+\newcommand{\papertitle}[2][Original title:\\]{
+	\parbox[t]{1.25\textwidth}{%
+		\vspace*{100pt}%
+		{#1}\large\scshape\bfseries{#2}%
+		\vspace*{35pt}
+	}
+  	\@afterheading%
+}
+
+\newif\ifnewauthor
+\newauthortrue
+\def\chapterauthor[#1]#2{%
+	\ifnewauthor\else, \fi
+	   #2\textsuperscript{\hyperref[authaffil\the\value{chapter}.#1]{#1}}%
+       \ifnewauthor\newauthorfalse\gdef\chapterauthors{#2}\else
+               \g@addto@macro\chapterauthors{, #2}\fi
+       \ignorespaces % to remove end of line spaces from
+                     % \chapterauthor[foo]{bar} input lines
+}
+
+\newcommand{\capauthors}[1]{
+	\parbox[t]{1.25\textwidth}{%
+		\vspace*{20pt}%
+			{#1}%
+		\vspace*{10pt}%
+	}
+  	\@afterheading%
+}
+
+\newcounter{affils}
+\def\chapteraffil[#1]{\item[#1 ]%
+    \refstepcounter{affils}%
+    \label{authaffil\the\value{chapter}.#1}%
+}
+
+\newcommand{\affils}[1]{
+	\parbox[t]{1.25\textwidth}{%
+		\vspace*{20pt}%
+		\begin{enumerate}
+			{#1}%
+		\end{enumerate}
+		\vspace*{35pt}%
+	}
+  	\@afterheading%
+}
+
+
+\newcommand{\publishedin}[2][Published in:\\]{
+	\parbox[t]{1.25\textwidth}{%
+		\vspace*{40pt}%
+		{#1}\fullcite{#2}%
+		\vspace*{35pt}
+	}
+  	\@afterheading%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Paragraphs
 
 \RequirePackage{ragged2e}   % provides \Centering, \Raggedleft \RaggedRight
-\RequirePackage{setspace}	% provides \singlespacing, \doublespacing, \onehalfspacing
 \RequirePackage{hyphenat}	% disable/enable hyphenation
 \RequirePackage{microtype}  % improve typographic spacing
 \RequirePackage{needspace}  % disable pagebreaking
@@ -556,7 +616,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Hyperrefs
 
-\RequirePackage{hyperref}
 \RequirePackage{bookmark}
 
 \PassOptionsToPackage{hyphens}{url}

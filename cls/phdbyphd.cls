@@ -188,7 +188,6 @@
 % By default start with plain style
 \chapterstyleplain
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % KOMA fonts
 
