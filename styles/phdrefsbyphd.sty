@@ -5,6 +5,8 @@
 
 \RequirePackage{hyperref}
 \RequirePackage{varioref}
+\RequirePackage{suffix}
+
 
 \newcommand{\pageanc}[1]{\label{page:#1}}
 
@@ -15,7 +17,15 @@
 \newcommand{\tablbl}[1]{\label{tab:#1}}
 \newcommand{\eqlbl}[1]{\label{eq:#1}}
 
-%\newcommand{\chref}[1]{Section \ref{ch:#1}}
-%\newcommand{\secref}[1]{Section \ref{sec:#1}}
-\newcommand{\figref}[1]{Figure \ref{fig:#1}}
-%\newcommand{\tabref}[1]{Table \ref{tab:#1}
+\newcommand{\chref}[1]{Chapter~\ref{ch:#1}}
+
+\newcommand{\secref}[1]{Section~\ref{sec:#1}}
+\WithSuffix\newcommand\secref*[1]{Section~\ref{sec:#1}}
+\newcommand{\subsecref}[1]{Section~\ref{subsec:#1}}
+\WithSuffix\newcommand\subsecref*[1]{\ref{subsec:#1}}
+\newcommand{\figref}[1]{Figure~\ref{fig:#1}}
+\WithSuffix\newcommand\figref*[1]{\ref{fig:#1}}
+\newcommand{\tabref}[1]{Table~\ref{tab:#1}}
+\WithSuffix\newcommand\tabref*[1]{\ref{tab:#1}}
+\renewcommand{\eqref}[1]{equation~(\ref{eq:#1})}
+\WithSuffix\newcommand\eqref*[1]{(\ref{eq:#1})}

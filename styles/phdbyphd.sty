@@ -52,7 +52,7 @@
 % Chapter cover page commands
 
 \newcommand{\papertitle}[2][Original title:\\]{
-	\parbox[t]{1.25\textwidth}{%
+	\parbox[t]{\textwidth}{%
 		\vspace*{100pt}%
 		{#1}\large\scshape\bfseries{#2}%
 		\vspace*{35pt}
@@ -72,7 +72,7 @@
 }
 
 \newcommand{\capauthors}[1]{
-	\parbox[t]{1.25\textwidth}{%
+	\parbox[t]{\textwidth}{%
 		\vspace*{20pt}%
 			{#1}%
 		\vspace*{10pt}%
@@ -87,7 +87,7 @@
 }
 
 \newcommand{\affils}[1]{
-	\parbox[t]{1.25\textwidth}{%
+	\parbox[t]{\textwidth}{%
 		\vspace*{20pt}%
 		\begin{enumerate}
 			{#1}%
@@ -99,9 +99,9 @@
 
 
 \newcommand{\publishedin}[2][Published in:\\]{
-	\parbox[t]{1.25\textwidth}{%
-		\vspace*{40pt}%
-		{#1}\fullcite{#2}%
+	\parbox[t]{\textwidth}{%
+		\vspace*{20pt}%
+		{#1}\citejvpy{#2}%
 		\vspace*{35pt}
 	}
   	\@afterheading%

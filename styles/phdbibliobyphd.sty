@@ -60,9 +60,18 @@
 
 \newlength\sclen
 
-\NewDocumentCommand{\sidecite}{O{0pt}m}{%
-	\cite{#2}%
-	\margincitation[#1]{#2}%
+\NewDocumentCommand{\citeay}{m}{%
+	\citeauthor{#1} \parencite*{#1}%
+}
+
+\NewDocumentCommand{\sideciteay}{O{}O{}O{0pt}m}{%
+	\citeauthor[#1][#2]{#4} \parencite*{#4}%
+	\margincitation[#3]{#4}%
+}
+
+\NewDocumentCommand{\sidecite}{O{}O{}O{0pt}m}{%
+	\cite[#1][#2]{#4}%
+	\margincitation[#3]{#4}%
 }
 
 \NewDocumentCommand{\margincitation}{O{0pt}>{\SplitList{,}}m}{%
@@ -71,5 +80,24 @@
 }
 
 \NewDocumentCommand{\formatmargincitation}{m}{%
-	\parencite{#1}: \citeauthor*{#1} (\citeyear{#1}), \citetitle{#1}\\%
+	\parencite{#1}: \citeauthor*{#1} (\citeyear{#1})\\%, \citetitle{#1}\\%
 }
+
+\newbibmacro*{volume+number+pp}{%
+	\printfield{volume}\setunit*{\adddot}%
+	\printfield{number}\setunit{\addcomma\space}%
+	\printfield{pages}\newunit}%
+
+\DeclareCiteCommand{\citejvpy}
+      {\usebibmacro{prenote}}
+      {\usebibmacro{citeindex}%
+		\usebibmacro{journal}%
+		\usebibmacro{volume+number+pp}
+		\setunit{\addcomma\space}
+         \usebibmacro{date}}
+      {\multicitedelim}
+	  {\usebibmacro{postnote}}
+
+
+
+\newcommand\citep{\cite} % Dummy command
