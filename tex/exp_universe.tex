@@ -9,20 +9,23 @@ Einstein's construct of the supposedly quasi-static Universe which involved a
 the key measurements which provided the connection between theory and
 observations.  By 1923, Slipher's hard work yielded a compilation of velocity
 estimates for 41 galaxies.  Remarkably, most of those galaxies were receding
-from us.  Half a decade afterwards, Edwin Hubble investigated the relation
+from us, and thus appeared redshifted\sidenote{The recession velocity of a
+galaxy can be measured by the (Doppler) shift, i.e. redshift, of its spectral
+lines.}.  Half a decade afterwards, Edwin Hubble investigated the relation
 between his distance measurements to these galaxies and their radial velocities.
 Thereby, he effectively measured an apparently constant velocity gradient in
 units of \Hunitsalt.  This constant was later named after him, the
 \textit{Hubble constant}~\Ho.  Through this velocity gradient he realized
 something, which could arguably be called the birth of modern cosmology: the
 concept of an expanding Universe would explain why all galaxies are receding
-from us and each other~\sidecite{Kirshner04, Hubble1929}\marginnote[1.0cm]{While
-one would expect such a finding to be highly cited, Hubble's publication
-interestingly counts only 72 offical citations as of the time of writing.}.  The
-outward motion of galaxies resulting from the uniform expansion of the Universe
-is best observable at very high distances where the local, mutual gravitational
-interaction between galaxies is subdominant.  This behaviour is commonly
-referred to as the \textit{Hubble flow}.
+from us and each other~\sidecite{Kirshner04,
+Hubble1929}\marginnote[0.75cm]{While one would expect such a finding to be
+highly cited, Hubble's publication interestingly counts only 73 offical
+citations at the time of writing.}.  The outward motion of galaxies resulting
+from the uniform expansion of the Universe is best observable at very high
+distances where the local, mutual gravitational interaction between galaxies is
+subdominant.  This behaviour is commonly referred to as the \textit{Hubble
+flow}.
 
 Hubble's realization was an impressive leap of thought, even more so, since the
 prevalent idea of the Universe at the time was synonymous to today's picture of
@@ -30,45 +33,190 @@ our own galaxy, the Milky Way, beyond which the existence of anything else was
 uncertain.  Only around 1920, astronomers started considering that what they
 called nebulae were in fact extra-galactic 'island universes' that is entirely
 other galaxies.  Today, there are 'standard' recipes for recreating and
-improving upon Hubble's results by gathering distance and velocity estimates to
-galaxies and other astronomical objects which are much further away.  While this
-might seem like a simple task, the matter of measuring distances relates to
-problems with which cosmology struggles still today.  
+improving upon Hubble's results\sidenote{He determined the Hubble constant by
+the slope of his iconic diagram with roughly $\Ho \approx 500\,\Hunits{}$.} by
+gathering distance and velocity or redshift estimates to galaxies and other
+astronomical objects which are much further away.  While this might seem like a
+simple task, the matter of measuring distances relates to problems with which
+cosmology struggles still today.  
 
 The most 'human' method of measuring distances is the \textit{parallax}.  It
 essentially utilizes the same principles as the human eye.  With two points of
 observation, an astronomical, stereoscopic vision is achieved from which the
 distance can be estimated.  However, with even the most sophisticated
 technologies reaching high angular resolution, parallax has only very little
-reach.  Since the main objective in cosmology is to measure the Universe's
-large-scale structures, this technique is relatively ineffective as it rarely
-reaches object able to probe the Hubble flow.  Still, it is generally used as
-calibration for other techniques with longer reach.  An especially powerful and
-recent application of the parallax is the measurement of distances to galaxies
-containing megamasers, gas clouds with water molecules which catalyse the
-emission of coherent microwave radiation.  Distances to these emission points
-can be determined to incredible precision with long baseline interferometers and
-spectral monitors.  The most influential consequence of the parallax technique
-is reflected in the distance unit 'parallax second' which is usually shortened
-to \textit{parsec} and ubiquitously employed in astronomy and astrophysics.  It
-is the distance where 1 astronomical unit (AU; the nominal distance of Earth to
-the Sun) spans 1 arcsecond on the sky.  Using \ref{eq:au} and
-\ref{eq:arcsectan}, we can write:
-\begin{equation}
+reach.  Since the main objective in cosmology is to study the Universe's
+large-scale structures from birth to the present, this technique is relatively
+ineffective as it rarely reaches objects able to probe the Hubble flow.  Still,
+it is generally used as calibration for other techniques with longer reach.  An
+especially powerful application of the parallax is the measurement of distances
+to galaxies containing megamasers, gas clouds with water molecules which
+catalyse the emission of coherent microwave radiation.  Distances to these
+emission points can be determined to incredible precision with long baseline
+interferometers and spectral monitors.  Another strong influence of the parallax
+technique is reflected in the distance unit 'parallax second' which is usually
+shortened to \textit{parsec} and ubiquitously employed in astronomy and
+astrophysics.  It is the distance where 1 astronomical unit (AU; the nominal
+distance of Earth to the Sun) spans 1 arcsecond on the sky.  Using \ref{eq:au}
+and \ref{eq:arcsectan}, we can write:
+%
+\begin{equation}%
     1\,\parsec = 1\,\AU \times \tan(1\,\arcsec)^{-1} \approx 10^{8}\,\lightsec
     \eqlbl{parsec}
+\end{equation}%
+%
+Distance measurements sensitive to the expansion of the Universe have to rely on
+different strategies.
+
+In an expanding, flat Universe many different measures of distances can be
+defined.  For example, it can be very useful to factor out the expansion and
+define the so-called \textit{comoving distance}
+%
+\begin{equation}\eqlbl{d_comov}%
+    d_{comov} = \frac{c}{\Ho} \int_0^{z} \frac{d\zeta}{\sqrt{\Omega_m(1+\zeta)^3
+    + \Omega_r(1+\zeta)^4 + \Omega_\Lambda}}.
 \end{equation}
- 
+%
+where $z$ is the redshift of the light to which the distance is measured, and
+$\Omega_i=\rho_i/\rho_c$ are the relativistic, non-relativistic, and dark energy
+components, normalized by the cosmological critical density $\rho_c$.  Every
+component contributes at various scales differently to the expansion or
+contraction of the Universe, and therefore have to be considered separately when
+distances are measured.  In a flat Universe, the cosmological critical density
+is its average density.  The comoving distance does not change with time,
+assuming the observers are moving with the Hubble flow.  Another measure which
+is especially often used in the context of lensing, is the
+\textit{angular-diameter distance} which is defined as an object's physical size
+over the its angular size as viewed from Earth. It can also be written as
+%
+\begin{equation}\eqlbl{d_comov}%
+    d_{ang} = \frac{d_{comov}}{(1+z)}
+\end{equation}
+%
+It is the distance which freezes the Universe at the time when the light which
+is used to measure it, is emitted.  This leads to a very peculiar behaviour that
+beyond some redshift the angular-diameter distance actually decreases with
+increasing redshift.
+
+For a long time, light from very bright sources represented the only way of
+measuring distances\sidenote{As explained below, gravitational waves changed the
+game in more than one way.}.  Just like lighthouses acted as distance markers
+and warning signals for reefs and promontories to mariners since ancient times,
+bright light sources called \textit{standard candles} provide the means for the
+most common method to determine distances for the purpose of probing the Hubble
+flow.  For such objects, the intrinsic luminosity $L$ can be measured or
+determined theoretically without measuring their distance.  By observing their
+apparent light flux $F$ dimmed by traversing the vastness of space, a
+\textit{luminosity distance} can be determined
+%
+\begin{equation}\eqlbl{d_lum}%
+    d_{lum} = \sqrt{\frac{L}{4\pi F}}
+\end{equation}%
+%
+which happens to relate with $d_{lum}={(1+z)\,d_{comov}}$ to the comoving
+distance.  Cepheids for instance, variable stars for which the intrinsic
+luminosity depends on their periodic behaviour of brightness fluctuations, are
+long-known standard candles.  Their luminosity-period relation was discovered by
+Henrietta Leavitt in 1912 and enabled the first distance measurements reaching
+past the edge of the Milky Way to the Andromeda Galaxy (M31).  The brightest
+standard candles known to astronomers however are Type-1a Supernovae (SNeIa).
+They are a special variant of Supernova in which a white dwarf in a binary star
+system accretes mass.  Due to this process, the exact energy available at the
+time of Supernova and thus its standardizable intrinsic luminosity is given by
+the Chandrasekhar mass limit of $1.44\mathrm{M_\odot}$.  
+
+Yet withal there is no single method which is applicable to all ranges of
+distances.  Thus, a common procedure in the measurement of the Hubble constant
+is the \textit{cosmic distance ladder}, in which one distance measurement
+iteratively provides calibration for the next, with the end of the rung being
+the farthest reaching SNeIa.  Methods based on the distance-redshift relation
+are often called 'late' measurements.
+
+Opposed to these are the 'early' measurements, which are based on completely
+different physical processes.  Instead of a distance measurement, the 'early'
+measurements determine the Hubble constant and other cosmological constants,
+with angular modes of temperature on the Cosmic Microwave Background (CMB).  For
+instance, the monopole temperature of the CMB evolves with $\dot{T}_{\text{CMB}}
+= -\Ho{}T_{\text{CMB}}(t)$.  The current temperature of the CMB is known to be
+around $T(0) = 2.725\;\mathrm{K}$. So, with a Hubble constant of the order of
+$70\;\Hunitsalt{}$, this yields a change in temperature of roughly
+$-0.2\;\mathrm{nK/yr}$ and could be measured with accurate detectors over a long
+period of time.  The common method however to infer \Ho{} is based on the
+multipole-temperature fluctuations of the CMB.  The particular structure at
+angular sizes in the CMB arises due to baryonic acoustic oscillations (BAO)
+which are an imprint of pressure waves in the primordial baryon-photon plasma.
+Therefore, the amplitudes of the BAO peaks depend on the baryon-density
+component of the Universe $\propto\Ho{}^{2}/G$ through which the Hubble constant
+can be indirectly determined.  Such methods obtain estimates which are
+independent of the cosmic distance ladder employed by 'late'-Universe
+measurements.
+
+The separation between 'early' and 'late' measurements of the Hubble constant
+has been emphasized in the last decade, because of a discrepancy in the results
+they yielded.  While measurements of late-Universe probes indicate a Hubble
+constant of around $\Ho = 74.0 \pm 1.4\;\Hunitsalt$~\sidecite[][latest results
+obtained by the SH0ES (Supernovae \Ho\ for the Equation of State) project which
+measures the Hubble constant using Supernovae]{Riess19}, 'early'-Universe
+measurements generally yield a lower value of $\Ho = 67.4 \pm
+0.5\;\Hunitsalt$~\sidecite[][most recent inference of the cosmological
+parameters from the Planck collaboration]{Planck18b}.  In the comparison of the
+values and uncertainties of such determinations, it becomes apparent that there
+is a discrepancy at a $4.5\sigma-5.5\sigma$-level\sidenote{depending on the
+exact measurements being compared} between these two opposing sides.  This means
+that there is roughly a 1 in 20'000'000 chance of both measurements being
+different on accident, which indicates a problem with either one or both
+methods.  The seemingly only way to resolve this so-called \textit{Hubble
+tension}, without completely changing the concordance model of cosmology, is to
+find some so-far unknown systematic errors in the measurements which would
+account for the discrepancies.  As it currently stands however, the Hubble
+tension appears to force the rejection of the most successful cosmological
+concordance model, the $\Lambda$ cold-dark matter model ($\Lambda$CDM). 
+
+For this reason, it is crucial to have as many independent methods of obtaining
+estimates for the Hubble constant as possible, each with sufficient precision to
+resolve the tension.  In the past couple of years, gravitational lenses were
+believed to provide a third perspective on the issue and possibly resolve the
+discrepancies surrounding the value of \Ho{}.  While other methods are based on
+standardizable luminosity measurements or the angular power spectrum of the CMB,
+gravitational lenses induce differences in travel times of light rays, so-called
+time delays, which can be measured in the lensed images of quasars and other
+time-variable sources over a period of the order of years.  These time delays
+set the scale of the lensing system and are proportional to the inverse of the
+Hubble constant, the Hubble time.  Through these time delays, the recovery of
+the lensing mass distribution therefore allows an independent measurement of the
+Hubble constant from a completely different physical process. 
+\chref{delays} presents a critical analysis of such a measurement.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \par\noindent\rule{\textwidth}{0.8pt}
 
-luminosity distances - $\text{D}_{\text{L}}$ vs. $\text{D}_{\text{A}}$
-
-sound-related distances and standard sirens
-
-Friedmann equation (a la youtube video) leading to density functions
-
-
-\par\noindent\rule{\textwidth}{0.8pt}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Light signals weaken with the square of their distance as described by
+\eqref{d_lum}.  This means a signal will be 4 times less bright at twice the
+distance, which is generally the case for long-range physical laws, be it the
+gravitational force, electro-magnetic force, or most kinds of radiation.  Of
+course, for a constant progress out into the cosmos, the demand on technologies
+is twice as high and pushes them to their limits.  
+Recently however, the detection of gravitational waves changed the game.  When
+two massive, compact objects such as black holes orbit each other and start to
+inspiral, some amount of energy is emitted in form of gravitational
+waves\sidenote{a highly non-classical effect!}.  A major advantage over their
+electro-magnetic counterpart is that the signal strength of gravitational waves
+decreases with distance linearly.  The benefits of this become immediately
+apparent: if one would manage to build a detector which is 100 times as
+sensitive, it could measure distances 100 times as far into the Universe, rather
+than 10 times as far with a light detector which was 100 times as sensitive.
+The reason for the linear dependence on distance lies in the method how the
+signal is generated and measured.  The easiest way of generating
+electro-magnetic waves is to move charges back and forth which creates dipole
+radiation, commonly known as light.  Due to the conservation of momentum, this
+is not possible for gravitational waves which instead consist of quadrupole
+radiation.  These kinds of radiations are fundamentally different when it comes
+to their detection.  While light simply gets absorbed in the detector and
+changes the energy level of the detected signal, gravitational waves induce
+stretching and compression in the detector, called strain which is proportional
+to the amplitude of the wave.  While the energy of gravitational waves still
+falls with the square of the distance, their amplitude decrease with the
+distance linearly, which is ultimately the reason of the farther reach of
+distance measurements based on gravitational waves.  In the future, this method
+of measuring distances will be crucial in resolving the discrepancies in the
+measurements of the Hubble constant.

@@ -4,47 +4,47 @@ On May 29, 1919 during a total solar eclipse, three scientists, Eddington,
 Dyson, and Davidson, tried to find out what effect, if any, is produced by a
 gravitational field on the path of a light ray traversing
 it~\cite{Eddington1920}.  During a thoroughly prepared expedition, they measured
-the deflection of positions of stars in the previously studied Hyades
-constellation caused by the mass of the Sun as predicted by the theory of
-gravity, general relativity.  This was the first observation of gravitational
-lensing, as well as the first predicted and validated effect of general
+the deflection of positions of stars in the well-known Hyades constellation
+caused by the mass of the Sun as predicted by the theory of gravity, general
+relativity.  This was the first observation of gravitational lensing, as well as
+the first predicted and validated effect of general
 relativity~\sidecite{Einstein1911}.
 
 Effectively, gravitational lensing is entirely analogous to optical lenses. In
 fact, to produce the distorted light signatures like they are observed in
 gravitational lens systems, one only needs a stem and the base from a wine glass
-and move it in front of a light source.  A toy example of such a situation can
-be found under:
-\href{https://phdenzel.github.io/zurich-lens/}{phdenzel.github.io/zurich-lens/}.
-In optics, the lens comprises a glass sheet of variable thickness.  It deflects
-light by an amount proportional to the local depth.  The physical process which
-causes a change of direction when a ray traverses a glass lens, is called
-refraction.  It describes the delay, i.e. decrease in speed of light, due to the
-change of media and therefore a change in direction.  While the result of
-lensing is the same for both optical and gravitational lenses, the latter causes
-the delay and deflection due to the change of the felt gravitational potential
-as light moves through it.  The rather rare occurrence of a perfect alignment of
-a background source, a quasar for instance, and a massive foreground lens in
-which the imaged source is distorted in a way such that it can be observed
-multiple times or even as a ring wrapping around the lens, is called
-\textit{strong} gravitational lensing.  \figref{mock-lens} demonstrates such a
-case with a mock lens.
-\begin{figure}[h]
-    \centering
+and move it in front of a light source.
+\href{https://phdenzel.github.io/zurich-lens/}{phdenzel.github.io/zurich-lens/}
+provides an interactive toy example of such a situation.  In optics, the lens
+comprises a glass sheet of variable thickness.  It deflects light by an amount
+proportional to the local depth.  The physical process which causes the change
+of direction when a ray traverses a glass lens, is called refraction.  It
+describes the delay, i.e. decrease in speed of light, due to the change of media
+and therefore a change in direction.  While the result of lensing is the same
+for both optical and gravitational lenses, the latter causes the delay and
+deflection due to the change of the felt gravitational potential as light moves
+through it.  The rather rare occurrence of a perfect alignment of a background
+source, a quasar for instance, and a massive foreground lens in which the imaged
+source is distorted in a way such that it can be observed multiple times or even
+as a ring wrapping around the lens, is called \textit{strong} gravitational
+lensing.  \figref{mock-lens} demonstrates such a case with a mock lens.
+\begin{figure}[h]%
+    \centering%
     \includegraphics[width=0.49\textwidth]{m82-original}\,%
     \includegraphics[width=0.49\textwidth]{m82-lensmock}
     \caption[Mock lens image of M82]{Mock lens observation: The left image shows
       the "Cigar Galaxy" M82 cutout from
       \href{https://apod.nasa.gov/apod/ap200515.html}{APOD 2020 May 15}. The
       right image demonstrates what it could look like, if a small black hole
-      for instance with a third of the Sun's mass would replace the Moon in
-      front of M82.  The right image was generated using my lens mock code:
+      for instance with 3 times the mass of the Sun would replace the Moon
+      (\textcolor{red}{TODO: check calculation again, angular size of 10
+      arcmin}).  The right image was generated using my lens mock code:
       \Code{lensing.js}
       (\href{https://phdenzel.github.io/lensing.js/}{phdenzel.github.io/lensing.js/}).\\
       \textit{Image Credit \& Copyright: Dietmar Hager, Torsten
-        Grossmann}}
-    \figlbl{mock-lens}
-\end{figure}
+        Grossmann}}%
+    \figlbl{mock-lens}%
+\end{figure}%
 
 More specifically, the deflection in gravitational lensing is of the order of
 $4M/R$, where $M$ is the mass of the lens and $R$ its size.  Strong
@@ -53,14 +53,15 @@ a distance $D$ is comparable to that deflection.  In fact, although the
 underlying physical process is all the same, gravitational lensing is
 categorized into three types based on the observational techniques and mass or
 size regimes: and \textit{micro}, \textit{strong}, and \textit{weak} lensing.
-\begin{equation}
-\begin{aligned}
+%
+\begin{equation}%
+  \begin{aligned}
     \text{micro} \hspace{1cm}&\frac{4M}{R} \gg \frac{R}{D}\\
     \text{strong} \hspace{1cm}&\frac{4M}{R} \gtrsim \frac{R}{D}\\
     \text{weak} \hspace{1cm}&\frac{4M}{R} < \frac{R}{D}
-\end{aligned}
-\end{equation}
-
+  \end{aligned}
+\end{equation}%
+%
 
 Microlensing is in many cases due to small, compact, and massive objects such as
 stars, or even expolanets around stars.  While it technically also projects a
@@ -74,25 +75,26 @@ enough to create multiple images, and the observable effect is a distortion
 which is only detectable in a statistical sense.
 
 Most gravitational lenses lie at cosmological distances, and only very massive,
-large, and mass-concentrated objects can in this case induce strong lensing
+large, and mass-concentrated objects can in this case lead to strong lensing
 features.  Galaxies are vast cosmic islands of stars, gas, dust, and mainly
 non-luminous matter held together by gravity.  This puts them in ideal mass and
 size range to act as such strong-lensing systems.  Based on most recent
-observations, it is estimated that there are more than 200 billion galaxies in
-the Universe, however so far less than a thousand gravitational lenses have been
-found across various data sets.  This makes them quite rare beasts\dots\ for
-now.  Future space and ground-based telescope missions however, such as the
-\textit{Square Kilometer Array} (SKA), the \textit{Large Synoptic Survey
-Telescope} (LSST), or \textit{Euclid} are expected to find several orders of
-magnitudes more.  This is very promising for science, because, due to their very
-special circumstances, lensing galaxies and their configurations can be modelled
-and give otherwise unobtainable insights into galaxy structure.  The fact that
-gravity and thus lensing is indiscriminate of the kinds of matter which cause
-the deflections, makes it all the more interesting.  In this regard,
-gravitational lenses are often seen as proof\sidenote{Not the only proof, as
-explained in following sections.} for invisible and non-luminous matter,
-commonly called \textit{dark matter}, without which the observed deflections due
-to galaxies cannot be explained by general relativity.
+observations, it is estimated that there are more than 2 trillion galaxies
+in the Universe \sidecite{Conselice16}, however so far less than a thousand
+gravitational lenses have been found across various data sets.  This makes them
+quite the rare beasts in comparision\dots\ at least for now.  Future space and
+ground-based telescope missions however, such as the \textit{Square Kilometer
+Array} (SKA), the \textit{Large Synoptic Survey Telescope} (LSST), or
+\textit{Euclid} are expected to find several orders of magnitudes more.  This is
+very promising for science, because, due to their very special circumstances,
+lensing galaxies and their configurations can be modelled and give otherwise
+unobtainable insights into galaxy structure.  The fact that gravity and thus
+lensing is indiscriminate of the kinds of matter which cause the deflections,
+makes it all the more interesting.  In this regard, gravitational lenses are
+often seen as proof\sidenote{Not the only proof, as explained in following
+sections.} for invisible and non-luminous matter, commonly called \textit{dark
+matter}, without which the observed deflections due to galaxies cannot be
+explained by general relativity.
 
 Finding connections between these matter components, how they assembled, and how
 they dynamically interact within galaxies is still subject of ongoing research.
@@ -116,14 +118,55 @@ systems are, scientifically speaking, highly valuable and promise to uncover
 mysteries surrounding galaxy evolution, the nature of dark matter, galaxy
 substructures, and the expansion of the Universe.
 
-The main theme of this thesis is to explore old and new ways...
+The main theme of this thesis is to explore old and new ways of connecting the
+three cornerstones of lensing research, \textit{lensing galaxies}, \textit{lens
+models}, and \textit{simulations}. The following chapters detail projects with
+that aim, each designated by a project name: \Code{FOSSIL}~(\chref{fossil}),
+\Code{ADLER}~(\chref{adler}), \Code{MATCH}~(\chref{match}), and
+\Code{DELAYS}~(\chref{delays}).
+
+\begin{figure}[h]%
+    \centering%
+    \includegraphics[width=0.99\textwidth]{scheme}%
+    \caption[Conceptual graph]{Conceptual graph: the outline of this fictional
+        lensing system perfectly construes the current state of lensing
+        research.  Simulations of galaxies have been shown to be physically
+        realistic and have successfully been inferred by lens models in (blind)
+        tests.  However, lens models still struggle to uniquely describe lensing
+        galaxies in observations and a direct link from simulations to lensing
+        galaxies has so far never even been explored before.  The projects in
+        the subsequent chapters thematize these subjects and their connections.
+        }%
+    \figlbl{concept}%
+\end{figure}%
+
+Attempts to describe lensing galaxies with models of lens systems have been made
+since the very first discovery by~\sideciteay{Walsh1979} in 1979.  In
+\chref{delays} and \chref*{fossil}, new techniques were developed to optimize
+lens recovery --- still rather traditionally --- with time delay measurements or
+stellar population synthesis models respectively.  Even with these physical
+informations, the models were difficult to properly constrain and revealed
+certain issues and limitations.  The subsequent project in \chref{adler} reports
+on a blind test which explores these problems with mock lenses from large-scale
+hydrodynamical simulations.  Particularly hard to solve is the issue of
+degeneracies, the fact that a lens configuration can be caused by many,
+differently shaped lenses, which is a long-known, inherent limitation to lens
+models.  It also proposes analysis techniques which can be employed in this case
+to isolate these problems.  Finally, \chref{match} gives proof-of-concept for an
+entirely new form of lens modelling, a 'matching' technique, which provides a
+direct link from simulations to lensing galaxies in observations.
+
+The following sections introduce the subsequent chapters and cover some basics
+and related topics in the schematic of \figref{concept}.  They elaborate on a
+few key aspects in cosmology, some theoretical background in galactic dynamics,
+in particular focussing on galaxies in lensing systems, and lensing theory.
 
 
-\section{The Expanding Universe}\seclbl{exp_universe}
+\section{The Hubble constant}\seclbl{hubble_constant}
 \input{tex/exp_universe}
 
-\section{The Solar Neighbourhood}\seclbl{solar_nbhood}
+\section{Galaxies}\seclbl{galaxies}
 \input{tex/solar_nbhood}
 
-\section{Number of lensing galaxies}\seclbl{number_lenses}
+\section{Lens models}\seclbl{lens_models}
 \input{tex/number_lenses}
