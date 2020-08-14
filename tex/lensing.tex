@@ -1,3 +1,61 @@
-%% number_lenses.tex
+%% lensing.tex
 
-Put a galaxy similar to MW at half the distance to the 
+General introduction to lens theory and lens modelling.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\par\noindent\rule{\textwidth}{0.8pt}
+
+The distance to the lens and the source $D_\mathrm{S}$ are always much larger
+than the line-of-sight extent of the lens itself. This is what allows the
+so-called \textit{thin-lens} approximation which allows the definition of a
+projected surface-density distribution
+%
+\begin{equation}\eqlbl{match:thinlens}
+  \kappa(\bm\theta) = \frac{4\pi GD_\mathrm{LS}D_\mathrm{L}}{c^2D_\mathrm{S}}
+    \int \rho(\bm\theta, z)\,\mathrm{d}z
+\end{equation}
+%
+from a mass-volume density $\rho$, where $D_\mathrm{LS}$ is the angular-diameter
+distance from the lens to the source, $\bm\theta$ the lens plane and $z$ the
+line-of-sight coordinate.
+
+% Lensing galaxy models
+In this context, it is very useful to think of an arbitrary surface-density
+distribution in terms of multipoles:
+%
+\begin{equation}\eqlbl{match:multipoles}%
+  \kappa(\bm\theta) = \langle\kappa_0(\theta)\rangle_{\phi} 
+  + \sum^{\infty}_{m=1} \langle\kappa_{m}(\theta)\rangle_{\phi} e^{im\phi}
+\end{equation}%
+%
+where the individual components $\langle\kappa_{m}(\theta)\rangle_{\phi}$ are
+angular averages over the surface density, expressed in polar coordinates.  It
+corresponds much to the idea that galaxies consist of a main body of matter and
+many smaller substructures orbiting around it.  The monopole $\kappa_0$, dipole
+$\kappa_1$ and quadrupole $\kappa_2$ are usually considered the most important
+components.  While the monopole only leads to radial deflections, the
+higher-order multipoles also include angular terms which are composed of two
+parts containing the interior and exterior poles.  The angular structure in the
+lens is mainly determined by three sources: (i) the luminous lens galaxy
+including its stars, gas, and dust, (ii) the dark matter in the halo of the
+galaxy, and (iii) the perturbations from nearby objects or objects along the
+line of sight.  The most common angular term included by lens models is the
+external shear which describes the exterior poles of the quadrupole.
+
+% Lensing degeneracies
+In fact, \sideciteay{Young1981} reported the first lens model which already
+involved all components up to the quadrupole expressed in terms of an elliptical
+mass distribution using a small set of parameters.  Already then, they
+identified essentially every important lensing-related issue, and in particular
+realized that there are many different mass distributions which can lead to
+identical lensing configurations \sidecite{Young1981b}; these degeneracies
+represent an inherent limitation to lens reconstructions \sidecite{Saha2000}.
+They create many misconceptions about lens models even amongst experts, as often
+times a single family of models is not able to fully describe lensing
+observables \sidecite{Gomer19, Denzel20, Kochanek20, TDCOSMO4}.  To reduce or
+even break degeneracies, modern lens reconstruction techniques try to constrain
+their models with additional data besides the image positions such as relative
+fluxes of the images, arc-like extended images, stellar photometry to describe
+the dynamics of the lensing galaxies, or time delays between the images
+\sidecite{Barnabe07, Ferreras07, Auger10, Bruderer15, Leier11, Leier16,
+Nightingale19, Denzel20b, Shajib20, Wong19}.
