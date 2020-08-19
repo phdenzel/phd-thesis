@@ -1,0 +1,87 @@
+%% summary.tex
+
+%
+\begin{equation}
+    \mathcal{P}(\bm\theta) = \frac{1}{2}\theta^{2} - 2\nabla^{-2}\kappa(\bm\theta)
+\end{equation}
+%
+
+%
+\begin{equation}
+    \tau(\bm\theta) = \mathcal{P}(\bm\theta) - \bm\beta\cdot\bm\theta
+\end{equation}
+%
+
+
+GLASS uses point-images
+%
+\begin{equation}
+    \nabla\tau(\bm\theta) = 0
+\end{equation}
+%
+
+Using Fermat's principle
+%
+\begin{equation}
+    \bm\beta = \nabla\mathcal{P}(\bm\theta)
+\end{equation}
+%
+which describes the extended images.
+
+
+\subsection{Inferring the Hubble constant}
+
+\chref{delays} presents a critical study of such a measurement.  With an
+analysis on 8 time-delay lenses, I determined the Hubble constant with a value
+of \sidenote{\protect\textcolor{red}{TODO}: I was told that one should use 'I'
+in the intro... is this really what is usually done?}
+%
+\begin{equation*}%
+    \Ho = 71.8^{+3.8}_{-3.3}\;\Hunitsalt
+\end{equation*}%
+%
+The value is compatible with both the early and late measurements, with a
+tension of less than $1.5\sigma$.  With a precision of 4.9\%, the measurement is
+unfortunately not able to contribute to the resolution of the Hubble tension.
+In fact, the investigation revealed that, if a 1\% level is at all obtainable,
+it would require a joint-analysis of many more time-delay measurements of
+quadruply imaging lens systems (quads).  It was not the only determination of
+the Hubble constant through lensing observations recently; the H0LiCOW
+collaboration \sidecite{Wong19} reported on a Hubble constant of
+$73.3^{+1.7}_{-1.8}\;\Hunitsalt$ from 6 time-delay lenses a year before, and the
+STRIDES collaboration \sidecite{Shajib20} determined a value of
+$74.2^{+2.7}_{-3.0}\;\Hunitsalt$ from a single lens.  However, while these
+results were reported with higher confidence, this study explores many different
+lens models and thus accounts for lensing degeneracies by construction.
+Although degeneracies are often neglected in lensing studies, it is known for a
+long time that a family of lens-mass distributions is able reproduce the same
+observables, but still yield different values for the Hubble constant.
+Therefore, studies with the aim of inferring the Hubble constant need to solve
+for (ideally) all possible solutions of mass distributions in order to retrieve
+a complete model.  The study produced 8000 lens-mass distributions with 1000
+values for the Hubble constant.  Most interestingly, the values appeared to be
+asymmetrically distributed, which might indicate that the errors on \Ho{} could
+be non-Gaussian.  These results were not entirely unexpected since the
+investigation was actually a continuation of ideas gathered during a
+participation in a scientific blind study \sidecite{TDLMC2} in which 50
+simulated time-delay lenses were analysed by several research groups.  It
+discovered that current lens recovery methods are accurate to only about 6\%,
+even with acclaimed precision over nearly 1\%.  In comparison with the study
+presented in \chref{delays}, it became apparent that the lens simulations
+considerably differed from real observations and that the uncertainties in the
+inference of \Ho{} from mock lenses were higher.  Besides the obvious numerical
+deviations, the radial distribution of lens images of the simulated lens set was
+relatively narrow which provided only little constraints on the slope of the
+density profile and consequently on \Ho.  This could mean that there exists a
+limit to the accuracy on \Ho{} achievable with time-delay galaxy lenses, which
+ultimately might preclude them to infer \Ho{} on a level required to resolve the
+Hubble tension.  Nonetheless, gravitational lenses are excellent cosmological
+probes. Especially cluster lenses do not exhibit this limitation and might still
+recover the Hubble constant with sufficient precision to contribute to the
+resolution of the Hubble tension.
+
+\subsection{Lens recovery of SW05}
+
+\subsection{Modelling tests on simulations}
+
+\subsection{The lens-matching method}

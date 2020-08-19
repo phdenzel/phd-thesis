@@ -8,7 +8,7 @@ the deflection of positions of stars in the well-known Hyades constellation
 caused by the mass of the Sun as predicted by the theory of gravity, general
 relativity.  This was the first observation of gravitational lensing, as well as
 the first predicted and validated effect of general
-relativity~\sidecite{Einstein1911}.
+relativity~\cite{Einstein1911}.
 
 Effectively, gravitational lensing is entirely analogous to optical lenses. In
 fact, to produce the distorted light signatures like they are observed in
@@ -79,22 +79,26 @@ large, and mass-concentrated objects can in this case lead to strong lensing
 features.  Galaxies are vast cosmic islands of stars, gas, dust, and mainly
 non-luminous matter held together by gravity.  This puts them in ideal mass and
 size range to act as such strong-lensing systems.  Based on most recent
-observations, it is estimated that there are more than 2 trillion galaxies
-in the Universe \sidecite{Conselice16}, however so far less than a thousand
+observations, it is estimated that there are more than 2 trillion galaxies in
+the Universe \sidecite{Conselice16}, however so far less than a thousand
 gravitational lenses have been found across various data sets.  This makes them
 quite the rare beasts in comparison\dots\ at least for now.  Future space and
 ground-based telescope missions however, such as the \textit{Square Kilometer
-Array} (SKA), the \textit{Large Synoptic Survey Telescope} (LSST), or
-\textit{Euclid} are expected to find several orders of magnitudes more.  This is
-very promising for science, because, due to their very special circumstances,
-lensing galaxies and their configurations can be modelled and give otherwise
-unobtainable insights into galaxy structure.  The fact that gravity and thus
-lensing is indiscriminate of the kinds of matter which cause the deflections,
-makes it all the more interesting.  In this regard, gravitational lenses are
-often seen as 'proof'\sidenote{Not the only proof, as explained in following
-sections.} for invisible and non-luminous matter, commonly called \textit{dark
-matter}, without which the observed deflections due to galaxies cannot be
-explained by general relativity.
+Array} (SKA), the \textit{Vera Rubin Observatory} (formerly known as
+\textit{Large Synoptic Survey Telescope}, or LSST), the \textit{James Webb Space
+Telescope} (JWST), and \textit{Euclid} are expected to find several orders of
+magnitudes more.  This is very promising for science, because, due to their very
+special circumstances, lensing galaxies and their configurations can be modelled
+and give otherwise unobtainable insights into galaxy structure. The task of lens
+models is to describe particular shapes of the lensing galaxy's mass
+distribution which produces deflections of one or more background sources which
+agree with the observed lensed images.  The fact that gravity and thus lensing
+is indiscriminate of the kinds of matter which cause the deflections, makes it
+all the more interesting.  In this regard, gravitational lenses are often seen
+as 'proof'\sidenote{Not the only proof, as explained in following sections.} for
+invisible and non-luminous matter, commonly called \textit{dark matter}, without
+which the observed deflections due to galaxies cannot be explained by general
+relativity.
 
 Finding connections between these matter components, how they assembled, and how
 they dynamically interact within galaxies is still subject of ongoing research.
@@ -119,8 +123,9 @@ mysteries surrounding galaxy evolution, the nature of dark matter, galaxy
 substructures, and the expansion of the Universe.
 
 The main theme of this thesis is to explore old and new ways of connecting the
-three cornerstones of lensing research, \textit{lensing galaxies}, \textit{lens
-models}, and \textit{simulations}. The following chapters detail projects with
+three cornerstones of lensing research, \textit{lensing galaxies} from
+observations, \textit{lens models} which try to reproduce observations, and
+\textit{simulations} of galaxies. The following chapters detail projects with
 that aim, each designated by a project name: \Code{FOSSIL}~(\chref{fossil}),
 \Code{ADLER}~(\chref{adler}), \Code{MATCH}~(\chref{match}), and
 \Code{DELAYS}~(\chref{delays}).
@@ -147,9 +152,9 @@ lens recovery --- still rather traditionally --- with time delay measurements or
 stellar population synthesis models respectively.  Even with this physical
 information, the models were difficult to properly constrain and revealed
 certain issues and limitations.  The subsequent project in \chref{adler} reports
-on a blind test which explores these problems with mock lenses from large-scale
-hydrodynamical simulations.  Particularly hard to solve is the issue of
-degeneracies, the fact that a lens configuration can be caused by many,
+on a blind test which further explores these problems with mock lenses from
+large-scale hydrodynamical simulations.  Particularly hard to solve is the issue
+of degeneracies, the fact that a lens configuration can be caused by many,
 differently shaped lenses, which is a long-known, inherent limitation to lens
 models.  It also proposes analysis techniques which can be employed in this case
 to isolate these problems.  Finally, \chref{match} gives proof-of-concept for an
@@ -158,15 +163,20 @@ direct link from simulations to lensing galaxies in observations.
 
 The following sections introduce the subsequent chapters and cover some basics
 and related topics in the schematic of \figref{concept}.  They elaborate on a
-few key aspects in cosmology, some theoretical background in galactic dynamics,
-in particular focusing on galaxies in lensing systems, and lensing theory.
+few key aspects in cosmology, some theoretical and observational background
+related to galactic dynamics, in particular focusing on topics relevant to
+galaxies in lensing systems, and some basic lensing theory.  Finally, the
+subsequent chapters are put into context and shortly summarized.
 
-\clearpage
-\section{The Hubble constant}\seclbl{hubble_constant}
+%\clearpage
+\section{The expanding Universe}\seclbl{exp_universe}
 \input{tex/exp_universe}
-\clearpage
+%\clearpage
 \section{Galaxies}\seclbl{galaxies}
 \input{tex/galaxies}
-\clearpage
-\section{Lens models}\seclbl{lens_models}
+%\clearpage
+\section{Lens models}\seclbl{lensing}
 \input{tex/lensing}
+%\clearpage
+\section{Summary}\seclbl{summary}
+\input{tex/summary}
