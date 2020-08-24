@@ -28,6 +28,7 @@ source, a quasar for instance, and a massive foreground lens in which the imaged
 source is distorted in a way such that it can be observed multiple times or even
 as a ring wrapping around the lens, is called \textit{strong} gravitational
 lensing.  \figref{mock-lens} demonstrates such a case with a mock lens.
+%
 \begin{figure}[h]%
     \centering%
     \includegraphics[width=0.49\textwidth]{m82-original}\,%
@@ -46,6 +47,7 @@ lensing.  \figref{mock-lens} demonstrates such a case with a mock lens.
         Grossmann}}%
     \figlbl{mock-lens}%
 \end{figure}%
+%
 
 More specifically, the deflection in gravitational lensing is of the order of
 $4M/R$, where $M$ is the mass of the lens and $R$ its size.  Strong
@@ -125,11 +127,12 @@ substructures, and the expansion of the Universe.
 The main theme of this thesis is to explore old and new ways of connecting the
 three cornerstones of lensing research, \textit{lensing galaxies} from
 observations, \textit{lens models} which try to reproduce observations, and
-\textit{simulations} of galaxies. The following chapters detail projects with
-that aim, each designated by a project name: \Code{FOSSIL}~(\chref{fossil}),
-\Code{ADLER}~(\chref{adler}), \Code{MATCH}~(\chref{match}), and
-\Code{DELAYS}~(\chref{delays}).
+\textit{simulations} of galaxies.  The following chapters detail projects with
+that aim, each designated by a project name: \Code{DELAYS}~(\chref{delays}),
+\Code{FOSSIL}~(\chref{fossil}), \Code{ADLER}~(\chref{adler}), and
+\Code{MATCH}~(\chref{match}).
 
+%
 \begin{figure}[h]%
     \centering%
     \includegraphics[width=0.99\textwidth]{scheme}%
@@ -144,39 +147,42 @@ that aim, each designated by a project name: \Code{FOSSIL}~(\chref{fossil}),
         }%
     \figlbl{concept}%
 \end{figure}%
+%
 
 Attempts to describe lensing galaxies with models of lens systems have been made
 since the very first discovery by~\sideciteay{Walsh1979} in 1979.  In
 \chref{delays} and \chref*{fossil}, new techniques were developed to optimise
 lens recovery --- still rather traditionally --- with time delay measurements or
-stellar population synthesis models respectively.  Even with this physical
-information, the models were difficult to properly constrain and revealed
-certain issues and limitations.  The subsequent project in \chref{adler} reports
-on a blind test which further explores these problems with mock lenses from
-large-scale hydrodynamical simulations.  Particularly hard to solve is the issue
-of degeneracies, the fact that a lens configuration can be caused by many,
-differently shaped lenses, which is a long-known, inherent limitation to lens
-models.  It also proposes analysis techniques which can be employed in this case
-to isolate these problems.  Finally, \chref{match} gives proof-of-concept for an
-entirely new form of lens modelling, a 'matching' technique, which provides a
-direct link from simulations to lensing galaxies in observations.
+stellar population synthesis models respectively.  Even with more physical
+information on the lensing galaxies, the models were difficult to properly
+constrain and revealed certain issues and limitations.  The subsequent project
+in \chref{adler} reports on a blind test which further explores these problems
+with mock lenses from large-scale hydrodynamical simulations.  Particularly hard
+to solve is the issue of degeneracies, the fact that a lens configuration can be
+caused by many, differently shaped lenses, which is a long-known, inherent
+limitation to lens models.  It also proposes analysis techniques which can be
+employed in this case to isolate these problems.  Finally, \chref{match} gives
+proof-of-concept for an entirely new form of lens modelling, a 'matching'
+technique, which provides a direct link from simulations to lensing galaxies in
+observations.
 
 The following sections introduce the subsequent chapters and cover some basics
 and related topics in the schematic of \figref{concept}.  They elaborate on a
-few key aspects in cosmology, some theoretical and observational background
-related to galactic dynamics, in particular focusing on topics relevant to
-galaxies in lensing systems, and some basic lensing theory.  Finally, the
-subsequent chapters are put into context and shortly summarized.
+few key aspects in cosmology (\secref{exp_universe}), some basic lensing theory
+(\secref{lensing}), and theoretical and observational background related to
+galactic dynamics, in particular focusing on topics relevant to galaxies in
+lensing systems (\secref{galaxies}).  Finally, the subsequent chapters are put
+into context and shortly summarized.
 
 %\clearpage
 \section{The expanding Universe}\seclbl{exp_universe}
 \input{tex/exp_universe}
 %\clearpage
-\section{Galaxies}\seclbl{galaxies}
-\input{tex/galaxies}
-%\clearpage
 \section{Lens models}\seclbl{lensing}
 \input{tex/lensing}
+%\clearpage
+\section{Galaxies}\seclbl{galaxies}
+\input{tex/galaxies}
 %\clearpage
 \section{Summary}\seclbl{summary}
 \input{tex/summary}
