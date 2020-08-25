@@ -40,9 +40,7 @@ lensing.  \figref{mock-lens} demonstrates such a case with a mock lens.
       for instance with 3 times the mass of the Sun would replace the Moon
       (\textcolor{red}{TODO: check calculation again, angular size of 10
       arcmin}).  The right image was generated using my lens mock code:
-      \Code{lensing.js}
-      (\href{https://phdenzel.github.io/lensing.js/}%
-            {phdenzel.github.io/lensing.js/}).\\
+      \Code{lensing.js} \cite{lensing.js}.\\
       \textit{Image Credit \& Copyright: Dietmar Hager, Torsten
         Grossmann}}%
     \figlbl{mock-lens}%
@@ -56,6 +54,9 @@ a distance $D$ is comparable to that deflection \sidecite{MagicEnv}.  In fact,
 although the underlying physical process is all the same, gravitational lensing
 is categorised into three types based on the observational techniques and mass
 or size regimes: and \textit{micro}, \textit{strong}, and \textit{weak} lensing.
+Note that in the following equation and the entire introduction of this thesis,
+we assume $c=G=1$, which enables us to express distances and masses in units of
+seconds, mass densities and velocity gradients in units of squared seconds etc.
 %
 \begin{equation}\eqlbl{lensing_types}%
   \begin{aligned}
@@ -79,8 +80,8 @@ which is only detectable in a statistical sense.
 Most gravitational lenses lie at cosmological distances, and only very massive,
 large, and mass-concentrated objects can in this case lead to strong lensing
 features.  Galaxies are vast cosmic islands of stars, gas, dust, and mainly
-non-luminous matter held together by gravity.  This puts them in ideal mass and
-size range to act as such strong-lensing systems.  Based on most recent
+non-luminous matter held together by gravity.  This puts them in an ideal mass
+and size range to act as such strong-lensing systems.  Based on most recent
 observations, it is estimated that there are more than 2 trillion galaxies in
 the Universe \sidecite{Conselice16}, however so far less than a thousand
 gravitational lenses have been found across various data sets.  This makes them
@@ -88,10 +89,10 @@ quite the rare beasts in comparison\dots\ at least for now.  Future space and
 ground-based telescope missions however, such as the \textit{Square Kilometer
 Array} (SKA), the \textit{Vera Rubin Observatory} (formerly known as
 \textit{Large Synoptic Survey Telescope}, or LSST), the \textit{James Webb Space
-Telescope} (JWST), and \textit{Euclid} are expected to find several orders of
-magnitudes more.  This is very promising for science, because, due to their very
-special circumstances, lensing galaxies and their configurations can be modelled
-and give otherwise unobtainable insights into galaxy structure. The task of lens
+Telescope} (JWST), and \textit{Euclid} are expected to find orders of magnitudes
+more.  This is very promising for science, because, due to their very special
+circumstances, lensing galaxies and their configurations can be modelled and
+give otherwise unobtainable insights into galaxy structure. The task of lens
 models is to describe particular shapes of the lensing galaxy's mass
 distribution which produces deflections of one or more background sources which
 agree with the observed lensed images.  The fact that gravity and thus lensing
@@ -136,15 +137,15 @@ that aim, each designated by a project name: \Code{DELAYS}~(\chref{delays}),
 \begin{figure}[h]%
     \centering%
     \includegraphics[width=0.99\textwidth]{scheme}%
-    \caption[Conceptual graph]{Conceptual graph: the outline of this fictional
-        lensing system perfectly construes the current state of lensing
-        research.  Simulations of galaxies have been shown to be physically
-        realistic and have successfully been inferred by lens models in (blind)
-        tests.  However, lens models still struggle to uniquely describe lensing
-        galaxies in observations and a direct link from simulations to lensing
-        galaxies has so far never even been explored before.  The projects in
-        the subsequent chapters thematise these subjects and their connections.
-        }%
+    \caption[Conceptual research graph]{Conceptual graph: the outline of this
+        fictional lensing system perfectly construes the current state of
+        lensing research.  Simulations of galaxies have been shown to be
+        physically realistic and have successfully been inferred by lens models
+        in (blind) tests.  However, lens models still struggle to uniquely
+        describe lensing galaxies in observations and a direct link from
+        simulations to lensing galaxies has so far never even been explored
+        before.  The projects in the subsequent chapters thematise these
+        subjects and their connections.  }%
     \figlbl{concept}%
 \end{figure}%
 %
@@ -162,8 +163,8 @@ to solve is the issue of degeneracies, the fact that a lens configuration can be
 caused by many, differently shaped lenses, which is a long-known, inherent
 limitation to lens models.  It also proposes analysis techniques which can be
 employed in this case to isolate these problems.  Finally, \chref{match} gives
-proof-of-concept for an entirely new form of lens modelling, a 'matching'
-technique, which provides a direct link from simulations to lensing galaxies in
+proof-of-concept for an entirely new strategy, a lens 'matching' technique,
+which provides a direct link from simulations to lensing galaxies in
 observations.
 
 The following sections introduce the subsequent chapters and cover some basics

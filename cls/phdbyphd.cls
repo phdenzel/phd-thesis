@@ -214,5 +214,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Counters
 
-\setcounter{secnumdepth}{1}
+\setcounter{secnumdepth}{2}
 \counterwithin*{sidenote}{chapter} % for global counter: \counterwithout{sidenote}{chapter}

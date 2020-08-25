@@ -61,11 +61,11 @@
 \newlength\sclen
 
 \NewDocumentCommand{\citeay}{m}{%
-	\citeauthor{#1} \parencite*{#1}%
+	\citeauthor*{#1} \parencite*{#1}%
 }
 
 \NewDocumentCommand{\sideciteay}{O{}O{}O{0pt}m}{%
-	\citeauthor[#1][#2]{#4} \parencite*{#4}%
+	\citeauthor*[#1][#2]{#4} \parencite*{#4}%
 	\margincitation[#3]{#4}%
 }
 

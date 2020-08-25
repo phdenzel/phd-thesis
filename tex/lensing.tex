@@ -163,11 +163,11 @@ D_{L}$.}
 \begin{equation}\eqlbl{geo_and_shapiro}%
   \begin{aligned}%
     t_{\text{geom}} &= \frac{(1+z_{L})}{2}\frac{D_{L}D_{S}}{D_{LS}}(\bm\theta - \bm\beta)^{2} \\
-    \Delta t_{\text{Shapiro}} &= -2(1+z_{L})\int_{0}^{z_{S}}\Phi(\bm\theta, z)\,\mathrm{d}z,
+    \Delta t_{\text{Shapiro}} &= -2(1+z_{L})\int_{0}^{z_{S}}\Phi(\bm\theta, \zeta)\,\mathrm{d}\zeta,
   \end{aligned}%
 \end{equation}%
 %
-where $z$ is the line-of-sight coordinate.  The distance to the lens and the
+where $\zeta$ is the line-of-sight coordinate.  The distance to the lens and the
 source $D_\mathrm{S}$ are always much larger than the line-of-sight extent of
 the lens itself. This is what allows the so-called \textit{thin-lens}
 approximation which allows the definition of a relativistic two-dimensional (2D)
@@ -179,7 +179,7 @@ the 'lens plane'
 % \end{equation}%
 %
 \begin{equation}\eqlbl{lens_potential}%
-  \psi(\bm\theta) = \frac{2D_{LS}}{D_{L}D_{S}}\int_{0}^{z_{S}}\Phi(\bm\theta, z)\,\mathrm{d}z,
+  \psi(\bm\theta) = \frac{2D_{LS}}{D_{L}D_{S}}\int_{0}^{z_{S}}\Phi(\bm\theta, \zeta)\,\mathrm{d}\zeta,
 \end{equation}%
 %
 Just as the Poisson equation \eqref*{Poisson} in 3D relates the Newtonian
@@ -201,7 +201,7 @@ potential
   \begin{aligned}
     \psi(\bm\theta) &= 2\nabla^{-2}\kappa \\
     \kappa(\bm\theta) &= \frac{4\pi D_{LS}D_{L}}{D_{S}}
-    \int \rho(\bm\theta, z)\,\mathrm{d}z.
+    \int \rho(\bm\theta, \zeta)\,\mathrm{d}\zeta.
   \end{aligned}
 \end{equation}%
 %
@@ -225,7 +225,7 @@ called the \textit{arrival-time surface}
 %   \end{aligned}%
 % \end{equation}%
 %
-\begin{equation}\eqlbl{arriva_time_surface}%
+\begin{equation}\eqlbl{arrival_time_surface}%
   \begin{aligned}%
     t(\bm\theta) &= (1+z_{L})\frac{D_{L}D_{S}}{D_{LS}}\;\tau \\
     \tau &= \frac{1}{2}(\bm\theta-\bm\beta)^{2} - \psi(\bm\theta),
