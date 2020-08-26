@@ -40,7 +40,7 @@
 \let\basemainmatter\mainmatter % customize mainmatter cmd
 \renewcommand{\mainmatter}{
 
-	\ifthispageodd{
+	\ifthispageodd{%\Ifthispageodd{
 	  \afterpage{\blankpage}
 	}{}
 
