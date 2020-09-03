@@ -78,7 +78,7 @@ if __name__ == "__main__":
             subtex = fullpath('{}.tex'.format(subm), subdir=tex_dir)
         # insert abstract
         print(subtex)
-        text2file(subtex, abstr, postkey='\section*{Abstract}')
+        text2file(subtex, abstr, postkey='\section*{Abstract}', verbose=True)
 
 
 

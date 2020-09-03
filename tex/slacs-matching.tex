@@ -1,25 +1,95 @@
 % Paper cover page
-\papertitle{TBA}
+\papertitle{A new strategy for matching observed and simulated lensing galaxies}
 \capauthors{
     \chapterauthor[1,2]{Philipp Denzel}
     \chapterauthor[3]{Sampath Mukherjee}
-    \chapterauthor[4]{Jonathan P. Coles}
     \chapterauthor[2,1]{Prasenjit Saha}
 }
 \affils{
     \chapteraffil[1]{Institute for Computational Science, University of Zurich, 8057 Zurich, Switzerland}
     \chapteraffil[2]{Physics Institute, University of Zurich, 8057 Zurich, Switzerland}
     \chapteraffil[3]{STAR Institute, Quartier Agora - All\'ee du six Ao$\hat{u}$t, 19c B-4000 Li\`ege, Belgium}
-    \chapteraffil[4]{Physik-Department, Technische Universit\"at M\"unchen, James-Franck-Str.~1, 85748 Garching, Germany}
 }
 
 %\publishedin[Reference:\\]{}
 \clearpage
 
+
+\newcommand\SDSSJ[1]{\ifthenelse{\equal{#1}{0029}}{\textsc{J0029\textminus0055}}{}\ifthenelse{\equal{#1}{0737}}{\textsc{J0737+3216}}{}\ifthenelse{\equal{#1}{0753}}{\textsc{J0753+3416}}{}\ifthenelse{\equal{#1}{1051}}{\textsc{J1051+4439}}{}\ifthenelse{\equal{#1}{0956}}{\textsc{J0956+5100}}{}\ifthenelse{\equal{#1}{1430}}{\textsc{J1430+6104}}{}\ifthenelse{\equal{#1}{1627}}{\textsc{J1627\textminus0053}}{}\ignorespaces}%
+\newcommand\roche{\mathcal{P}}
+
+
 % Abstract
 \section*{Abstract}
-
+\noindent The study of strong-lensing systems conventionally involves
+constructing a mass distribution that can reproduce the observed
+multiply-imaging properties.  Such mass reconstructions are
+generically non-unique.  Here we present an alternative strategy:
+instead of modelling the mass distribution, we search cosmological
+galaxy-formation simulations for plausible matches.  In this paper we
+test the idea on seven well-studied lenses from the SLACS survey.  For
+each of these, we first pre-select a few hundred galaxies from the
+EAGLE simulations, using the expected Einstein radius as an initial
+criterion.  Then, for each of these pre-selected galaxies, we fit for
+the source light distribution, while using MCMC for the placement and
+orientation of the lensing galaxy, so as to reproduce the multiple
+images and arcs.  The results indicate that the strategy is feasible,
+and even yields relative posterior probabilities of two different
+galaxy-formation scenarios, though these are not statistically
+significant yet.  Extension to other observables, such as kinematics
+and colours of the stellar population in the lensing galaxy, is
+straightforward in principle, though we have not attempted it yet.
+Scaling to arbitrarily large numbers of lenses also appears feasible.
+This will be especially relevant for upcoming wide-field surveys,
+through which the number of galaxy lenses will rise possibly a
+hundredfold, which will overwhelm conventional modelling methods.
 
 \clearpage
-% Sections
-\section{Introduction}
+
+
+% Introduction
+% \input{\home/tex/intro.tex}
+  
+% Methods
+% \input{\home/tex/methods.tex}
+
+% SEAGLE
+% \input{\home/tex/seagle.tex}
+
+% Test cases
+% \input{\home/tex/testcases.tex}
+
+% Results
+% \input{\home/tex/results.tex}
+
+% Conclusion
+% \input{\home/tex/conclusion.tex}
+
+
+%%%% Acknowledgements
+\section*{Acknowledgments}
+
+  We would like to thank Liliya L. R. Williams for useful discussions and
+  comments on the paper.
+
+  % We also thank the anonymous referee for the constructive suggestions to
+  % bring the paper to its final form.
+
+  PD acknowledges support from the Swiss National Science Foundation.  SM
+  acknowledges the funding from the European Research Council (ERC) under the
+  EUs Horizon 2020 research and innovation programme (COSMICLENS; grant
+  agreement no. 787886).
+
+  This research is based on observations made with the NASA/ESA Hubble Space
+  Telescope obtained from the Space Telescope Science Institute, which is
+  operated by the Association of Universities for Research in Astronomy, Inc.,
+  under NASA contract NAS 5–26555. These observations are associated with
+  programs \#10886, \#10174, \#12210, \#10494.
+
+\section*{Data availability}
+  The data underlying this article are available at the STScI
+  (\href{https://mast.stsci.edu/}{https://mast.stsci.edu/}; the unique
+  identifiers are cited in the acknowledgements).  The derived data generated in
+  this research will be shared on request to the corresponding author, or can be
+  replicated using the open-source software available at:
+  \faGithub\;\href{https://github.com/phdenzel/gleam}{https://github.com/phdenzel/gleam}.

@@ -1,5 +1,5 @@
 % Paper cover page
-\papertitle{TBA}
+\papertitle{The Hubble constant from eight time-delay galaxy lenses}
 \capauthors{
     \chapterauthor[1,2]{Philipp Denzel}
     \chapterauthor[3]{Jonathan P. Coles}
@@ -13,46 +13,76 @@
     \chapteraffil[4]{School of Physics and Astronomy, University of Minnesota, 116 Church Street SE, Minneapolis, MN 55455, USA}
 }
 
-%\publishedin[Reference:\\]{}
+\publishedin[Reference:\\]{Denzel20b}
 \clearpage
+
+
+\newcommand{\Hres}{\ensuremath{71.8^{+3.9}_{-3.3}\,\Hunits{}}}
+\newcommand{\HaHzres}{\ensuremath{2.33^{+0.13}_{-0.11}\,\mathrm{aHz}}}
+\newcommand{\invHres}{\ensuremath{13.7^{+0.7}_{-0.7}\,\Gyrs{}}}
+\newcommand{\rhocritres}{\ensuremath{5.4^{+0.6}_{-0.5}\,\GeVmcube{}}}
+\newcommand{\tref}[1]{\hyperlink{tr#1}{(#1)}}
+\newcommand{\tlink}[1]{\hypertarget{tr#1}{(#1)}}
+\def\twidth{.59\textwidth}
+\def\theight{.59\textheight}
+\def\pwidth{.49\textwidth}
+\def\pheight{.49\textheight}
+\def\qwidth{.49\textwidth}
+\def\qheight{.24\textheight}
+
 
 % Abstract
 \section*{Abstract}
   %
-  \noindent We present a determination of the Hubble constant from a joint,
-  free-form analysis of 8 strongly, quadruply lensing systems.  In the
-  concordance cosmology, we find {\Ho{}$ = 71.31^{+3.86}_{-3.61}$\,\Hunits{}}
-  which is precise up to $5.24\%$ and in agreement with the latest measurements
-  of the local Universe using Supernovae Type 1a calibrated by the distance
-  ladder and measurements of the early Universe such as the Planck observations
-  of the cosmic microwave background.  Our precision is lower compared to other
-  recent measurements, because the modeling strategies reflect the systematic
-  uncertainties to which lensing degeneracies can lead.  Moreover, we tested our
-  free-form lens models of these systems against the current values of H$_{0}$
-  from local and early Universe measurements.  We provide lensed image
-  reconstructions of models constrained by these current values.
-  
-  This leads us to conclude that\dots
-  % TODO
+  \noindent 
+  We present a determination of the Hubble constant from the joint, free-form
+  analysis of 8 strongly, quadruply lensing systems.  
+  In the concordance cosmology, we find $\Ho{} = \Hres{}$ with a precision of
+  $4.97\%$.  This is in agreement with the latest measurements from Supernovae
+  Type Ia and Planck observations of the cosmic microwave background.  
+  Our precision is lower compared to these and other recent time-delay
+  cosmography determinations, because our modelling strategies reflect the
+  systematic uncertainties of lensing degeneracies.  We furthermore are able to
+  find reasonable lensed image reconstructions by constraining to either value
+  of $\Ho$ from local and early Universe measurements.  This leads us to
+  conclude that current lensing constraints on $\Ho$ are not strong enough to
+  break the ``Hubble tension'' problem of cosmology.
 
 
   \clearpage
   % Sections
   
   % Introduction
-  % \input{\home/tex/intro}
+  \input{\home/tex/intro}
   
   % Systems
-  % \input{\home/tex/systems}
+  \input{\home/tex/systems}
   
-  % % Methods
-  % \input{\home/tex/methods}
+  % Methods
+  \input{\home/tex/methods}
   
   % Results
-  % \input{\home/tex/results}
+  \input{\home/tex/results}
   
   % Conclusion
-  % \input{\home/tex/conclusion}
+  \input{\home/tex/conclusion}
+
+  %%%% Acknowledgements
+  % 
+  \section*{Acknowledgments}
+  PD acknowledges support from the Swiss National Science Foundation.  This
+  research is based on observations made with the NASA/ESA Hubble Space
+  Telescope obtained from the Space Telescope Science Institute, which is
+  operated by the Association of Universities for Research in Astronomy, Inc.,
+  under NASA contract NAS 5–26555. These observations are associated with
+  programs \#10158, \#15320, \#12324, \#12874, \#9744, and \#10509.
+
+  \section*{Data availability}
+  The data underlying this article are available at the STScI
+  (\href{https://mast.stsci.edu/}{https://mast.stsci.edu/}; the unique
+  identifiers are cited in the acknowledgements).  The derived data generated in
+  this research will be shared on request to the corresponding author.
   
+  %
   % Figures
-  % \input{\home/fig/figures}
+  \input{\home/fig/figures}
