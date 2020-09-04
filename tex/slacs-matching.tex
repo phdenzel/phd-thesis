@@ -17,6 +17,17 @@
 
 \newcommand\SDSSJ[1]{\ifthenelse{\equal{#1}{0029}}{\textsc{J0029\textminus0055}}{}\ifthenelse{\equal{#1}{0737}}{\textsc{J0737+3216}}{}\ifthenelse{\equal{#1}{0753}}{\textsc{J0753+3416}}{}\ifthenelse{\equal{#1}{1051}}{\textsc{J1051+4439}}{}\ifthenelse{\equal{#1}{0956}}{\textsc{J0956+5100}}{}\ifthenelse{\equal{#1}{1430}}{\textsc{J1430+6104}}{}\ifthenelse{\equal{#1}{1627}}{\textsc{J1627\textminus0053}}{}\ignorespaces}%
 \newcommand\roche{\mathcal{P}}
+\renewcommand{\tref}[1]{\hyperlink{tr#1}{(#1)}}
+\renewcommand{\tlink}[1]{\hypertarget{tr#1}{(#1)}}
+
+
+\def\twidth{.59\textwidth}
+\def\theight{.32\textheight}
+\def\pwidth{.49\textwidth}
+\def\pheight{.49\textheight}
+\def\qwidth{.24\textwidth}
+\def\qheight{.23\textheight}
+\def\hheight{.5\textheight}
 
 
 % Abstract
@@ -48,29 +59,29 @@ hundredfold, which will overwhelm conventional modelling methods.
 
 
 % Introduction
-% \input{\home/tex/intro.tex}
+\input{\home/tex/intro.tex}
   
 % Methods
-% \input{\home/tex/methods.tex}
+\input{\home/tex/methods.tex}
 
 % SEAGLE
-% \input{\home/tex/seagle.tex}
+\input{\home/tex/seagle.tex}
 
 % Test cases
-% \input{\home/tex/testcases.tex}
+\input{\home/tex/testcases.tex}
 
 % Results
-% \input{\home/tex/results.tex}
+\input{\home/tex/results.tex}
 
 % Conclusion
-% \input{\home/tex/conclusion.tex}
+\input{\home/tex/conclusion.tex}
 
 
 %%%% Acknowledgements
 \section*{Acknowledgments}
 
-  We would like to thank Liliya L. R. Williams for useful discussions and
-  comments on the paper.
+  We would like to thank Liliya L. R. Williams and Dominique Sluse for useful
+  discussions and suggestions on how to improve this paper.
 
   % We also thank the anonymous referee for the constructive suggestions to
   % bring the paper to its final form.
@@ -93,3 +104,7 @@ hundredfold, which will overwhelm conventional modelling methods.
   this research will be shared on request to the corresponding author, or can be
   replicated using the open-source software available at:
   \faGithub\;\href{https://github.com/phdenzel/gleam}{https://github.com/phdenzel/gleam}.
+
+
+% Figures
+\input{\home/fig/figures}
