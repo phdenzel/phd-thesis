@@ -9,4 +9,4 @@
 	url = git@github.com:phdenzel/slacs-matching-paper.git
 [submodule "papers/fossil"]
 	path = papers/fossil
-	url = https://github.com/phdenzel/sw05-paper.git
+	url = git@github.com:phdenzel/sw05-paper.git
