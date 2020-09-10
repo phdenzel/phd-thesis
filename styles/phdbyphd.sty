@@ -53,7 +53,7 @@
 
 \newcommand{\papertitle}[2][Original title:\\]{
 	\parbox[t]{\textwidth}{%
-		\vspace*{100pt}%
+		\vspace*{65pt}%
 		{#1}\large\scshape\bfseries{#2}%
 		\vspace*{35pt}
 	}
@@ -73,7 +73,7 @@
 
 \newcommand{\capauthors}[1]{
 	\parbox[t]{\textwidth}{%
-		\vspace*{20pt}%
+		\vspace*{10pt}%
 			{#1}%
 		\vspace*{10pt}%
 	}
@@ -81,7 +81,7 @@
 }
 
 \newcounter{affils}
-\def\chapteraffil[#1]{\item[#1 ]%
+\def\chapteraffil[#1]{\item[#1]%
     \refstepcounter{affils}%
     \label{authaffil\the\value{chapter}.#1}%
 }
@@ -97,12 +97,21 @@
   	\@afterheading%
 }
 
+\newcommand{\collabs}[2][In collaboration with:\vspace*{10pt}\\]{
+	\parbox[t]{\textwidth}{%
+		\vspace*{10pt}%
+			{#1}{#2}%
+		\vspace*{10pt}%
+	}
+  	\@afterheading%
+}
+
+
 
 \newcommand{\publishedin}[2][Published in:\\]{
 	\parbox[t]{\textwidth}{%
 		\vspace*{20pt}%
 		{#1}\citejvpy{#2}%
-		\vspace*{35pt}
 	}
   	\@afterheading%
 }
