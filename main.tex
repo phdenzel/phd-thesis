@@ -3,7 +3,7 @@
 \documentclass[
     fontsize=10pt,
     twoside=true,
-    numbers=noenddot,
+    numbers=noenddot
 ]{cls/phdbyphd}
 
 \usepackage[english]{babel}
@@ -25,7 +25,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-% \includepdf{front-cover.pdf}
+\pagenumbering{Alph}
+\includepdf{front-cover.pdf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \titlehead{Doctoral Dissertation}
@@ -53,11 +54,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \KOMAoptions{twoside=semi}
 \maketitle
-
+% \KOMAoptions{twoside=false}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Inspirational quote
 \input{tex/prequote}
-\KOMAoptions{twoside=false}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
@@ -85,12 +86,18 @@
 
     \listoftables
 
+    %\afterpage{\blankpage}
+
 \endgroup
+
+%\KOMAoptions{twoside=false}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter
 \setchapterstyle{phdbyphd}
+
+% \afterpage{\blankpage}\addtocounter{page}{-1}
 
 \setchapterpreamble[u]{\margintoc}
 \chapter{Introduction}\chlbl{intro}

@@ -40,10 +40,16 @@
 \let\basemainmatter\mainmatter % customize mainmatter cmd
 \renewcommand{\mainmatter}{
 
+	% comment out what you need if page numbering doesn't work
+	\afterpage{\blankpage}
+	%\afterpage{\blankpage}
+	%\afterpage{\blankpage}
 	\ifthispageodd{%\Ifthispageodd{
-	  \afterpage{\blankpage}
-	}{}
-
+		\afterpage{\blankpage}%\addtocounter{page}{-1}
+	}{
+		% \afterpage{\blankpage}%\addtocounter{page}{-1}
+	}
+	
 	\basemainmatter
 
 	\setlength{\overflowingheadlen}{\linewidth}

@@ -4,6 +4,7 @@ main:
 	pdflatex main \
 	&& makeindex main \
 	&& biber main \
+	&& pdflatex main \
 	&& pdflatex main
 
 .PHONY: main
