@@ -1,0 +1,58 @@
+#+TITLE: Exploring models of lensing galaxies
+#+SUBTITLE: On bridging the gap between observations, models, and simulations
+#+AUTHOR: Philipp Denzel
+#+EMAIL: phdenzel@physik.uzh.ch
+
+# #+OPTIONS: author:nil
+# #+OPTIONS: email:nil
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+OPTIONS: date:nil
+#+OPTIONS: timestamp:nil
+#+OPTIONS: \n:t
+
+#+MACRO: NL @@latex:\\@@ @@html:<br>@@ @@ascii:|@@
+
+# # infos @ https://revealjs.com/config/
+#+REVEAL_INIT_OPTIONS: width: 1920, height: 1080, center: true,
+#+REVEAL_INIT_OPTIONS: progress: true, history: false, slideNumber: false,
+#+REVEAL_INIT_OPTIONS: controls: true, keyboard: true, previewLinks: true, 
+#+REVEAL_INIT_OPTIONS: mathjax: true,
+#+REVEAL_INIT_OPTIONS: transition: 'fade',
+#+REVEAL_INIT_OPTIONS: navigationMode: 'default'
+# #+REVEAL_INIT_OPTIONS: navigationMode: 'linear',
+#+REVEAL_THEME: black
+#+REVEAL_PLUGINS: ( markdown math )
+#+REVEAL_HLEVEL: 2
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="PhD colloquium by PhD">
+#+REVEAL_POSTAMBLE: <p> Created by phdenzel. </p>
+
+
+# #+REVEAL_EXTRA_JS: { src: 'vid.js', async: true, condition: function() { return !!document.body.classList; } }
+
+
+** Topic: Strong gravitational lenses
+  {{{NL}}}
+  Why are they useful for?{{{NL}}}
+  #+ATTR_REVEAL: :frag (grow)
+  - Testing general relativity{{{NL}}}
+  - Probing the invisible structure of galaxies: dark matter{{{NL}}}
+  - Galactic dynamics: 6D phase-space structure{{{NL}}}
+  - Measuring cosmological constants: the expansion rate of the Universe{{{NL}}}
+  
+** What are strong gravitational lenses?
+  {{{NL}}}
+  #+ATTR_REVEAL: :frag (grow)
+  - Phenomenon: Light in *strong* gravitational fields {{{NL}}}
+  - Newton's gravitational theory{{{NL}}}
+  - Einstein's theory of general relativity{{{NL}}}
+  - Behaviour of light in an expanding Universe{{{NL}}}
+
+
+* Why did you choose this field?
+  
+  #+ATTR_REVEAL: :frag (appear)
+  Research contract.
+  #+ATTR_REVEAL: :frag (appear)
+  ...and because it's fun!{{{NL}}}
+  [[https://phdenzel.github.io/zurich-lens/][Let's have some fun! Click me!]]
