@@ -2,6 +2,7 @@
 #+SUBTITLE: On bridging the gap between observations, models, and simulations
 #+AUTHOR: Philipp Denzel
 #+EMAIL: phdenzel@physik.uzh.ch
+#+DATE: 29/10/2020
 
 # #+OPTIONS: author:nil
 # #+OPTIONS: email:nil
@@ -27,9 +28,53 @@
 #+REVEAL_HEAD_PREAMBLE: <meta name="description" content="PhD colloquium by PhD">
 #+REVEAL_POSTAMBLE: <p> Created by phdenzel. </p>
 
-
 # #+REVEAL_EXTRA_JS: { src: 'vid.js', async: true, condition: function() { return !!document.body.classList; } }
 
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1>
+#+REVEAL_TITLE_SLIDE: <h3>%s</h3>
+#+REVEAL_TITLE_SLIDE: <div>by</div>
+#+REVEAL_TITLE_SLIDE: <h4>%a</h4>
+#+REVEAL_TITLE_SLIDE: <h4>UZH - %d</h4>
+
+* Outline
+
+- Introduction
+  - Introducing myself...
+  - Topic: Gravitational lensing
+  - State of research (Feynman: yesterday's discovery is today's calibration... and tomorrow's background!)
+  - Connecting: models, simulations, and observations
+  - Understanding GL: Light + Gravity
+
+#+REVEAL: split
+  - Light from your hand (30 cm away) takes about 1 ns to reach your eye
+  - I can see you in the audience as you were about 10 ns (or more) in the past
+  - Everything you and I look at is to one degree or another in the past
+  - Light from the Sun takes about 500 s to reach the Earth
+  - Light from the nearest star outside of the solar system Alpha centauri tavels ~4 and a half years
+  - We see the Andromeda galaxy as it was 2.5 million years in the past
+  - and so on
+  - we have telescopes powerful enough to see galaxies whose light has been travelling for almost 13 billion years to reach us
+  - we observe them in a Universe which is still quite young where the matter is warm and gravity hasn't had time to pull them together
+  - if we look in between the galaxies we can observe parts of the Universe whose light has been traveling for almost the entire age of the Universe
+  - it it so far back, it appears to be still in the final stages of the Big Bang when space was completely filled with an opaque, dense, and extremely hot plasma, the Cosmic Microwave Background
+  - we are not in the center of our Universe, but we perseve it in concentric spheres of cosmic time (like geological strata) reaching back to the very beginning
+  - as light reaches us from afar we observe the Universe in different era where its components, i.e. galaxies and all invisible parts, are in different evolutionary stages
+  - we are surrounded by these epochs and receive their light from all directions
+  - and sometimes we observe single objects which appear to come from different directions simultaneously... that's what we call gravitational lensing
+
+#+REVEAL: split
+- The expanding Universe in a simplified GR picture
+
+#+REVEAL: split
+- Measuring the expansion and the H0 tension
+- Measuring H0 with time-delay lenses
+- Project: DELAY
+- The importance of lensing degeneracies
+- Project: ADLER
+- Project: MATCH
+- If enough time: also talk about Project: FOSSIL (connecting through galaxy evolution models)
+
+** Some example slides follow
 
 ** Topic: Strong gravitational lenses
   {{{NL}}}
