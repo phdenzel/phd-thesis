@@ -13,6 +13,7 @@
 #+OPTIONS: \n:t
 
 #+MACRO: NL @@latex:\\@@ @@html:<br>@@ @@ascii:|@@
+#+MACRO: quote @@html:<q cite="$2">$1</q>@@@@latex:``$1''@@
 
 # # infos @ https://revealjs.com/config/
 #+REVEAL_INIT_OPTIONS: width: 1920, height: 1080, center: true,
@@ -22,50 +23,274 @@
 #+REVEAL_INIT_OPTIONS: transition: 'fade',
 #+REVEAL_INIT_OPTIONS: navigationMode: 'default'
 # #+REVEAL_INIT_OPTIONS: navigationMode: 'linear',
-#+REVEAL_THEME: black
-#+REVEAL_PLUGINS: ( markdown math )
+#+REVEAL_THEME: phdcolloq
+#+REVEAL_PLUGINS: ( markdown math notes zoom )
 #+REVEAL_HLEVEL: 2
 #+REVEAL_HEAD_PREAMBLE: <meta name="description" content="PhD colloquium by PhD">
 #+REVEAL_POSTAMBLE: <p> Created by phdenzel. </p>
 
 # #+REVEAL_EXTRA_JS: { src: 'vid.js', async: true, condition: function() { return !!document.body.classList; } }
 
+#+REVEAL_TITLE_SLIDE: <div style="padding: 0px 30px 250px 30px"> <a href='https://www.uzh.ch/de.html'> <img src='./assets/imgs/uzh_logo_d_neg_retina.png' alt='UZH logo' width='294px' height='100px' style="float: left"> </a> </div> 
 #+REVEAL_TITLE_SLIDE: <h1>%t</h1>
 #+REVEAL_TITLE_SLIDE: <h3>%s</h3>
-#+REVEAL_TITLE_SLIDE: <div>by</div>
-#+REVEAL_TITLE_SLIDE: <h4>%a</h4>
-#+REVEAL_TITLE_SLIDE: <h4>UZH - %d</h4>
+#+REVEAL_TITLE_SLIDE: <div style="padding-top: 50px">PhD colloquium</div>
+#+REVEAL_TITLE_SLIDE: <h5>by<h5>
+#+REVEAL_TITLE_SLIDE: <h4 style="padding-top: 50px">%a</h4>
+#+REVEAL_TITLE_SLIDE: <h4 style="padding-top: 50px">UZH - %d</h4>
+
+# ####+REVEAL: split
+
 
 * Outline
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperh"
+:END:
 
+#+ATTR_HTML: :width 800px :align right :style position: relative float: right;
+[[./assets/imgs/scheme.png]]
+
+#+ATTR_HTML: :style position: relative;
+1) Introduction to gravitational, multiple-image lensing
+2) Measuring the expansion rate of the Universe
+3) Lens modelling of hydrodynamically simulated galaxies
+4) The lens-matching technique
+5) Studying galaxy formation with lensing
+
+{{{NL}}}
+#+begin_quote
+Yesterday's discovery is today's calibration... and tomorrow's background! {{{NL}}}--- R. Feynman
+#+end_quote
+
+  #+BEGIN_NOTES
 - Introduction
-  - Introducing myself...
-  - Topic: Gravitational lensing
-  - State of research (Feynman: yesterday's discovery is today's calibration... and tomorrow's background!)
-  - Connecting: models, simulations, and observations
-  - Understanding GL: Light + Gravity
+- Introducing myself...
+- Topic: Gravitational lensing
+- State of research (Feynman's quote)
+- Connecting: models, simulations, and observations
 
-#+REVEAL: split
-  - Light from your hand (30 cm away) takes about 1 ns to reach your eye
-  - I can see you in the audience as you were about 10 ns (or more) in the past
-  - Everything you and I look at is to one degree or another in the past
-  - Light from the Sun takes about 500 s to reach the Earth
-  - Light from the nearest star outside of the solar system Alpha centauri tavels ~4 and a half years
-  - We see the Andromeda galaxy as it was 2.5 million years in the past
-  - and so on
-  - we have telescopes powerful enough to see galaxies whose light has been travelling for almost 13 billion years to reach us
-  - we observe them in a Universe which is still quite young where the matter is warm and gravity hasn't had time to pull them together
-  - if we look in between the galaxies we can observe parts of the Universe whose light has been traveling for almost the entire age of the Universe
-  - it it so far back, it appears to be still in the final stages of the Big Bang when space was completely filled with an opaque, dense, and extremely hot plasma, the Cosmic Microwave Background
-  - we are not in the center of our Universe, but we perseve it in concentric spheres of cosmic time (like geological strata) reaching back to the very beginning
-  - as light reaches us from afar we observe the Universe in different era where its components, i.e. galaxies and all invisible parts, are in different evolutionary stages
-  - we are surrounded by these epochs and receive their light from all directions
-  - and sometimes we observe single objects which appear to come from different directions simultaneously... that's what we call gravitational lensing
 
-#+REVEAL: split
-- The expanding Universe in a simplified GR picture
+At first, I will give a short introduction to the effect knwon as
+gravitational lensing and how it can lead to observations multiple
+images of the same object, which is usually called source.  It is an
+observer-dependent phenomenon which is actually quite easy to
+understand, with only two major components: Light and Gravity. So, in
+the first few minutes, I will discuss these two concepts in a
+astrophysical and cosmic perspective and try to explain them in simple
+terms.
 
-#+REVEAL: split
+Then, I will show you how one can combine measurements and models of
+gravitational lenses to infer the expansion rate of the Universe, also
+known as the Hubble constant. The Hubble constant can and was measured
+also by other --- actually more prominent --- methods, but ever since
+the first measurement, different methods yielded different results
+(often not even in agreement with each other).  So, we are actually
+quite uncertain at the moment about the actual value of the Hubble
+constant (or if it is even constant).
+#+END_NOTES
+
+
+* Light
+
+** Speed of light
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperh" data-background-video="./assets/movies/lamp_u.mp4" data-background-video-loop data-background-video-muted data-background-size="contain";
+:END:
+
+#+BEGIN_NOTES
+Light from your hand (30 cm away) takes about 1 ns to reach your eye
+
+I can see you in the audience as you were about 10 ns (or more) in
+the past
+
+Everything you and I look at is to one degree or another in the past
+#+END_NOTES
+
+
+** Sun light
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperh" data-background-video="./assets/movies/sun_u.mp4" data-background-video-loop data-background-video-muted data-background-size="contain";
+:END:
+
+#+BEGIN_NOTES
+Light from the Sun takes about 500 s to reach Earth
+#+END_NOTES
+
+
+** Alpha Centauri
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperh" data-background-video="./assets/movies/alpha_centauri_u.mp4" data-background-video-loop data-background-video-muted data-background-size="contain";
+:END:
+
+#+BEGIN_NOTES
+Light from the nearest star outside of the solar system Alpha
+Centauri travels ~4 and a half years to us
+#+END_NOTES
+
+
+** Andromeda
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperh" data-background-video="./assets/movies/andromeda_u.mp4" data-background-video-loop data-background-video-muted data-background-size="contain";
+:END:
+
+#+BEGIN_NOTES
+We see the Andromeda galaxy as it was 2.5 million years in the past
+and so on...
+#+END_NOTES
+
+
+** Young galaxies
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperlefth" data-background-image="./assets/imgs/early_galaxies.png" data-background-size="contain";
+:END:
+
+#+BEGIN_NOTES
+We have powerful telescopes to see galaxies whose light has been
+travelling for almost 13 billion years to reach us.
+
+We observe them in a Universe which is still quite young where the
+matter is warm and gravity hasn't had time to pull them together.
+#+END_NOTES
+
+
+** Cosmic epochs
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperh" data-background-video="./assets/movies/dyna_u.mp4" data-background-video-muted data-background-size="contain";
+:END:
+
+#+BEGIN_NOTES
+And if we look in between the galaxies we can observe parts of the
+Universe whose light has been traveling for almost the entire age of
+the Universe
+
+It is so far back, it appears to be still in the final stages of the
+Big Bang when space was completely filled with an opaque, dense, and
+extremely hot plasma, the Cosmic Microwave Background
+
+We are not in the center of our Universe, but we perceive it in
+concentric spheres of cosmic time (like geological strata) reaching
+back to the very beginning
+
+As light reaches us from afar, we observe the Universe in different
+eras where its components, i.e. galaxies and all invisible parts, are
+in different evolutionary stages
+
+We are surrounded by these epochs and receive their light from all
+directions
+
+And sometimes we observe single objects which appear to come from
+different directions simultaneously... that's what we call
+gravitational lensing
+#+END_NOTES
+
+
+* Gravity
+#+BEGIN_NOTES
+The second part to udnerstand what gravitational lensing is, is
+gravity.
+
+In highschool, you learned about Newton's law of gravity. 
+
+It was and still is important, because it explained the paths of
+projectiles on Earth and the movements of many planets in our solar
+system, and was even used to predict the postiion of Neptune before it
+was discovered in 1846.
+
+However, there are two notable anomalies with measurements which
+Newton's theory of gravity cannot explain.
+
+First, the precession of Mercury's orbit is slightly off when we try
+to predict it with Newton's law. 
+
+There were lots of theories to explain this anomaly, (for example
+another planet between the Sun and Mercury, called Vulcan), but all of
+them ultimately failed.
+
+Until 1915, when Albert Einstein published a very important equation.
+And... it's not the one most people think of: $E=mc^2$.  It's an
+equation which relates mass + energy, to gravity $G_{\mu\nu} =
+8\piT_{\mu\nu}$.  This equation remains to this day the best
+description of how gravity works.
+#+END_NOTES
+
+** History
+
+#+ATTR_HTML: :height 900px :align left :style float: left;
+[[./assets/imgs/Einstein.jpg]]
+
+$$ R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = 8 \pi T_{\mu\nu} $$
+#+ATTR_REVEAL: :frag (appear)
+- matched up with Newton's law of gravity 
+- explained the orbit of Mercury exactly
+- many predictions, for example
+  #+ATTR_REVEAL: :frag (appear)
+  - bending of star light passing by the Sun
+  - a.k.a. gravitational lensing 
+- compatible with the expansion of the Universe
+
+#+BEGIN_NOTES
+Einstein didn't just pull this equation out of thin air. It is the
+natural consequence of a long list of key principles in physics +
+combined with advanced mathematics of curved surfaces + of course
+agreement with experimental observations.
+#+END_NOTES
+
+** History
+
+#+ATTR_HTML: :height 850px :align left :style float:left :style padding-left: 200px
+[[./assets/imgs/eddington_experiment.jpg]]
+Illustrated London News, November 22 1919
+
+#+ATTR_HTML: :height 850px :align right :style float:right :style padding-right: 200px
+[[./assets/imgs/nytimes_headline.png]]
+Headline NY Times, November 10 1919
+
+
+# ** What does GR tell us about the Universe as a whole?
+# $$ R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = 8 \pi T_{\mu\nu} $$
+# #+ATTR_REVEAL: :frag (appear)
+# - Approximating the Universe with $\rho = $ const, yields $\rho \sim \frac{1}{a^{2}}$ and $\rho = 0$  !?
+# - Modify equation: $$ R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = 8 \pi T_{\mu\nu} \color{#4E70F2}{- \Lambda g_{\mu\nu}} $$
+# - Friedman did *not* assume $\frac{\partial \rho}{\partial t} = 0$:
+#   - $$ \frac{\dot{a}}{a} = -\frac{\dot{\rho}}{3\rho} $$
+#   - $$ -\frac{\ddot{a}}{a} = \frac{4\pi}{3}\rho - \frac{\Lambda}{3} $$
+
+
+* Gravitational lensing
+
+** "Wine glass" lensing
+[[yt:FqDN-GxrvH8,1820,980][wineglass-video]]
+
+** "Beer" lensing
+#+ATTR_REVEAL: :frag (appear appear)
+- [[https://phdenzel.github.io/zurich-lens][phdenzel.github.io/zurich-lens]]
+- [[https://phdenzel.github.io/streaming-lens][phdenzel.github.io/streaming-lens]]
+
+
+** Zurich lensed
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperlefth" data-background-iframe="https://phdenzel.github.io/zurich-lens/" data-background-interactive;
+:END:
+
+#+BEGIN_NOTES
+What is important to know about gravitational lenses, is that the mass
+distribution of a lens, meaning whether light from a source passes by
+a black hole, a star, a galaxy, or even heavier objects, will
+determine how much the light is deflected and what configuration is
+ultimately observed.
+
+For the experts in the room: the deflections in this mock-up
+roughly correspond to an singular isothermal sphere model.
+#+END_NOTES
+
+
+** Quasar lensing
+
+[[yt:49L6XY2a-40,1820,980][RAS-animation]]
+Credit: ESA/Hubble, NASA
+
+
+* TODO
 - Measuring the expansion and the H0 tension
 - Measuring H0 with time-delay lenses
 - Project: DELAY
@@ -73,31 +298,3 @@
 - Project: ADLER
 - Project: MATCH
 - If enough time: also talk about Project: FOSSIL (connecting through galaxy evolution models)
-
-** Some example slides follow
-
-** Topic: Strong gravitational lenses
-  {{{NL}}}
-  Why are they useful for?{{{NL}}}
-  #+ATTR_REVEAL: :frag (grow)
-  - Testing general relativity{{{NL}}}
-  - Probing the invisible structure of galaxies: dark matter{{{NL}}}
-  - Galactic dynamics: 6D phase-space structure{{{NL}}}
-  - Measuring cosmological constants: the expansion rate of the Universe{{{NL}}}
-  
-** What are strong gravitational lenses?
-  {{{NL}}}
-  #+ATTR_REVEAL: :frag (grow)
-  - Phenomenon: Light in *strong* gravitational fields {{{NL}}}
-  - Newton's gravitational theory{{{NL}}}
-  - Einstein's theory of general relativity{{{NL}}}
-  - Behaviour of light in an expanding Universe{{{NL}}}
-
-
-* Why did you choose this field?
-  
-  #+ATTR_REVEAL: :frag (appear)
-  Research contract.
-  #+ATTR_REVEAL: :frag (appear)
-  ...and because it's fun!{{{NL}}}
-  [[https://phdenzel.github.io/zurich-lens/][Let's have some fun! Click me!]]
