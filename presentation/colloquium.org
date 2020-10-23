@@ -10,12 +10,12 @@
 #+OPTIONS: toc:nil
 #+OPTIONS: date:nil
 #+OPTIONS: timestamp:nil
-#+OPTIONS: \n:t
+# #+OPTIONS: \n:t
 
 #+MACRO: NL @@latex:\\@@ @@html:<br>@@ @@ascii:|@@
 #+MACRO: quote @@html:<q cite="$2">$1</q>@@@@latex:``$1''@@
 
-# # infos @ https://revealjs.com/config/
+# # infos @ https://revealjs.com/con fig/
 #+REVEAL_INIT_OPTIONS: width: 1920, height: 1080, center: true,
 #+REVEAL_INIT_OPTIONS: progress: true, history: false, slideNumber: false,
 #+REVEAL_INIT_OPTIONS: controls: true, keyboard: true, previewLinks: true, 
@@ -39,8 +39,6 @@
 #+REVEAL_TITLE_SLIDE: <h4 style="padding-top: 50px">%a</h4>
 #+REVEAL_TITLE_SLIDE: <h4 style="padding-top: 50px">UZH - %d</h4>
 
-# ####+REVEAL: split
-
 
 * Outline
 :PROPERTIES:
@@ -58,11 +56,12 @@
 5) Studying galaxy formation with lensing
 
 {{{NL}}}
+{{{NL}}}
 #+begin_quote
 Yesterday's discovery is today's calibration... and tomorrow's background! {{{NL}}}--- R. Feynman
 #+end_quote
 
-  #+BEGIN_NOTES
+#+BEGIN_NOTES
 - Introduction
 - Introducing myself...
 - Topic: Gravitational lensing
@@ -222,7 +221,7 @@ $$ R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = 8 \pi T_{\mu\nu} $$
 #+ATTR_REVEAL: :frag (appear)
 - matched up with Newton's law of gravity 
 - explained the orbit of Mercury exactly
-- many predictions, for example
+- many predictions, for example...
   #+ATTR_REVEAL: :frag (appear)
   - bending of star light passing by the Sun
   - a.k.a. gravitational lensing 
@@ -239,11 +238,11 @@ agreement with experimental observations.
 
 #+ATTR_HTML: :height 850px :align left :style float:left :style padding-left: 200px
 [[./assets/imgs/eddington_experiment.jpg]]
-Illustrated London News, November 22 1919
+{{{NL}}} Illustrated London News, November 22 1919
 
 #+ATTR_HTML: :height 850px :align right :style float:right :style padding-right: 200px
 [[./assets/imgs/nytimes_headline.png]]
-Headline NY Times, November 10 1919
+{{{NL}}} Headline NY Times, November 10 1919
 
 
 # ** What does GR tell us about the Universe as a whole?
@@ -261,7 +260,8 @@ Headline NY Times, November 10 1919
 ** "Wine glass" lensing
 [[yt:FqDN-GxrvH8,1820,980][wineglass-video]]
 
-** "Beer" lensing
+
+** Mock lensing
 #+ATTR_REVEAL: :frag (appear appear)
 - [[https://phdenzel.github.io/zurich-lens][phdenzel.github.io/zurich-lens]]
 - [[https://phdenzel.github.io/streaming-lens][phdenzel.github.io/streaming-lens]]
@@ -285,16 +285,149 @@ roughly correspond to an singular isothermal sphere model.
 
 
 ** Quasar lensing
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperlefth" data-background-video="./assets/movies/quasar_lensing_RAS.mp4" data-background-video-muted data-background-size="contain";
+:END:
+#+ATTR_HTML: :class slide-footer
+RAS PR 17/4, Credit: ESA/Hubble, NASA
 
-[[yt:49L6XY2a-40,1820,980][RAS-animation]]
+
+* The Hubble constant
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperh" data-background-video="./assets/movies/quasar_flicker.mp4" data-background-video-loop data-background-video-muted data-background-size="contain";
+:END:
+#+ATTR_HTML: :class slide-footer
 Credit: ESA/Hubble, NASA
 
 
-* TODO
-- Measuring the expansion and the H0 tension
-- Measuring H0 with time-delay lenses
-- Project: DELAY
-- The importance of lensing degeneracies
-- Project: ADLER
-- Project: MATCH
-- If enough time: also talk about Project: FOSSIL (connecting through galaxy evolution models)
+** Are we certain about the value of H$_0$?
+
+# #+ATTR_HTML: :height 720px
+# [[./assets/imgs/slipher.png]]
+# #+REVEAL: split
+
+#+ATTR_HTML: :height 720px
+[[./assets/imgs/hubble.png]]
+#+ATTR_HTML: :class slide-footer
+E. Hubble (1929)
+#+REVEAL: split
+
+#+ATTR_HTML: :height 720px
+[[./assets/imgs/hubble_history.png]]
+#+ATTR_HTML: :class slide-footer
+Credit: J. Huchra (2010)
+#+REVEAL: split
+
+#+ATTR_HTML: :height 1030px
+[[./assets/imgs/H0_tension.png]]
+#+ATTR_HTML: :class slide-footer
+Verde et al. (2019), Credit: V. Bonvin & M. Millon
+
+
+** Time-delay galaxies
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/B1608+656_composite.jpg]] 
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/DESJ0408-5354_composite.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/HE0435-1223_composite.jpg]] 
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/PG1115+080_composite.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/RXJ0911+0551_composite.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/RXJ1131-1231_composite.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/SDSSJ1004+4112_composite.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/WFIJ2033-4723_composite.jpg]]
+
+
+** Lens models
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/B1608+656_kappa.jpg]] 
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/DESJ0408-5354_kappa.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/HE0435-1223_kappa.jpg]] 
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/PG1115+080_kappa.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/RXJ0911+0551_kappa.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/RXJ1131-1231_kappa.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/SDSSJ1004+4112_kappa.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/WFIJ2033-4723_kappa.jpg]]
+
+
+** Ensemble
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperrighth" data-background-iframe="./assets/scripts/DESJ0408_5354_ensemble.html" data-background-interactive;
+:END:
+
+
+# ** Arrival-time surfaces
+# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# [[./assets/imgs/time-delays/B1608+656_arriv.jpg]] 
+# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# [[./assets/imgs/time-delays/DESJ0408-5354_arriv.jpg]]
+# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# [[./assets/imgs/time-delays/HE0435-1223_arriv.jpg]] 
+# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# [[./assets/imgs/time-delays/PG1115+080_arriv.jpg]]
+# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# [[./assets/imgs/time-delays/RXJ0911+0551_arriv.jpg]]
+# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# [[./assets/imgs/time-delays/RXJ1131-1231_arriv.jpg]]
+# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# [[./assets/imgs/time-delays/SDSSJ1004+4112_arriv.jpg]]
+# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# [[./assets/imgs/time-delays/WFIJ2033-4723_arriv.jpg]]
+
+
+** Single-band data
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/B1608+656_data.jpg]] 
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/DESJ0408-5354_data.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/HE0435-1223_data.jpg]] 
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/PG1115+080_data.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/RXJ0911+0551_data.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/RXJ1131-1231_data.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/SDSSJ1004+4112_data.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/WFIJ2033-4723_data.jpg]]
+
+
+** Synthetic images
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/B1608+656_synth.jpg]] 
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/DESJ0408-5354_synth.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/HE0435-1223_synth.jpg]] 
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/PG1115+080_synth.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/RXJ0911+0551_synth.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/RXJ1131-1231_synth.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/SDSSJ1004+4112_synth.jpg]]
+#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+[[./assets/imgs/time-delays/WFIJ2033-4723_synth.jpg]]
+
+
+
+# * TODO
+# - The importance of lensing degeneracies
+# - Project: ADLER
+# - Project: MATCH
+# - If enough time: also talk about Project: FOSSIL (connecting through galaxy evolution models)
