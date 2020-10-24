@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Exploring models of lensing galaxies</title>
+<meta name="author" content="(Philipp Denzel)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./assets/css/reveal.css"/>
+
+<link rel="stylesheet" href="./assets/css/theme/phdcolloq.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './assets/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<meta name="description" content="PhD colloquium by PhD">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><div style="padding: 0px 30px 250px 30px"> <a href='https://www.uzh.ch/de.html'> <img src='./assets/imgs/uzh_logo_d_neg_retina.png' alt='UZH logo' width='294px' height='100px' style="float: left"> </a> </div>
+<h1>Exploring models of lensing galaxies</h1>
+<h3>On bridging the gap between observations, models, and simulations</h3>
+<div style="padding-top: 50px">PhD colloquium on 29/10/2020</div>
+<div style="padding-top: 50px">by</div>
+<h4 style="padding-top: 50px"><a href="https://phdenzel.github.io/"> Philipp Denzel </a></h4>
+</section>
+
+
+<section>
+<section id="slide-org992cb07" class="upperh">
+<h2 id="org992cb07">Outline</h2>
+
+<div class="figure">
+<p><img src="./assets/imgs/scheme.png" alt="scheme.png" width="800px" align="right" style="position: relative float: right;" />
+</p>
+</div>
+
+<ol style="position: relative;">
+<li>Introduction to gravitational, multiple-image lensing</li>
+<li>Measuring the expansion rate of the Universe</li>
+<li>Lens modelling &amp; degeneracies</li>
+<li>The lens-matching technique  <br>  Studying galaxy formation with lensing</li>
+
+</ol>
+
+<p>
+ <br> 
+ <br> 
+ <br> 
+</p>
+<blockquote >
+<p>
+Yesterday's discovery is today's calibration&#x2026; and tomorrow's background!  <br> &#x2014; R. Feynman
+</p>
+</blockquote>
+
+<aside class="notes">
+<ul>
+<li>Introduction</li>
+<li>Introducing myself&#x2026;</li>
+<li>Topic: Gravitational lensing</li>
+<li>State of research (Feynman's quote)</li>
+<li>Connecting: models, simulations, and observations</li>
+
+</ul>
+
+
+<p>
+At first, I will give a short introduction to the effect knwon as
+gravitational lensing and how it can lead to observations multiple
+images of the same object, which is usually called source.  It is an
+observer-dependent phenomenon which is actually quite easy to
+understand, with only two major components: Light and Gravity. So, in
+the first few minutes, I will discuss these two concepts in a
+astrophysical and cosmic perspective and try to explain them in simple
+terms.
+</p>
+
+<p>
+Then, I will show you how one can combine measurements and models of
+gravitational lenses to infer the expansion rate of the Universe, also
+known as the Hubble constant. The Hubble constant can and was measured
+also by other &#x2014; actually more prominent &#x2014; methods, but ever since
+the first measurement, different methods yielded different results
+(often not even in agreement with each other).  So, we are actually
+quite uncertain at the moment about the actual value of the Hubble
+constant (or if it is even constant).
+</p>
+
+</aside>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org5595f6c">
+<h2 id="org5595f6c">Light</h2>
+<div class="outline-text-2" id="text-org5595f6c">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc9ad740" class="upperh" data-background-video="./assets/movies/lamp_u.mp4" data-background-video-loop data-background-video-muted data-background-size="contain";>
+<h3 id="orgc9ad740">Speed of light</h3>
+<aside class="notes">
+<p>
+Light from your hand (30 cm away) takes about 1 ns to reach your eye
+</p>
+
+<p>
+I can see you in the audience as you were about 10 ns (or more) in
+the past
+</p>
+
+<p>
+Everything you and I look at is to one degree or another in the past
+</p>
+
+</aside>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org5eaf21c" class="upperh" data-background-video="./assets/movies/sun_u.mp4" data-background-video-loop data-background-video-muted data-background-size="contain";>
+<h3 id="org5eaf21c">Sun light</h3>
+<aside class="notes">
+<p>
+Light from the Sun takes about 500 s to reach Earth
+</p>
+
+</aside>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgfecaec9" class="upperh" data-background-video="./assets/movies/alpha_centauri_u.mp4" data-background-video-loop data-background-video-muted data-background-size="contain";>
+<h3 id="orgfecaec9">Alpha Centauri</h3>
+<aside class="notes">
+<p>
+Light from the nearest star outside of the solar system Alpha
+Centauri travels ~4 and a half years to us
+</p>
+
+</aside>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgf8a9f74" class="upperh" data-background-video="./assets/movies/andromeda_u.mp4" data-background-video-loop data-background-video-muted data-background-size="contain";>
+<h3 id="orgf8a9f74">Andromeda</h3>
+<aside class="notes">
+<p>
+We see the Andromeda galaxy as it was 2.5 million years in the past
+and so on&#x2026;
+</p>
+
+</aside>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orge7658a6" class="upperlefth" data-background-image="./assets/imgs/early_galaxies.png" data-background-size="contain";>
+<h3 id="orge7658a6">Young galaxies</h3>
+<aside class="notes">
+<p>
+We have powerful telescopes to see galaxies whose light has been
+travelling for almost 13 billion years to reach us.
+</p>
+
+<p>
+We observe them in a Universe which is still quite young where the
+matter is warm and gravity hasn't had time to pull them together.
+</p>
+
+</aside>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgfe0886c" class="upperh" data-background-video="./assets/movies/dyna_u.mp4" data-background-video-muted data-background-size="contain";>
+<h3 id="orgfe0886c">Cosmic epochs</h3>
+<aside class="notes">
+<p>
+And if we look in between the galaxies we can observe parts of the
+Universe whose light has been traveling for almost the entire age of
+the Universe
+</p>
+
+<p>
+It is so far back, it appears to be still in the final stages of the
+Big Bang when space was completely filled with an opaque, dense, and
+extremely hot plasma, the Cosmic Microwave Background
+</p>
+
+<p>
+We are not in the center of our Universe, but we perceive it in
+concentric spheres of cosmic time (like geological strata) reaching
+back to the very beginning
+</p>
+
+<p>
+As light reaches us from afar, we observe the Universe in different
+eras where its components, i.e. galaxies and all invisible parts, are
+in different evolutionary stages
+</p>
+
+<p>
+We are surrounded by these epochs and receive their light from all
+directions
+</p>
+
+<p>
+And sometimes we observe single objects which appear to come from
+different directions simultaneously&#x2026; that's what we call
+gravitational lensing
+</p>
+
+</aside>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org2c30f4d">
+<h2 id="org2c30f4d">Gravity</h2>
+<aside class="notes">
+<p>
+The second part to udnerstand what gravitational lensing is, is
+gravity.
+</p>
+
+<p>
+In highschool, you learned about Newton's law of gravity. 
+</p>
+
+<p>
+It was and still is important, because it explained the paths of
+projectiles on Earth and the movements of many planets in our solar
+system, and was even used to predict the postiion of Neptune before it
+was discovered in 1846.
+</p>
+
+<p>
+However, there are two notable anomalies with measurements which
+Newton's theory of gravity cannot explain.
+</p>
+
+<p>
+First, the precession of Mercury's orbit is slightly off when we try
+to predict it with Newton's law. 
+</p>
+
+<p>
+There were lots of theories to explain this anomaly, (for example
+another planet between the Sun and Mercury, called Vulcan), but all of
+them ultimately failed.
+</p>
+
+<p>
+Until 1915, when Albert Einstein published a very important equation.
+And&#x2026; it's not the one most people think of: \(E=mc^2\).  It's an
+equation which relates mass + energy, to gravity \(G_{\mu\nu} =
+8\piT_{\mu\nu}\).  This equation remains to this day the best
+description of how gravity works.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org16c33ef">
+<h3 id="org16c33ef">History</h3>
+
+<div class="figure">
+<p><img src="./assets/imgs/Einstein.jpg" alt="Einstein.jpg" height="900px" align="left" style="float: left;" />
+</p>
+</div>
+
+<p>
+\[ R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = 8 \pi T_{\mu\nu} \]
+</p>
+<ul>
+<li class="fragment appear">matched up with Newton's law of gravity</li>
+<li class="fragment appear">explained the orbit of Mercury exactly</li>
+<li class="fragment appear">many predictions, for example&#x2026;
+<ul>
+<li class="fragment appear">bending of star light passing by the Sun  <br>  a.k.a. gravitational lensing</li>
+
+</ul></li>
+<li class="fragment appear">compatible with the expansion of the Universe</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+Einstein didn't just pull this equation out of thin air. It is the
+natural consequence of a long list of key principles in physics +
+combined with advanced mathematics of curved surfaces + of course
+agreement with experimental observations.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org08910e2">
+<h3 id="org08910e2">History</h3>
+<p height="850px" align="left" style="float:left" style="padding-left: 200px">
+<img src="./assets/imgs/eddington_experiment.jpg" alt="eddington_experiment.jpg" height="850px" align="left" style="padding-left: 200px" />
+ <br>  Illustrated London News, November 22 1919
+</p>
+
+<p height="850px" align="right" style="float:right" style="padding-right: 200px">
+<img src="./assets/imgs/nytimes_headline.png" alt="nytimes_headline.png" height="850px" align="right" style="padding-right: 200px" />
+ <br>  Headline NY Times, November 10 1919
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgf1c8479">
+<h2 id="orgf1c8479">Gravitational lensing</h2>
+<div class="outline-text-2" id="text-orgf1c8479">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgb071380">
+<h3 id="orgb071380">"Wine glass" lensing</h3>
+<p>
+<iframe src="https://www.youtube.com/embed/FqDN-GxrvH8?rel=0&amp;showinfo=0&amp;loop=1" width="1820" height="980" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen>wineglass-video</iframe>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org8dbb95c">
+<h3 id="org8dbb95c">Mock lensing</h3>
+<ul>
+<li class="fragment appear"><a href="https://phdenzel.github.io/zurich-lens">phdenzel.github.io/zurich-lens</a></li>
+<li class="fragment appear"><a href="https://phdenzel.github.io/streaming-lens">phdenzel.github.io/streaming-lens</a></li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org98d4bae" class="upperlefth" data-background-iframe="https://phdenzel.github.io/zurich-lens/" data-background-interactive;>
+<h3 id="org98d4bae">Zurich lensed</h3>
+<aside class="notes">
+<p>
+What is important to know about gravitational lenses, is that the mass
+distribution of a lens, meaning whether light from a source passes by
+a black hole, a star, a galaxy, or even heavier objects, will
+determine how much the light is deflected and what configuration is
+ultimately observed.
+</p>
+
+<p>
+For the experts in the room: the deflections in this mock-up
+roughly correspond to an singular isothermal sphere model.
+</p>
+
+</aside>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org137741c" class="upperlefth" data-background-video="./assets/movies/quasar_lensing_RAS.mp4" data-background-video-muted data-background-size="contain";>
+<h3 id="org137741c">Quasar lensing</h3>
+<p class="slide-footer">
+RAS PR 17/4, Credit: ESA/Hubble, NASA
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org5716711">
+<h2 id="org5716711">The Hubble constant</h2>
+<div class="outline-text-2" id="text-org5716711">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orge6e7f9b" class="upperh" data-background-video="./assets/movies/quasar_flicker.mp4" data-background-video-loop data-background-video-muted data-background-size="contain";>
+<h3 id="orge6e7f9b">Inference through gravitational lensing</h3>
+<p class="slide-footer">
+Credit: ESA/Hubble, NASA
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orge3101ed">
+<h3 id="orge3101ed">Are we certain about the value of H\(_0\)?</h3>
+
+<div class="figure">
+<p><img src="./assets/imgs/hubble.png" alt="hubble.png" height="720px" />
+</p>
+</div>
+<p class="slide-footer">
+E. Hubble (1929)
+</p>
+</section>
+<section id="slide-orge3101ed-split">
+
+
+<div class="figure">
+<p><img src="./assets/imgs/hubble_history.png" alt="hubble_history.png" height="720px" />
+</p>
+</div>
+<p class="slide-footer">
+Credit: J. Huchra (2010)
+</p>
+</section>
+<section id="slide-orge3101ed-split">
+
+
+<div class="figure">
+<p><img src="./assets/imgs/H0_tension.png" alt="H0_tension.png" height="1030px" />
+</p>
+</div>
+<p class="slide-footer">
+<a href="https://www.nature.com/articles/s41550-019-0902-0" class="slide-footer">Verde et al. (2019)</a> Credit: V. Bonvin &amp; M. Millon
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgbda44cc">
+<h3 id="orgbda44cc">Time-delay galaxies</h3>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/B1608+656_composite.jpg" alt="B1608+656_composite.jpg" height="45%" width="24%" align="left" style="margin:2px;" /> 
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/DESJ0408-5354_composite.jpg" alt="DESJ0408-5354_composite.jpg" height="45%" width="24%" align="left" style="margin:2px;" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/HE0435-1223_composite.jpg" alt="HE0435-1223_composite.jpg" height="45%" width="24%" align="left" style="margin:2px;" /> 
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/PG1115+080_composite.jpg" alt="PG1115+080_composite.jpg" height="45%" width="24%" align="left" style="margin:2px;" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/RXJ0911+0551_composite.jpg" alt="RXJ0911+0551_composite.jpg" height="45%" width="24%" align="left" style="margin:2px;" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/RXJ1131-1231_composite.jpg" alt="RXJ1131-1231_composite.jpg" height="45%" width="24%" align="left" style="margin:2px;" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/SDSSJ1004+4112_composite.jpg" alt="SDSSJ1004+4112_composite.jpg" height="45%" width="24%" align="left" style="margin:2px;" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/WFIJ2033-4723_composite.jpg" alt="WFIJ2033-4723_composite.jpg" height="45%" width="24%" align="left" style="margin:2px;" />
+</p>
+</div>
+
+<p class="slide-footer">
+<a href="https://arxiv.org/abs/2007.14398" class="slide-footer">Denzel et al. (2020b, arxiv:2007.14398)</a>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org835e38a">
+<h3 id="org835e38a">Lens models</h3>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/B1608+656_kappa.jpg" alt="B1608+656_kappa.jpg" height="45%" width="24%" align="left" style="margin:2px;" /> 
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/DESJ0408-5354_kappa.jpg" alt="DESJ0408-5354_kappa.jpg" height="45%" width="24%" align="left" style="margin:2px;" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/HE0435-1223_kappa.jpg" alt="HE0435-1223_kappa.jpg" height="45%" width="24%" align="left" style="margin:2px;" /> 
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/PG1115+080_kappa.jpg" alt="PG1115+080_kappa.jpg" height="45%" width="24%" align="left" style="margin:2px;" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/RXJ0911+0551_kappa.jpg" alt="RXJ0911+0551_kappa.jpg" height="45%" width="24%" align="left" style="margin:2px;" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/RXJ1131-1231_kappa.jpg" alt="RXJ1131-1231_kappa.jpg" height="45%" width="24%" align="left" style="margin:2px;" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/SDSSJ1004+4112_kappa.jpg" alt="SDSSJ1004+4112_kappa.jpg" height="45%" width="24%" align="left" style="margin:2px;" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/WFIJ2033-4723_kappa.jpg" alt="WFIJ2033-4723_kappa.jpg" height="45%" width="24%" align="left" style="margin:2px;" />
+</p>
+</div>
+
+<p class="slide-footer">
+<a href="https://arxiv.org/abs/2007.14398" class="slide-footer">Denzel et al. (2020b, arxiv:2007.14398)</a>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org22a770a" class="upperrighth" data-background-iframe="./assets/scripts/DESJ0408_5354_ensemble.html" data-background-interactive;>
+<h3 id="org22a770a">Ensemble</h3>
+<p style="text-align: right">
+DESJ0408-5354  <br>  Ensembles of models: 1000
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org60158d1">
+<h3 id="org60158d1">H\(_0\) inference</h3>
+<div height="810px" style="float:right">
+\begin{align}
+  H_0 &= 71.3^{+3.9}_{-3.6} \,\mathrm{km/s/Mpc} \\
+  &\quad \\
+  &\mathrm{or} \\
+  &\quad \\
+  H_0 &= 2.3^{+0.1}_{-0.1} \,\mathrm{aHz}
+\end{align}
+
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/H0_pdf.png" alt="H0_pdf.png" height="810px" style="float:left" />
+</p>
+</div>
+<p class="slide-footer">
+<a href="https://arxiv.org/abs/2007.14398" class="slide-footer">Denzel et al. (2020b, arxiv:2007.14398)</a>
+</p>
+</section>
+<section id="slide-org60158d1-split">
+
+<p height="810px" style="float:right">
+\[ H_0^{-1} = 13.8^{+0.7}_{-0.7} \,\mathrm{Gyr} \]
+</p>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/invH0_pdf.png" alt="invH0_pdf.png" height="810px" style="float:left" />
+</p>
+</div>
+<p class="slide-footer">
+<a href="https://arxiv.org/abs/2007.14398" class="slide-footer">Denzel et al. (2020b, arxiv:2007.14398)</a>
+</p>
+</section>
+<section id="slide-org60158d1-split">
+
+<div height="810px" style="float:right">
+\begin{align}
+  \rho_{\mathrm{c}} &= \frac{3c^2}{8\pi Ge}H_0^2 \\
+  &\quad \\
+  &= 5.4^{+0.6}_{-0.5} \,\mathrm{GeV/m^3}
+\end{align}
+
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/H02dens_pdf.png" alt="H02dens_pdf.png" height="810px" style="float:left" />
+</p>
+</div>
+<p class="slide-footer">
+<a href="https://arxiv.org/abs/2007.14398" class="slide-footer">Denzel et al. (2020b, arxiv:2007.14398)</a>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgb29db08">
+<h3 id="orgb29db08"><span class="underline">Data</span> vs synthetic images</h3>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/data.png" alt="data.png" height="90%" width="95%" align="left" style="margin:2px;" />
+</p>
+</div>
+<p class="slide-footer">
+<a href="https://arxiv.org/abs/2007.14398" class="slide-footer">Denzel et al. (2020b, arxiv:2007.14398)</a>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc299d0a">
+<h3 id="orgc299d0a">Data vs <span class="underline">synthetic images</span></h3>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/synths.png" alt="synths.png" height="90%" width="95%" align="left" style="margin:2px;" />
+</p>
+</div>
+<p class="slide-footer">
+<a href="https://arxiv.org/abs/2007.14398" class="slide-footer">Denzel et al. (2020b, arxiv:2007.14398)</a>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgfac12fd">
+<h3 id="orgfac12fd">Synthetic ensemble optimization</h3>
+<div height="810px" style="float:right">
+\begin{align}
+  H_0 &= 71.3^{+3.9}_{-3.6} \,\mathrm{km/s/Mpc} \\
+  &\quad \\
+  \rightarrow \quad H_0 &= 71.8^{+3.9}_{-3.3} \,\mathrm{km/s/Mpc}
+\end{align}
+
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/time-delays/H0_filtered.png" alt="H0_filtered.png" height="810px" style="float:left" />
+</p>
+</div>
+<p class="slide-footer">
+<a href="https://arxiv.org/abs/2007.14398" class="slide-footer">Denzel et al. (2020b, arxiv:2007.14398)</a>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org2fda670">
+<h2 id="org2fda670">Lensing degeneracies</h2>
+<div class="outline-text-2" id="text-org2fda670">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orge6c6bea" class="upperh">
+<h3 id="orge6c6bea">One configuration, multiple images</h3>
+<ul style="float:right">
+<li>SEAGLE-generated lens simulations:
+<ul>
+<li><a href="https://academic.oup.com/mnras/article-abstract/479/3/4108/5047893?redirectedFrom=fulltext">Mukherjee et al. (2018)</a>  <br>  <a href="https://arxiv.org/abs/1901.01095">Mukherjee et al. (2020)</a></li>
+
+</ul></li>
+<li>Testing free-form reconstructions:
+<ul>
+<li>modelled with GLASS (<a href="https://arxiv.org/abs/1401.7990">Coles et al. 2014</a>)</li>
+<li><a href="https://academic.oup.com/mnras/article-abstract/492/3/3885/5706849?redirectedFrom=fulltext">Denzel et al. (2020)</a></li>
+
+</ul></li>
+<li>Synthetic image optimizations</li>
+
+</ul>
+
+
+<div class="figure">
+<p><img src="./assets/imgs/adler/degeneracies.png" alt="degeneracies.png" height="920px" style="float:left" /> 
+</p>
+</div>
+
+<p class="slide-footer">
+<a href="https://academic.oup.com/mnras/article-abstract/492/3/3885/5706849?redirectedFrom=fulltext" class="slide-footer">Denzel et al. (2020)</a>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org542c607">
+<h3 id="org542c607">The lensing Roche potential</h3>
+<div>
+\begin{align}
+  \tau(\pmb\theta) &= \frac{1}{2} \theta^2 - 2\nabla^{-2} \kappa(\pmb\theta) - \pmb\theta\cdot\pmb\beta = \mathcal{P}(\pmb\theta) - \pmb\theta\cdot\pmb\beta \\
+  \mathcal{P}(\pmb\theta) &= \frac{1}{2} \theta^2 - 2\nabla^{-2} \kappa(\pmb\theta)
+\end{align}
+
+</div>
+
+
+<div class="figure">
+<p><img src="./assets/imgs/adler/data.png" alt="data.png" width="33%" style="float:left" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/adler/kappa.png" alt="kappa.png" width="33%" style="float:left" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/adler/arriv.png" alt="arriv.png" width="33%" style="float:left" />
+</p>
+</div>
+
+<p class="slide-footer">
+<a href="https://academic.oup.com/mnras/article-abstract/492/3/3885/5706849?redirectedFrom=fulltext" class="slide-footer">Denzel et al. (2020)</a>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org68ed44c">
+<h3 id="org68ed44c">Synthetic images</h3>
+<ul style="float:right">
+<li>Source reconstruction:
+<ul>
+<li>\(\pmb\beta = \nabla\mathcal{P}(\pmb\theta)\)  <br>  \[ I(\pmb\theta) = \int\int L(\pmb\theta', \pmb\beta) P(\pmb\theta - \pmb\theta') s(\pmb\beta) \mathrm{d}^2\pmb\theta' \mathrm{d}^2\pmb\beta \]</li>
+
+</ul></li>
+<li>New implementation:
+<ul>
+<li><code>gleam</code> python module  <br>  open-source on <a href="https://github.com/phdenzel/gleam">github.com/phdenzel/gleam</a></li>
+
+</ul></li>
+
+</ul>
+
+
+<div class="figure">
+<p><img src="./assets/imgs/fossil/composite.png" alt="composite.png" height="400px" style="float:left" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/fossil/composite_synth.png" alt="composite_synth.png" height="400px" style="float:left" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/fossil/src.png" alt="src.png" height="400px" style="float:left" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/fossil/resids.png" alt="resids.png" height="400px" style="float:left" />
+</p>
+</div>
+
+
+<p class="slide-footer">
+Denzel et al. (2020d, to be submitted)
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org0bfcc4c">
+<h2 id="org0bfcc4c">Lens matching</h2>
+<div class="outline-text-2" id="text-org0bfcc4c">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org13eeb06">
+<h3 id="org13eeb06">Concept</h3>
+<div>
+\begin{align}
+  & \\
+  P(F\,|\,D) &= \frac{P(D\,|\,F) \; P(F)}{P(D)} \\
+  & \\
+  P(D\,|\,F) &= \sum_g P(D\,|\,g) \; P(g\,|\,F) \\
+  & \\
+  P(D\,|\,g) &= \sum_\nu P(D\,|\,g, \nu)\;P(\nu)
+\end{align}
+
+</div>
+
+<p>
+Galaxy-formation scenario: \(F\), observed data: \(D\), galaxy properties: \(g\) nuisance paramters: \(\nu\)
+</p>
+
+<p class="slide-footer">
+Denzel et al. (2020c, submitted to MNRAS)
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgc32f11a">
+<h3 id="orgc32f11a">An alternative approach to modelling</h3>
+<p>
+ <br> 
+\[ P(D|F) \approx \sum_{s,\xi} P(I^{\mathrm{obs}}|\pmb\alpha, s)\;P(\pmb\alpha|\xi, F)\;P(s, \xi) \]
+</p>
+<p style="justify:left">
+Observed brightness \(I^{\mathrm{obs}}\), deflection field: \(\pmb\alpha = \nabla\mathcal{P}(\pmb\theta) - \pmb\theta\),  <br>  source distribution at source redshift \(s\), lens-system alignment \(\xi\)
+</p>
+
+<p class="slide-footer">
+Denzel et al. (2020c, submitted to MNRAS)
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org018d4c3">
+<h3 id="org018d4c3">Markov-Chain Monte-Carlo simulations</h3>
+<p>
+TODO
+</p>
+
+<p class="slide-footer">
+Denzel et al. (2020c, submitted to MNRAS)
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgf8892cf">
+<h3 id="orgf8892cf">Lens matching</h3>
+<p>
+A catalogue of 1662 SEAGLE models
+</p>
+
+<div class="figure">
+<p><img src="./assets/imgs/matching/catalogue.png" alt="catalogue.png" height="720px" style="float:left" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/matching/J0029_kappa.png" alt="J0029_kappa.png" height="273px" style="margin: 0" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/matching/J0753_kappa.png" alt="J0753_kappa.png" height="273px" style="margin: 0" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./assets/imgs/matching/J0956_kappa.png" alt="J0956_kappa.png" height="273px" style="margin: 0" />
+</p>
+</div>
+
+
+<p class="slide-footer">
+Denzel et al. (2020c, submitted to MNRAS)
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org6e1a607">
+<h3 id="org6e1a607">Test cases</h3>
+<p>
+Lens systems: SDSSJ0029-0055, SDSSJ0753+3416, SDSSJ0956+5100 (out of 7)
+</p>
+
+<div class="figure">
+<p><img src="./assets/imgs/matching/test_cases.png" alt="test_cases.png" height="820px" />
+</p>
+</div>
+
+<p class="slide-footer">
+Denzel et al. (2020c, submitted to MNRAS)
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgd26bf04">
+<h3 id="orgd26bf04">Constraints on galaxy formation scenarios</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Lens</th>
+<th scope="col" class="org-left">Best <code>SEAGLE</code> match</th>
+<th scope="col" class="org-left">Most-plausible \(F\)</th>
+<th scope="col" class="org-right">\(\chi^2_\nu\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">SDSSJ0029−0055</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{FBconst}}\).HH44S1A0B90G0</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{FBconst}}\)</td>
+<td class="org-right">2.68</td>
+</tr>
+
+<tr>
+<td class="org-left">SDSSJ0737+3216</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{FBconst}}\).HH21S1A90B0G0</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{FBconst}}\)</td>
+<td class="org-right">3.47</td>
+</tr>
+
+<tr>
+<td class="org-left">SDSSJ0753+3416</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{AGNdT8}}\).HH1S9A0B0G90</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{AGNdT8}}\)</td>
+<td class="org-right">2.78</td>
+</tr>
+
+<tr>
+<td class="org-left">SDSSJ0956+5100</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{AGNdT8}}\).HH17S1A90B0G0</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{AGNdT8}}\)</td>
+<td class="org-right">3.50</td>
+</tr>
+
+<tr>
+<td class="org-left">SDSSJ1051+4439</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{FBconst}}\).HH48S3A0B90G0</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{FBconst}}\)</td>
+<td class="org-right">2.69</td>
+</tr>
+
+<tr>
+<td class="org-left">SDSSJ1430+6104</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{AGNdT8}}\).HH3S1A90B0G0</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{FBconst}}\)</td>
+<td class="org-right">2.49</td>
+</tr>
+
+<tr>
+<td class="org-left">SDSSJ1627−0053</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{AGNdT8}}\).HH205S0A90B0G0</td>
+<td class="org-left">\(\color{#4E70F2}{\mathsf{FBconst}}\)</td>
+<td class="org-right">2.37</td>
+</tr>
+</tbody>
+</table>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-org14e9869">
+<h3 id="org14e9869">Towards statistically relevant constaints</h3>
+<ul>
+<li class="fragment appear">Source reconstruction: regularizations, lens subtraction</li>
+<li class="fragment appear">Preselection using:
+<ul>
+<li class="fragment appear">Einstein-radius estimates</li>
+<li class="fragment appear">stellar mass estimates from population synthesis models</li>
+
+</ul></li>
+<li class="fragment appear">galactic dynamics through stellar dispersion</li>
+<li class="fragment appear">eventually: substructure constaints using time-delay measurements</li>
+
+</ul>
+
+
+<p class="slide-footer">
+Denzel et al. (2020c, submitted to MNRAS)
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgc1d4d4a">
+<h2 id="orgc1d4d4a">Backup slides</h2>
+<p>
+TODO
+</p>
+</section>
+</section>
+</div>
+</div>
+<p> Created by phdenzel. </p>
+<script src="./assets/js/reveal.js"></script>
+<script src="./assets/js/markdown/markdown.js"></script>
+<script src="./assets/js/math/math.js"></script>
+<script src="./assets/js/notes/notes.js"></script>
+<script src="./assets/js/zoom/zoom.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown,RevealMath,RevealNotes,RevealZoom],
+width: 1920, height: 1080, center: true,
+progress: true, history: false, slideNumber: false,
+controls: true, keyboard: true, previewLinks: true,
+mathjax: true,
+transition: 'fade',
+navigationMode: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+]
+});
+</script>
+</body>
+</html>
