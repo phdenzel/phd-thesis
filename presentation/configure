@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd assets/scripts
+tar xzvf DESJ0408_5354_ensemble.tar.gz 

@@ -31,13 +31,13 @@
 
 # #+REVEAL_EXTRA_JS: { src: 'vid.js', async: true, condition: function() { return !!document.body.classList; } }
 
+
 #+REVEAL_TITLE_SLIDE: <div style="padding: 0px 30px 250px 30px"> <a href='https://www.uzh.ch/de.html'> <img src='./assets/imgs/uzh_logo_d_neg_retina.png' alt='UZH logo' width='294px' height='100px' style="float: left"> </a> </div> 
 #+REVEAL_TITLE_SLIDE: <h1>%t</h1>
 #+REVEAL_TITLE_SLIDE: <h3>%s</h3>
-#+REVEAL_TITLE_SLIDE: <div style="padding-top: 50px">PhD colloquium</div>
-#+REVEAL_TITLE_SLIDE: <h5>by<h5>
-#+REVEAL_TITLE_SLIDE: <h4 style="padding-top: 50px">%a</h4>
-#+REVEAL_TITLE_SLIDE: <h4 style="padding-top: 50px">UZH - %d</h4>
+#+REVEAL_TITLE_SLIDE: <div style="padding-top: 50px">PhD colloquium on %d</div>
+#+REVEAL_TITLE_SLIDE: <div style="padding-top: 50px">by</div>
+#+REVEAL_TITLE_SLIDE: <h4 style="padding-top: 50px"><a href="https://phdenzel.github.io/"> %a </a></h4>
 
 
 * Outline
@@ -51,10 +51,10 @@
 #+ATTR_HTML: :style position: relative;
 1) Introduction to gravitational, multiple-image lensing
 2) Measuring the expansion rate of the Universe
-3) Lens modelling of hydrodynamically simulated galaxies
-4) The lens-matching technique
-5) Studying galaxy formation with lensing
+3) Lens modelling & degeneracies
+4) The lens-matching technique {{{NL}}} Studying galaxy formation with lensing
 
+{{{NL}}}
 {{{NL}}}
 {{{NL}}}
 #+begin_quote
@@ -223,8 +223,7 @@ $$ R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = 8 \pi T_{\mu\nu} $$
 - explained the orbit of Mercury exactly
 - many predictions, for example...
   #+ATTR_REVEAL: :frag (appear)
-  - bending of star light passing by the Sun
-  - a.k.a. gravitational lensing 
+  - bending of star light passing by the Sun {{{NL}}} a.k.a. gravitational lensing
 - compatible with the expansion of the Universe
 
 #+BEGIN_NOTES
@@ -293,6 +292,8 @@ RAS PR 17/4, Credit: ESA/Hubble, NASA
 
 
 * The Hubble constant
+
+** Inference through gravitational lensing
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: class="upperh" data-background-video="./assets/movies/quasar_flicker.mp4" data-background-video-loop data-background-video-muted data-background-size="contain";
 :END:
@@ -321,45 +322,51 @@ Credit: J. Huchra (2010)
 #+ATTR_HTML: :height 1030px
 [[./assets/imgs/H0_tension.png]]
 #+ATTR_HTML: :class slide-footer
-Verde et al. (2019), Credit: V. Bonvin & M. Millon
+[[https://www.nature.com/articles/s41550-019-0902-0][Verde et al. (2019)]] Credit: V. Bonvin & M. Millon
 
 
 ** Time-delay galaxies
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/B1608+656_composite.jpg]] 
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/DESJ0408-5354_composite.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/HE0435-1223_composite.jpg]] 
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/PG1115+080_composite.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/RXJ0911+0551_composite.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/RXJ1131-1231_composite.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/SDSSJ1004+4112_composite.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/WFIJ2033-4723_composite.jpg]]
+
+#+ATTR_HTML: :class slide-footer
+[[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
 
 
 ** Lens models
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/B1608+656_kappa.jpg]] 
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/DESJ0408-5354_kappa.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/HE0435-1223_kappa.jpg]] 
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/PG1115+080_kappa.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/RXJ0911+0551_kappa.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/RXJ1131-1231_kappa.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/SDSSJ1004+4112_kappa.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+#+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/WFIJ2033-4723_kappa.jpg]]
+
+#+ATTR_HTML: :class slide-footer
+[[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
 
 
 ** Ensemble
@@ -367,67 +374,293 @@ Verde et al. (2019), Credit: V. Bonvin & M. Millon
 :REVEAL_EXTRA_ATTR: class="upperrighth" data-background-iframe="./assets/scripts/DESJ0408_5354_ensemble.html" data-background-interactive;
 :END:
 
+#+ATTR_HTML: :style text-align: right
+DESJ0408-5354 {{{NL}}} Ensembles of models: 1000
+
 
 # ** Arrival-time surfaces
-# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 # [[./assets/imgs/time-delays/B1608+656_arriv.jpg]] 
-# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 # [[./assets/imgs/time-delays/DESJ0408-5354_arriv.jpg]]
-# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 # [[./assets/imgs/time-delays/HE0435-1223_arriv.jpg]] 
-# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 # [[./assets/imgs/time-delays/PG1115+080_arriv.jpg]]
-# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 # [[./assets/imgs/time-delays/RXJ0911+0551_arriv.jpg]]
-# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 # [[./assets/imgs/time-delays/RXJ1131-1231_arriv.jpg]]
-# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 # [[./assets/imgs/time-delays/SDSSJ1004+4112_arriv.jpg]]
-# #+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 # [[./assets/imgs/time-delays/WFIJ2033-4723_arriv.jpg]]
 
 
-** Single-band data
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/B1608+656_data.jpg]] 
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/DESJ0408-5354_data.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/HE0435-1223_data.jpg]] 
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/PG1115+080_data.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/RXJ0911+0551_data.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/RXJ1131-1231_data.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/SDSSJ1004+4112_data.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/WFIJ2033-4723_data.jpg]]
+** H$_0$ inference
+# :PROPERTIES:
+# :REVEAL_EXTRA_ATTR: class="upperh" data-background-image="./assets/imgs/time-delays/H0_post.jpg" data-background-size="contain";
+# :END:
+
+#+ATTR_HTML: :height 810px :style float:right
+\begin{align}
+  H_0 &= 71.3^{+3.9}_{-3.6} \,\mathrm{km/s/Mpc} \\
+  &\quad \\
+  &\mathrm{or} \\
+  &\quad \\
+  H_0 &= 2.3^{+0.1}_{-0.1} \,\mathrm{aHz}
+\end{align}
+#+ATTR_HTML: :height 810px :style float:left
+[[./assets/imgs/time-delays/H0_pdf.png]]
+#+ATTR_HTML: :class slide-footer
+[[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
+#+REVEAL: split
+
+#+ATTR_HTML: :height 810px :style float:right
+$$ H_0^{-1} = 13.8^{+0.7}_{-0.7} \,\mathrm{Gyr} $$
+#+ATTR_HTML: :height 810px :style float:left
+[[./assets/imgs/time-delays/invH0_pdf.png]]
+#+ATTR_HTML: :class slide-footer
+[[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
+#+REVEAL: split
+
+#+ATTR_HTML: :height 810px :style float:right
+\begin{align}
+  \rho_{\mathrm{c}} &= \frac{3c^2}{8\pi Ge}H_0^2 \\
+  &\quad \\
+  &= 5.4^{+0.6}_{-0.5} \,\mathrm{GeV/m^3}
+\end{align}
+#+ATTR_HTML: :height 810px :style float:left
+[[./assets/imgs/time-delays/H02dens_pdf.png]]
+#+ATTR_HTML: :class slide-footer
+[[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
+
+
+** _Data_ vs synthetic images
+#+ATTR_HTML: :height 90% :width 95% :align left :style float:left :style margin:2px;
+[[./assets/imgs/time-delays/data.png]]
+#+ATTR_HTML: :class slide-footer
+[[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
+
+** Data vs _synthetic images_
+#+ATTR_HTML: :height 90% :width 95% :align left :style float:left :style margin:2px;
+[[./assets/imgs/time-delays/synths.png]]
+#+ATTR_HTML: :class slide-footer
+[[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
+
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/B1608+656_data.jpg]] 
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/DESJ0408-5354_data.jpg]]
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/HE0435-1223_data.jpg]] 
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/PG1115+080_data.jpg]]
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/RXJ0911+0551_data.jpg]]
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/RXJ1131-1231_data.jpg]]
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/SDSSJ1004+4112_data.jpg]]
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/WFIJ2033-4723_data.jpg]]
+#
+#
+# ** Synthetic images
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/B1608+656_synth.jpg]] 
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/DESJ0408-5354_synth.jpg]]
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/HE0435-1223_synth.jpg]] 
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/PG1115+080_synth.jpg]]
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/RXJ0911+0551_synth.jpg]]
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/RXJ1131-1231_synth.jpg]]
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/SDSSJ1004+4112_synth.jpg]]
+# #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
+# [[./assets/imgs/time-delays/WFIJ2033-4723_synth.jpg]]
+
+
+** Synthetic ensemble optimization
+#+ATTR_HTML: :height 810px :style float:right
+\begin{align}
+  H_0 &= 71.3^{+3.9}_{-3.6} \,\mathrm{km/s/Mpc} \\
+  &\quad \\
+  \rightarrow \quad H_0 &= 71.8^{+3.9}_{-3.3} \,\mathrm{km/s/Mpc}
+\end{align}
+#+ATTR_HTML: :height 810px :style float:left
+[[./assets/imgs/time-delays/H0_filtered.png]]
+#+ATTR_HTML: :class slide-footer
+[[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
+
+
+* Lensing degeneracies
+
+** One configuration, multiple images
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperh"
+:END:
+
+#+ATTR_HTML: :style float:right
+- SEAGLE-generated lens simulations:
+  - [[https://academic.oup.com/mnras/article-abstract/479/3/4108/5047893?redirectedFrom=fulltext][Mukherjee et al. (2018)]] {{{NL}}} [[https://arxiv.org/abs/1901.01095][Mukherjee et al. (2020)]]
+- Testing free-form reconstructions:
+  - modelled with GLASS ([[https://arxiv.org/abs/1401.7990][Coles et al. 2014]])
+  - [[https://academic.oup.com/mnras/article-abstract/492/3/3885/5706849?redirectedFrom=fulltext][Denzel et al. (2020)]]
+- Synthetic image optimizations
+
+#+ATTR_HTML: :height 920px :style float:left
+[[./assets/imgs/adler/degeneracies.png]] 
+
+#+ATTR_HTML: :class slide-footer
+[[https://academic.oup.com/mnras/article-abstract/492/3/3885/5706849?redirectedFrom=fulltext][Denzel et al. (2020)]]
+
+
+** The lensing Roche potential
+# #+ATTR_HTML: :height 45% :width 22% :align left :style float:left :style margin:2px;
+\begin{align}
+  \tau(\pmb\theta) &= \frac{1}{2} \theta^2 - 2\nabla^{-2} \kappa(\pmb\theta) - \pmb\theta\cdot\pmb\beta = \mathcal{P}(\pmb\theta) - \pmb\theta\cdot\pmb\beta \\
+  \mathcal{P}(\pmb\theta) &= \frac{1}{2} \theta^2 - 2\nabla^{-2} \kappa(\pmb\theta)
+\end{align}
+
+#+ATTR_HTML: :width 33% :style float:left
+[[./assets/imgs/adler/data.png]]
+#+ATTR_HTML: :width 33% :style float:left
+[[./assets/imgs/adler/kappa.png]]
+#+ATTR_HTML: :width 33% :style float:left
+[[./assets/imgs/adler/arriv.png]]
+
+# #+ATTR_HTML: :width 24% :style float:left
+# [[./assets/imgs/adler/data.png]]
+# #+ATTR_HTML: :width 24% :style float:left
+# [[./assets/imgs/adler/kappa.png]]
+# #+ATTR_HTML: :width 24% :style float:left
+# [[./assets/imgs/adler/arriv.png]]
+# #+ATTR_HTML: :width 24% :style float:left
+# [[./assets/imgs/adler/roche.png]]
+
+#+ATTR_HTML: :class slide-footer
+[[https://academic.oup.com/mnras/article-abstract/492/3/3885/5706849?redirectedFrom=fulltext][Denzel et al. (2020)]]
 
 
 ** Synthetic images
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/B1608+656_synth.jpg]] 
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/DESJ0408-5354_synth.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/HE0435-1223_synth.jpg]] 
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/PG1115+080_synth.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/RXJ0911+0551_synth.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/RXJ1131-1231_synth.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/SDSSJ1004+4112_synth.jpg]]
-#+ATTR_HTML: :height 48% :width 25% :align left :style float:left;
-[[./assets/imgs/time-delays/WFIJ2033-4723_synth.jpg]]
+#+ATTR_HTML: :style float:right
+- Source reconstruction:
+  - $\pmb\beta = \nabla\mathcal{P}(\pmb\theta)$ {{{NL}}} $$ I(\pmb\theta) = \int\int L(\pmb\theta', \pmb\beta) P(\pmb\theta - \pmb\theta') s(\pmb\beta) \mathrm{d}^2\pmb\theta' \mathrm{d}^2\pmb\beta $$
+- New implementation:
+  - ~gleam~ python module {{{NL}}} open-source on [[https://github.com/phdenzel/gleam][github.com/phdenzel/gleam]]
+
+#+ATTR_HTML: :height 400px :style float:left
+[[./assets/imgs/fossil/composite.png]]
+#+ATTR_HTML: :height 400px :style float:left
+[[./assets/imgs/fossil/composite_synth.png]]
+#+ATTR_HTML: :height 400px :style float:left
+[[./assets/imgs/fossil/src.png]]
+#+ATTR_HTML: :height 400px :style float:left
+[[./assets/imgs/fossil/resids.png]]
+
+
+#+ATTR_HTML: :class slide-footer
+Denzel et al. (2020d, to be submitted)
+
+
+* Lens matching
+
+** Concept
+
+\begin{align}
+  & \\
+  P(F\,|\,D) &= \frac{P(D\,|\,F) \; P(F)}{P(D)} \\
+  & \\
+  P(D\,|\,F) &= \sum_g P(D\,|\,g) \; P(g\,|\,F) \\
+  & \\
+  P(D\,|\,g) &= \sum_\nu P(D\,|\,g, \nu)\;P(\nu)
+\end{align}
+
+Galaxy-formation scenario: $F$, observed data: $D$, galaxy properties: $g$ nuisance paramters: $\nu$
+
+#+ATTR_HTML: :class slide-footer
+Denzel et al. (2020c, submitted to MNRAS)
+
+
+** An alternative approach to modelling
+{{{NL}}}
+$$ P(D|F) \approx \sum_{s,\xi} P(I^{\mathrm{obs}}|\pmb\alpha, s)\;P(\pmb\alpha|\xi, F)\;P(s, \xi) $$
+#+ATTR_HTML: :style justify:left
+Observed brightness $I^{\mathrm{obs}}$, deflection field: $\pmb\alpha = \nabla\mathcal{P}(\pmb\theta) - \pmb\theta$, {{{NL}}} source distribution at source redshift $s$, lens-system alignment $\xi$
+
+#+ATTR_HTML: :class slide-footer
+Denzel et al. (2020c, submitted to MNRAS)
+
+
+** Markov-Chain Monte-Carlo simulations
+
+TODO
+
+#+ATTR_HTML: :class slide-footer
+Denzel et al. (2020c, submitted to MNRAS)
+
+
+** Lens matching
+A catalogue of 1662 SEAGLE models
+#+ATTR_HTML: :height 720px :style float:left
+[[./assets/imgs/matching/catalogue.png]]
+#+ATTR_HTML: :height 273px :style margin: 0
+[[./assets/imgs/matching/J0029_kappa.png]]
+#+ATTR_HTML: :height 273px :style margin: 0
+[[./assets/imgs/matching/J0753_kappa.png]]
+#+ATTR_HTML: :height 273px :style margin: 0
+[[./assets/imgs/matching/J0956_kappa.png]]
+
+
+#+ATTR_HTML: :class slide-footer
+Denzel et al. (2020c, submitted to MNRAS)
+
+
+** Test cases
+Lens systems: SDSSJ0029-0055, SDSSJ0753+3416, SDSSJ0956+5100 (out of 7)
+#+ATTR_HTML: :height 820px
+[[./assets/imgs/matching/test_cases.png]]
+
+#+ATTR_HTML: :class slide-footer
+Denzel et al. (2020c, submitted to MNRAS)
+
+
+** Constraints on galaxy formation scenarios
+
+
+| Lens           | Best ~SEAGLE~ match                               | Most-plausible $F$                  | $\chi^2_\nu$ |
+|----------------+---------------------------------------------------+-------------------------------------+--------------|
+| SDSSJ0029−0055 | $\color{#4E70F2}{\mathsf{FBconst}}$.HH44S1A0B90G0 | $\color{#4E70F2}{\mathsf{FBconst}}$ |         2.68 |
+| SDSSJ0737+3216 | $\color{#4E70F2}{\mathsf{FBconst}}$.HH21S1A90B0G0 | $\color{#4E70F2}{\mathsf{FBconst}}$ |         3.47 |
+| SDSSJ0753+3416 | $\color{#4E70F2}{\mathsf{AGNdT8}}$.HH1S9A0B0G90   | $\color{#4E70F2}{\mathsf{AGNdT8}}$  |         2.78 |
+| SDSSJ0956+5100 | $\color{#4E70F2}{\mathsf{AGNdT8}}$.HH17S1A90B0G0  | $\color{#4E70F2}{\mathsf{AGNdT8}}$  |         3.50 |
+| SDSSJ1051+4439 | $\color{#4E70F2}{\mathsf{FBconst}}$.HH48S3A0B90G0 | $\color{#4E70F2}{\mathsf{FBconst}}$ |         2.69 |
+| SDSSJ1430+6104 | $\color{#4E70F2}{\mathsf{AGNdT8}}$.HH3S1A90B0G0   | $\color{#4E70F2}{\mathsf{FBconst}}$ |         2.49 |
+| SDSSJ1627−0053 | $\color{#4E70F2}{\mathsf{AGNdT8}}$.HH205S0A90B0G0 | $\color{#4E70F2}{\mathsf{FBconst}}$ |         2.37 |
 
 
 
-# * TODO
-# - The importance of lensing degeneracies
-# - Project: ADLER
-# - Project: MATCH
-# - If enough time: also talk about Project: FOSSIL (connecting through galaxy evolution models)
+** Towards statistically relevant constaints
+
+#+ATTR_REVEAL: :frag (appear)
+- Source reconstruction: regularizations, lens subtraction
+- Preselection using:
+  #+ATTR_REVEAL: :frag (appear)
+  - Einstein-radius estimates
+  - stellar mass estimates from population synthesis models
+- galactic dynamics through stellar dispersion
+- eventually: substructure constaints using time-delay measurements
+
+
+#+ATTR_HTML: :class slide-footer
+Denzel et al. (2020c, submitted to MNRAS)
+
+
+* Backup slides
+
+TODO
