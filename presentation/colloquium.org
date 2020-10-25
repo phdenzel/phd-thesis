@@ -185,7 +185,7 @@ gravitational lensing
 
 * Gravity
 #+BEGIN_NOTES
-The second part to udnerstand what gravitational lensing is, is
+The second part to understanding what gravitational lensing is, is
 gravity.
 
 In highschool, you learned about Newton's law of gravity. 
@@ -224,13 +224,27 @@ $$ R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = 8 \pi T_{\mu\nu} $$
 - many predictions, for example...
   #+ATTR_REVEAL: :frag (appear)
   - bending of star light passing by the Sun {{{NL}}} a.k.a. gravitational lensing
-- compatible with the expansion of the Universe
+- compatible with the expansion of the Universe 
 
 #+BEGIN_NOTES
 Einstein didn't just pull this equation out of thin air. It is the
 natural consequence of a long list of key principles in physics +
 combined with advanced mathematics of curved surfaces + of course
 agreement with experimental observations.
+
+It managed to explain exactly the anomalies of Mercury's orbit.  It
+also made several predictions, about how light propagates through the
+large-scale structure of the Universe.
+
+It is also compatible with the expansion of the Universe, which ---
+interesting fact --- Einstein actually refused to believe in for a long
+time.
+
+Einstein predicted that light redshifts when travelling outwards from
+a gravitational potential.
+
+He also predicted exactly by how much light is deflected by a
+gravitational field.
 #+END_NOTES
 
 ** History
@@ -242,6 +256,24 @@ agreement with experimental observations.
 #+ATTR_HTML: :height 850px :align right :style float:right :style padding-right: 200px
 [[./assets/imgs/nytimes_headline.png]]
 {{{NL}}} Headline NY Times, November 10 1919
+
+#+BEGIN_NOTES
+It didn't take long until this theory of Einstein's passed its first
+test.
+
+In 1919, Eddington, Dyson, and Davidson travelled to two places,
+Principe, an island off the coast of West-Africa and Sobral in Brazil,
+and simulatenously measured stellar constellations during a solar
+eclipse.
+
+They discovered that because they measured the starlight passing by
+the Sun, it was deflected from its original configuration, by the
+amount Einstein's theory predicted.
+
+After their findings were published, newspapers all over the world
+reported about it. The NY Times headlines are specifically amusing to
+read: "..."
+#+END_NOTES
 
 
 # ** What does GR tell us about the Universe as a whole?
@@ -256,14 +288,46 @@ agreement with experimental observations.
 
 * Gravitational lensing
 
+#+BEGIN_NOTES
+Gravitational lensing is, as I mentioned just before, the deflection
+of light by a gravitational field from a massive object.
+
+In my opinion, a visual demonstration is better than any other form of
+explanation what gravitational lensing is.
+
+However, since lab experiments are pretty much impossible... I
+mean... recipes for massive black-holes ask for very exotic
+ingredients that are hard to come by and are unadvisable to perform in
+a lab in the vincinity of Earth anyways, demonstrations usually
+utilize analogues from optics.
+
+A wine glass stem is especially suited to produce a resembling
+deflection signature.
+
+In this youtube video someone demonstrates this...
+#+END_NOTES
+
 ** "Wine glass" lensing
 [[yt:FqDN-GxrvH8,1820,980][wineglass-video]]
 
 
 ** Mock lensing
-#+ATTR_REVEAL: :frag (appear appear)
-- [[https://phdenzel.github.io/zurich-lens][phdenzel.github.io/zurich-lens]]
-- [[https://phdenzel.github.io/streaming-lens][phdenzel.github.io/streaming-lens]]
+{{{NL}}}
+[[https://phdenzel.github.io/zurich-lens][phdenzel.github.io/zurich-lens]]
+#+ATTR_HTML: :target _blank
+[[https://phdenzel.github.io/streaming-lens][phdenzel.github.io/streaming-lens]]
+
+#+BEGIN_NOTES
+Now, the ones that know me, know that first, I'm not a wine
+drinker... and second, I like to solve tasks with computers.
+
+So, if you'd like to see an interactive, playful demonstration of
+gravitational lensing, and you're sitting in front of your computer,
+then open or click on one of the links here and try it out.
+
+The lower one works with a webcam... it'll ask for permisson to use it.
+You also have to open the second link in a separate tab.
+#+END_NOTES
 
 
 ** Zurich lensed
@@ -272,14 +336,21 @@ agreement with experimental observations.
 :END:
 
 #+BEGIN_NOTES
+If you clicked on the first link, you see this page.
+
+It shows the beautifully illuminated town of Zurich with the
+Zimmerberg mountain chain in the background at night.
+
+If you move the cursor... it shows a lensed field.
+
 What is important to know about gravitational lenses, is that the mass
 distribution of a lens, meaning whether light from a source passes by
 a black hole, a star, a galaxy, or even heavier objects, will
 determine how much the light is deflected and what configuration is
 ultimately observed.
 
-For the experts in the room: the deflections in this mock-up
-roughly correspond to an singular isothermal sphere model.
+For the experts in the room: the deflections in these mock-ups roughly
+correspond to an singular isothermal sphere model.
 #+END_NOTES
 
 
@@ -289,6 +360,16 @@ roughly correspond to an singular isothermal sphere model.
 :END:
 #+ATTR_HTML: :class slide-footer
 RAS PR 17/4, Credit: ESA/Hubble, NASA
+
+#+BEGIN_NOTES
+A gravitational lens system consists of three parts, all aligned in an
+almost perfectly straight line over cosmic distances.
+1) A bright source, in this illustration a quasar which is a very
+   bright, acreting black-hole.
+2) A galaxy or other massive object, acting as lens.
+3) And an observer
+
+#+END_NOTES
 
 
 * The Hubble constant
