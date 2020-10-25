@@ -661,6 +661,84 @@ Denzel et al. (2020c, submitted to MNRAS)
 Denzel et al. (2020c, submitted to MNRAS)
 
 
-* Backup slides
+* Summary
 
-TODO
+- Lensing galaxies: models, simulations, and observations
+- The Hubble constant from time-delay galaxy lenses
+- Limitations of lens models: degeneracies
+- Lens matching: constraints on galaxy formation theory
+
+
+* SW05 - a fossil group candidate?
+
+** SpaceWarps discovery
+SW05 composite image (using g, r, and i channels) from CFHLS survey
+#+ATTR_HTML: :height 820px
+[[./assets/imgs/fossil/composite.png]]
+
+#+ATTR_HTML: :class slide-footer
+Denzel et al. (2020d, to be submitted)
+
+
+** Initially modelled by citizen scientists
+using SpaghettiLens ([[https://academic.oup.com/mnras/article/447/3/2170/986519][Küng et al. 2015]] & [[https://academic.oup.com/mnras/article-abstract/474/3/3700/4655189?redirectedFrom=fulltext][Küng et al. 2017]])
+#+ATTR_HTML: :height 820px
+[[./assets/imgs/fossil/arriv.png]]
+
+#+ATTR_HTML: :class slide-footer
+Denzel et al. (2020d, to be submitted)
+
+
+** Stellar mass estimates
+using stellar population synthesis models
+#+ATTR_HTML: :height 820px :width 820px :style float:left
+[[./assets/imgs/fossil/basemodels.png]]
+
+{{{NL}}}
+{{{NL}}}
+Marginalized over:
+#+ATTR_HTML: :style float:right
+-  redshifts
+- 3 different metallicities
+- 4 age ranges
+- constant star formation rate assumed
+
+#+ATTR_HTML: :class slide-footer
+Denzel et al. (2020d, to be submitted)
+
+
+** Light vs dark
+#+ATTR_HTML: :height 820px :style float:left
+[[./assets/imgs/fossil/lightvsdark.png]]
+
+{{{NL}}}
+{{{NL}}}
+- Total mass:   {{{NL}}} $(1.12 \pm 0.08) \cdot 10^{13} \mathrm{M}_{\odot}$
+- Stellar mass: {{{NL}}} $(3.04 \pm 0.22) \cdot 10^{11} \mathrm{M}_{\odot}$
+
+#+ATTR_HTML: :class slide-footer
+Denzel et al. (2020d, to be submitted)
+
+
+** Stellar mass $\neq$ baryonic mass
+
+#+ATTR_HTML: :height 820px :style float:left
+[[./assets/imgs/fossil/veldisp.png]]
+{{{NL}}}
+{{{NL}}}
+Possibly missing mass in gas, {{{NL}}} radiating at a temperature of:
+$$ \left(\frac{GM}{c^3}\right) \left(\frac{c}{r}\right) \times 1\,\mathrm{GeV} \\ \sim 5 \mathrm{keV} $$
+
+#+ATTR_HTML: :class slide-footer
+Denzel et al. (2020d, to be submitted)
+
+
+** Strong evidence for fossil group
+
+#+ATTR_HTML: :height 820px :style float:left
+[[./assets/imgs/fossil/nbrhood_composite.png]]
+#+ATTR_HTML: :height 820px :style float:left
+[[./assets/imgs/fossil/nbrhood_zrange.png]]
+
+#+ATTR_HTML: :class slide-footer
+Denzel et al. (2020d, to be submitted)
