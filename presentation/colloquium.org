@@ -40,52 +40,23 @@
 #+REVEAL_TITLE_SLIDE: <h4 style="padding-top: 50px"><a href="https://phdenzel.github.io/"> %a </a></h4>
 
 
-* Outline
-:PROPERTIES:
-:REVEAL_EXTRA_ATTR: class="upperh"
-:END:
-
-#+ATTR_HTML: :width 800px :align right :style position: relative float: right;
-[[./assets/imgs/scheme.png]]
-
-#+ATTR_HTML: :style position: relative;
-1) Introduction to gravitational, multiple-image lensing
-2) Measuring the expansion rate of the Universe
-3) Lens modelling & degeneracies
-4) The lens-matching technique {{{NL}}} Studying galaxy formation with lensing
-
-{{{NL}}}
-{{{NL}}}
-{{{NL}}}
-#+begin_quote
-Yesterday's discovery is today's calibration... and tomorrow's background! {{{NL}}}--- R. Feynman
-#+end_quote
-
 #+BEGIN_NOTES
-- Introduction
-- Introducing myself...
-- Topic: Gravitational lensing
-- State of research (Feynman's quote)
-- Connecting: models, simulations, and observations
+Thank you very much for this nice introduction.
 
+I'd also like to welcome everybody to my PhD presentation.
 
-At first, I will give a short introduction to the effect knwon as
-gravitational lensing and how it can lead to observations multiple
-images of the same object, which is usually called source.  It is an
-observer-dependent phenomenon which is actually quite easy to
-understand, with only two major components: Light and Gravity. So, in
-the first few minutes, I will discuss these two concepts in a
-astrophysical and cosmic perspective and try to explain them in simple
-terms.
+The topic of today is gravitational lensing and I hope that I manage
+to report everything interesting which I have learned over the past
+four years studying these objects.
 
-Then, I will show you how one can combine measurements and models of
-gravitational lenses to infer the expansion rate of the Universe, also
-known as the Hubble constant. The Hubble constant can and was measured
-also by other --- actually more prominent --- methods, but ever since
-the first measurement, different methods yielded different results
-(often not even in agreement with each other).  So, we are actually
-quite uncertain at the moment about the actual value of the Hubble
-constant (or if it is even constant).
+Now, before we dive into this topic, we have to talked about two
+physical prinicples which make up the phenonmenon of gravitational
+lensing.
+
+Namely, Light and Gravity.  So.... let's start with Light.
+
+What is important to know about light is how it propagates through the
+cosmos and how we observe it.
 #+END_NOTES
 
 
@@ -97,12 +68,13 @@ constant (or if it is even constant).
 :END:
 
 #+BEGIN_NOTES
-Light from your hand (30 cm away) takes about 1 ns to reach your eye
+Hold you hand up roughly 30 cm in front of your face.
+Light reflected from your hand takes about 1 ns to reach your eye.
 
-I can see you in the audience as you were about 10 ns (or more) in
-the past
+If I had a physical audience present, I would see them at a delay of
+about 10 ns, if I'd be standing at a Corona-save distance from them.
 
-Everything you and I look at is to one degree or another in the past
+Everything you and I look at is to one degree or another in the past.
 #+END_NOTES
 
 
@@ -112,7 +84,7 @@ Everything you and I look at is to one degree or another in the past
 :END:
 
 #+BEGIN_NOTES
-Light from the Sun takes about 500 s to reach Earth
+Sunlight takes about 500 s to reach Earth.
 #+END_NOTES
 
 
@@ -123,7 +95,7 @@ Light from the Sun takes about 500 s to reach Earth
 
 #+BEGIN_NOTES
 Light from the nearest star outside of the solar system Alpha
-Centauri travels ~4 and a half years to us
+Centauri travels ~4.5 years to us
 #+END_NOTES
 
 
@@ -133,8 +105,8 @@ Centauri travels ~4 and a half years to us
 :END:
 
 #+BEGIN_NOTES
-We see the Andromeda galaxy as it was 2.5 million years in the past
-and so on...
+We cannot see the Andromeda galaxy as it is now, but we see it as it
+was 2.5 million years in the past and so on...
 #+END_NOTES
 
 
@@ -144,11 +116,16 @@ and so on...
 :END:
 
 #+BEGIN_NOTES
-We have powerful telescopes to see galaxies whose light has been
-travelling for almost 13 billion years to reach us.
+Today, we have telescopes so powerful that we are able to see galaxies
+whose light has been travelling for almost the entire age of the
+Universe to reach us.
 
-We observe them in a Universe which is still quite young where the
-matter is warm and gravity hasn't had time to pull them together.
+We observe them in a Universe which is still quite young where matter,
+mainly gas, is not quite cool enough yet so that gravity has had time
+to pull them together and form many stars. 
+
+The shapes of these galaxies are therefore quite different from what
+we observe in our neighborhood the Local group.
 #+END_NOTES
 
 
@@ -158,58 +135,42 @@ matter is warm and gravity hasn't had time to pull them together.
 :END:
 
 #+BEGIN_NOTES
-And if we look in between the galaxies we can observe parts of the
-Universe whose light has been traveling for almost the entire age of
-the Universe
+Now, I want to stress that we are not in the center of our Universe,
+but we perceive it in concentric spheres of cosmic time (like
+geological strata) reaching back to the very beginning.
 
-It is so far back, it appears to be still in the final stages of the
-Big Bang when space was completely filled with an opaque, dense, and
-extremely hot plasma, the Cosmic Microwave Background
-
-We are not in the center of our Universe, but we perceive it in
-concentric spheres of cosmic time (like geological strata) reaching
-back to the very beginning
+There, we can observe parts of the Universe which are so far back,
+they appears to be still in the final stages of the Big Bang when
+space was completely filled with an opaque, dense, and extremely hot
+plasma. The light that we observe from there, we call the Cosmic
+Microwave Background.
 
 As light reaches us from afar, we observe the Universe in different
 eras where its components, i.e. galaxies and all invisible parts, are
-in different evolutionary stages
+in different evolutionary stages.
 
 We are surrounded by these epochs and receive their light from all
-directions
+directions.
 
-And sometimes we observe single objects which appear to come from
+And sometimes we observe objects which appear to come from
 different directions simultaneously... that's what we call
-gravitational lensing
+gravitational lensing.
 #+END_NOTES
 
 
 * Gravity
 #+BEGIN_NOTES
 The second part to understanding what gravitational lensing is, is
-gravity.
+gravity. 
 
-In highschool, you learned about Newton's law of gravity. 
+In highschool, you learned about Newton's law of gravity...  
 
-It was and still is important, because it explained the paths of
-projectiles on Earth and the movements of many planets in our solar
-system, and was even used to predict the postiion of Neptune before it
-was discovered in 1846.
+and it is important, because it can explain gravitatonal interactions
+on Earth and even the movements of the outer planets in our solar
+system.
 
-However, there are two notable anomalies with measurements which
-Newton's theory of gravity cannot explain.
-
-First, the precession of Mercury's orbit is slightly off when we try
-to predict it with Newton's law. 
-
-There were lots of theories to explain this anomaly, (for example
-another planet between the Sun and Mercury, called Vulcan), but all of
-them ultimately failed.
-
-Until 1915, when Albert Einstein published a very important equation.
-And... it's not the one most people think of: $E=mc^2$.  It's an
-equation which relates mass + energy, to gravity $G_{\mu\nu} =
-8\piT_{\mu\nu}$.  This equation remains to this day the best
-description of how gravity works.
+However, there is an anomaly with measurements of Mercuries orbit
+which scientists were unable to explain with Newton's law.
 #+END_NOTES
 
 ** History
@@ -227,24 +188,30 @@ $$ R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = 8 \pi T_{\mu\nu} $$
 - compatible with the expansion of the Universe 
 
 #+BEGIN_NOTES
-Einstein didn't just pull this equation out of thin air. It is the
-natural consequence of a long list of key principles in physics +
-combined with advanced mathematics of curved surfaces + of course
-agreement with experimental observations.
+Until 1915, when Albert Einstein published this very important
+equation.
 
-It managed to explain exactly the anomalies of Mercury's orbit.  It
-also made several predictions, about how light propagates through the
-large-scale structure of the Universe.
+It's an equation which relates mass + energy (T on the right), to
+gravity and the curvature of spacetime (the Rs on the left).
 
-It is also compatible with the expansion of the Universe, which ---
-interesting fact --- Einstein actually refused to believe in for a long
-time.
+Now, it is not important that you know what this equation exactly
+means, just know that this equation remains to this day the best
+description of how gravity works.
 
-Einstein predicted that light redshifts when travelling outwards from
-a gravitational potential.
+When Einstein deviced this equation it passed all his initial tests.
 
-He also predicted exactly by how much light is deflected by a
-gravitational field.
+It matched Newton's law where it needed to, and managed to explain the anomalies of Mercury's orbit exactly. 
+
+It also made several predictions, about how light propagates through
+the structure of the Universe.
+
+And very important for today's talk, it predicted how the path of
+light is bent when travelling through a gravitational potential.
+This effect is what we call gravitational lensing.
+
+And as a sidenote, this equation is also compatible with the expansion
+of the Universe, even though Einstein tried his best for a long time
+to ignore it.
 #+END_NOTES
 
 ** History
@@ -264,15 +231,14 @@ test.
 In 1919, Eddington, Dyson, and Davidson travelled to two places,
 Principe, an island off the coast of West-Africa and Sobral in Brazil,
 and simulatenously measured stellar constellations during a solar
-eclipse.
+eclipse. And measured the deflection by comparing to their original positions.
 
-They discovered that because they measured the starlight passing by
-the Sun, it was deflected from its original configuration, by the
-amount Einstein's theory predicted.
+This is only possible during an eclipse because otherwise the light
+from the Sun would obscure any other light source.
 
 After their findings were published, newspapers all over the world
-reported about it. The NY Times headlines are specifically amusing to
-read: "..."
+reported about it. The NY Times headlines are in my opinion especially
+amusing: "..."
 #+END_NOTES
 
 
@@ -292,19 +258,14 @@ read: "..."
 Gravitational lensing is, as I mentioned just before, the deflection
 of light by a gravitational field from a massive object.
 
-In my opinion, a visual demonstration is better than any other form of
-explanation what gravitational lensing is.
+In my opinion, a visual demonstration is far better than any other
+form of explanation.
 
-However, since lab experiments are pretty much impossible... I
-mean... recipes for massive black-holes ask for very exotic
-ingredients that are hard to come by and are unadvisable to perform in
-a lab in the vincinity of Earth anyways, demonstrations usually
-utilize analogues from optics.
+However, since the gravitational aspect of lensing is hard to
+reproduce at home, the optical analogue is usually used for such
+demonstrations.
 
-A wine glass stem is especially suited to produce a resembling
-deflection signature.
-
-In this youtube video someone demonstrates this...
+And here you see one example, using the stem of a wine glass...
 #+END_NOTES
 
 ** "Wine glass" lensing
@@ -318,15 +279,17 @@ In this youtube video someone demonstrates this...
 [[https://phdenzel.github.io/streaming-lens][phdenzel.github.io/streaming-lens]]
 
 #+BEGIN_NOTES
-Now, the ones that know me, know that first, I'm not a wine
-drinker... and second, I like to solve tasks with computers.
+Now, the ones that know me, know that 
 
-So, if you'd like to see an interactive, playful demonstration of
-gravitational lensing, and you're sitting in front of your computer,
-then open or click on one of the links here and try it out.
+first, I'm not a wine drinker... 
 
-The lower one works with a webcam... it'll ask for permisson to use it.
-You also have to open the second link in a separate tab.
+and second, I like to solve tasks with computers.
+
+And that's why I wrote a program for demonstration purposes, of which you
+see two implementations if you click on either of these links.
+
+The lower one uses a webcam, and because I use mine for broadcasing, I
+show you the contents of the first link here.
 #+END_NOTES
 
 
@@ -336,12 +299,10 @@ You also have to open the second link in a separate tab.
 :END:
 
 #+BEGIN_NOTES
-If you clicked on the first link, you see this page.
+Here you see the beautifully illuminated town of Zurich at night with
+the üetliberg in the background.
 
-It shows the beautifully illuminated town of Zurich with the
-Zimmerberg mountain chain in the background at night.
-
-If you move the cursor... it shows a lensed field.
+If I move the cursor... it shows a lensed field.
 
 What is important to know about gravitational lenses, is that the mass
 distribution of a lens, meaning whether light from a source passes by
@@ -354,6 +315,72 @@ correspond to an singular isothermal sphere model.
 #+END_NOTES
 
 
+* Outline
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperh"
+:END:
+
+{{{NL}}}
+#+ATTR_HTML: :width 800px :align right :style position: relative float: right;
+[[./assets/imgs/scheme.png]]
+
+#+ATTR_HTML: :style position: relative;
+1) Measuring the expansion rate of the Universe
+2) Lens modelling & degeneracies
+3) The lens-matching technique {{{NL}}} Studying galaxy formation with lensing
+
+
+{{{NL}}}{{{NL}}}{{{NL}}}{{{NL}}}{{{NL}}}
+#+begin_quote
+Yesterday's discovery is today's calibration... and tomorrow's background! {{{NL}}}--- R. Feynman
+#+end_quote
+
+
+#+BEGIN_NOTES
+Okay, now everybody should know what I'm roughly talking about during
+the rest of the talk.
+
+Richard Feynman once said, "Yesterday's discovery is today's
+calibration... and tomorrow's background!"
+
+Gravitational lensing is a research field which has a hand in all of
+those points.
+
+We constantly discover new gravitational lenses... currently there are
+roughly 800 confirmed lenses, but within the next 10 years we expect
+this number to be more like 100'000.
+
+So, we also need to configure and calibrate our modelling techniques
+to be able to efficiently handle so many lenses.
+
+And in some cases lenses are also the background information used to
+infer other astrophysical or cosmological properties.
+
+My main research can be summarized with the latter two points in this
+quote and is schematically shown in this graph...
+
+The goal of every lens study is to make connections from observations
+to theory.
+
+This is usually accomplished by modelling the observed lensing galaxy.
+And this has been done many times before...
+
+Some go even further and test their models against simulations of
+galaxies.
+
+However, so far to my knowledge nobody has made a direct connection
+from simulations to observed lensing galaxies.
+
+In the end I will show you how one could go this.
+
+But let's first talk about the expansion rate of the Universe, the
+Hubble constant.
+#+END_NOTES
+
+
+* The Hubble constant
+
+
 ** Quasar lensing
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: class="upperlefth" data-background-video="./assets/movies/quasar_lensing_RAS.mp4" data-background-video-muted data-background-size="contain";
@@ -362,17 +389,15 @@ correspond to an singular isothermal sphere model.
 RAS PR 17/4, Credit: ESA/Hubble, NASA
 
 #+BEGIN_NOTES
-A gravitational lens system consists of three parts, all aligned in an
-almost perfectly straight line over cosmic distances.
-1) A bright source, in this illustration a quasar which is a very
-   bright, acreting black-hole.
-2) A galaxy or other massive object, acting as lens.
-3) And an observer
+A gravitational lens system consists of 3 aligned parts.
+1) A bright source that sends out light which is deflected by...
+2) A foreground object, usually a galaxy, and focussed towards...
+3) The observer
 
+In this illustration most interesting part is the source, which is a
+quasar, or AGN, which is a very bright, an accreting black-hole.
 #+END_NOTES
 
-
-* The Hubble constant
 
 ** Inference through gravitational lensing
 :PROPERTIES:
@@ -563,7 +588,7 @@ $$ H_0^{-1} = 13.8^{+0.7}_{-0.7} \,\mathrm{Gyr} $$
 # #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 # [[./assets/imgs/time-delays/SDSSJ1004+4112_synth.jpg]]
 # #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
-# [[./assets/imgs/time-delays/WFIJ2033-4723_synth.jpg]]
+# [[./assets/imgs/time-delays/FIJI2033-4723_synth.jpg]]
 
 
 ** Synthetic ensemble optimization
@@ -581,7 +606,7 @@ $$ H_0^{-1} = 13.8^{+0.7}_{-0.7} \,\mathrm{Gyr} $$
 
 * Lensing degeneracies
 
-** One configuration, multiple images
+** One configuration, multiple solutions
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: class="upperh"
 :END:
@@ -667,15 +692,44 @@ Galaxy-formation scenario: $F$, observed data: $D$, galaxy properties: $g$ nuisa
 #+ATTR_HTML: :class slide-footer
 Denzel et al. (2020c, submitted to MNRAS)
 
+#+BEGIN_NOTES
+The situation is... one would like to compare lensing observations
+with galaxy simulations implementing various galaxy formation
+scenarios.
 
-** An alternative approach to modelling
-{{{NL}}}
-$$ P(D|F) \approx \sum_{s,\xi} P(I^{\mathrm{obs}}|\pmb\alpha, s)\;P(\pmb\alpha|\xi, F)\;P(s, \xi) $$
-#+ATTR_HTML: :style justify:left
-Observed brightness $I^{\mathrm{obs}}$, deflection field: $\pmb\alpha = \nabla\mathcal{P}(\pmb\theta) - \pmb\theta$, {{{NL}}} source distribution at source redshift $s$, lens-system alignment $\xi$
+In Bayesian terms, the posterior probability distribution of a
+particular galaxy formation scenario F compared with the data, is
+given by the likelihood of the data given a galaxy formation scenario
+times the prior probability of a galaxy formation scenario and
+normalized by the data marginalized over all possible galaxy fomration
+scenarios.
 
-#+ATTR_HTML: :class slide-footer
-Denzel et al. (2020c, submitted to MNRAS)
+Of course this is hard to calculate, but in a comparison of two galaxy
+formation scenarios, these terms cancel.
+
+The term of interest is the likelihood P(D|F).
+This is given by this marginalization over all galaxy properties g.
+
+Now, since galaxy formation is very complex and involves many
+different components and parameters, there will be some nuisance
+parameters we are not interested in. So the likelihood of a particular
+galaxy property is given by the marginalization over some nuisance
+paramters.
+
+Conventional lens modelling consists of constructing g such that
+P(D|g) is optimized.
+
+#+END_NOTES
+
+
+# ** An alternative approach to modelling
+# {{{NL}}}
+# $$ P(D|F) \approx \sum_{s,\xi} P(I^{\mathrm{obs}}|\pmb\alpha, s)\;P(\pmb\alpha|\xi, F)\;P(s, \xi) $$
+# #+ATTR_HTML: :style justify:left
+# Observed brightness $I^{\mathrm{obs}}$, deflection field: $\pmb\alpha = \nabla\mathcal{P}(\pmb\theta) - \pmb\theta$, {{{NL}}} source distribution at source redshift $s$, lens-system alignment $\xi$
+
+# #+ATTR_HTML: :class slide-footer
+# Denzel et al. (2020c, submitted to MNRAS)
 
 
 ** Markov-Chain Monte-Carlo simulations
@@ -726,7 +780,7 @@ Denzel et al. (2020c, submitted to MNRAS)
 
 
 
-** Towards statistically relevant constaints
+** Towards statistically relevant constraints
 
 #+ATTR_REVEAL: :frag (appear)
 - Source reconstruction: regularizations, lens subtraction
@@ -735,7 +789,7 @@ Denzel et al. (2020c, submitted to MNRAS)
   - Einstein-radius estimates
   - stellar mass estimates from population synthesis models
 - galactic dynamics through stellar dispersion
-- eventually: substructure constaints using time-delay measurements
+- eventually: substructure constraints using time-delay measurements
 
 
 #+ATTR_HTML: :class slide-footer
