@@ -24,12 +24,13 @@
 #+REVEAL_INIT_OPTIONS: navigationMode: 'default'
 # #+REVEAL_INIT_OPTIONS: navigationMode: 'linear',
 #+REVEAL_THEME: phdcolloq
-#+REVEAL_PLUGINS: ( markdown math notes zoom )
+#+REVEAL_PLUGINS: ( markdown math zoom )
 #+REVEAL_HLEVEL: 2
 #+REVEAL_HEAD_PREAMBLE: <meta name="description" content="PhD colloquium by PhD">
 #+REVEAL_POSTAMBLE: <p> Created by phdenzel. </p>
 
 # #+REVEAL_EXTRA_JS: { src: 'vid.js', async: true, condition: function() { return !!document.body.classList; } }
+
 
 
 #+REVEAL_TITLE_SLIDE: <div style="padding: 0px 30px 250px 30px"> <a href='https://www.uzh.ch/de.html'> <img src='./assets/imgs/uzh_logo_d_neg_retina.png' alt='UZH logo' width='294px' height='100px' style="float: left"> </a> </div> 
@@ -38,7 +39,6 @@
 #+REVEAL_TITLE_SLIDE: <div style="padding-top: 50px">PhD colloquium on %d</div>
 #+REVEAL_TITLE_SLIDE: <div style="padding-top: 50px">by</div>
 #+REVEAL_TITLE_SLIDE: <h4 style="padding-top: 50px"><a href="https://phdenzel.github.io/"> %a </a></h4>
-
 
 #+BEGIN_NOTES
 Thank you very much for this nice introduction.
@@ -54,13 +54,19 @@ physical prinicples which make up the phenonmenon of gravitational
 lensing.
 
 Namely, Light and Gravity.  So.... let's start with Light.
-
-What is important to know about light is how it propagates through the
-cosmos and how we observe it.
 #+END_NOTES
+
+* Website
+
+[[https://www.ics.uzh.ch/~phdenzel/phd-colloquium/][www.ics.uzh.ch/~phdenzel/phd-colloquium/]]
 
 
 * Light
+
+#+BEGIN_NOTES
+What is important to know about light is how it propagates through the
+cosmos and how we observe it.
+#+END_NOTES
 
 ** Speed of light
 :PROPERTIES:
@@ -140,7 +146,7 @@ but we perceive it in concentric spheres of cosmic time (like
 geological strata) reaching back to the very beginning.
 
 There, we can observe parts of the Universe which are so far back,
-they appears to be still in the final stages of the Big Bang when
+they appear to be still in the final stages of the Big Bang when
 space was completely filled with an opaque, dense, and extremely hot
 plasma. The light that we observe from there, we call the Cosmic
 Microwave Background.
@@ -350,13 +356,13 @@ We constantly discover new gravitational lenses... currently there are
 roughly 800 confirmed lenses, but within the next 10 years we expect
 this number to be more like 100'000.
 
-So, we also need to configure and calibrate our modelling techniques
-to be able to efficiently handle so many lenses.
+So, we also need to configure and calibrate and optimize our modelling
+techniques to be able to efficiently handle so many lenses.
 
 And in some cases lenses are also the background information used to
 infer other astrophysical or cosmological properties.
 
-My main research can be summarized with the latter two points in this
+My research during the past 4 year can be summarized with the latter two points in this
 quote and is schematically shown in this graph...
 
 The goal of every lens study is to make connections from observations
@@ -371,7 +377,7 @@ galaxies.
 However, so far to my knowledge nobody has made a direct connection
 from simulations to observed lensing galaxies.
 
-In the end I will show you how one could go this.
+In the end I will show you how one could go about this at the end of the talk.  
 
 But let's first talk about the expansion rate of the Universe, the
 Hubble constant.
@@ -406,6 +412,16 @@ quasar, or AGN, which is a very bright, an accreting black-hole.
 #+ATTR_HTML: :class slide-footer
 Credit: ESA/Hubble, NASA
 
+#+BEGIN_NOTES
+The interesting thing about quasars is that their brightness seems to
+fluctuate.  This is interesting because in gravitational lenses light
+rays take different paths around the lens and consequently have
+different travel times.
+
+The difference between these travel times are called time delays which
+are measureable and are proportional to the Hubble constant.
+#+END_NOTES
+
 
 ** Are we certain about the value of H$_0$?
 
@@ -417,18 +433,52 @@ Credit: ESA/Hubble, NASA
 [[./assets/imgs/hubble.png]]
 #+ATTR_HTML: :class slide-footer
 E. Hubble (1929)
+
+#+BEGIN_NOTES
+Why is it even interesting today to measure the Hubble constant?
+
+In 1929 Hubble discovered that galaxies are receding from us and that
+this recession seems to be proportional to their distance.
+
+By measuring these distances, he came to the conclusion that this must
+be because the Universe is expanding.  And you can even read the value
+for this recession rate of in his plot... it's about 500 km/s / Mpc.
+#+END_NOTES
+
 #+REVEAL: split
 
 #+ATTR_HTML: :height 720px
 [[./assets/imgs/hubble_history.png]]
 #+ATTR_HTML: :class slide-footer
 Credit: J. Huchra (2010)
+
+#+BEGIN_NOTES
+Now, since then, many more measurements have been done, and it seems
+that the values converged to something between 50 and 100.
+#+END_NOTES
+
 #+REVEAL: split
 
 #+ATTR_HTML: :height 1030px
 [[./assets/imgs/H0_tension.png]]
 #+ATTR_HTML: :class slide-footer
 [[https://www.nature.com/articles/s41550-019-0902-0][Verde et al. (2019)]] Credit: V. Bonvin & M. Millon
+
+#+BEGIN_NOTES
+And in fact, the most recent measurements are between roughly 65
+and 80.  Now I don't have time to discuss every single measurement,
+but maybe just remember the Planck measurement which seems to be the most
+precise one yet, and the SHOES measurement from the Late type branch.
+
+These different methods seem to disagree with each other, if you
+compare their error bars.
+
+With the CCHP being the most inbetween measurement.
+
+Now, this tension between different methods of obtaining the Hubble
+constant, is why it is important to look for more independent
+measurements in the hope to resolve this conflict.
+#+END_NOTES
 
 
 ** Time-delay galaxies
@@ -453,6 +503,17 @@ Credit: J. Huchra (2010)
 [[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
 
 
+#+BEGIN_NOTES
+I have tried myself at this problem and assembled a set of 8 lenses
+with known time-delays between their different images.
+
+This way of measuring the Hubble constant is a first order measurement
+and that's why also have to supply the time delays which lens model.
+
+We have used the positions of these quasar images, and used them to
+fit lens models to the observations.
+#+END_NOTES
+
 ** Lens models
 #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/B1608+656_kappa.jpg]] 
@@ -474,6 +535,14 @@ Credit: J. Huchra (2010)
 #+ATTR_HTML: :class slide-footer
 [[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
 
+#+BEGIN_NOTES
+We did that with a lens modelling technique called free-form
+modelling, which Prasenjit and Liliya sort of pioneered.
+
+They are called free-form because each mass pixel that you can see
+here is fit with a Monte-Carlo approach and therefore is not
+restricted to any sort of parametric shape which you could imagine.
+#+END_NOTES
 
 ** Ensemble
 :PROPERTIES:
@@ -483,6 +552,16 @@ Credit: J. Huchra (2010)
 #+ATTR_HTML: :style text-align: right
 DESJ0408-5354 {{{NL}}} Ensembles of models: 1000
 
+#+BEGIN_NOTES
+The models that I showed you are in fact ensemble averages.
+
+Each ensemble contains a 1000 models and each model contains 8 surface mass density
+maps which are simultaneously fit to all 8 lenses and their image point positions.
+
+The interesting part about these individual models is that only linear
+constaints were used in the modelling process which means the
+ensemble-average is a solution to the lens observation as well.
+#+END_NOTES
 
 # ** Arrival-time surfaces
 # #+ATTR_HTML: :height 45% :width 24% :align left :style float:left :style margin:2px;
@@ -520,6 +599,31 @@ DESJ0408-5354 {{{NL}}} Ensembles of models: 1000
 [[./assets/imgs/time-delays/H0_pdf.png]]
 #+ATTR_HTML: :class slide-footer
 [[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
+
+#+BEGIN_NOTES
+By combining the mass models with the time-delays we obtain values for
+the Hubble constant.  And because, we have explored the degenerate
+solution space, we have not just one value, but a distribution of a
+1000 values.
+
+Now, you can see that the spread of this distribution is quite wide,
+in fact it contains values from 60 all the way to 80 km/s/Mpc.
+With the median written out here.
+
+And in comparison with other measurements, we seem to be in the same
+ball park as other types of measurements.
+
+I also want to draw your attention to the units I have used here on
+the bottom axis.
+
+In my opinion, km/s/Mpc is hard to say and also not in SI units.  When
+using these legacy units, one implicitly says something about the way
+how the Hubble constant is measured. And since other types of
+measurements which do not measure a velocity gradient, They really
+have no reason to use these old units. And in my humble opinion,
+should use units like attoHertz.
+#+END_NOTES
+
 #+REVEAL: split
 
 #+ATTR_HTML: :height 810px :style float:right
@@ -528,6 +632,14 @@ $$ H_0^{-1} = 13.8^{+0.7}_{-0.7} \,\mathrm{Gyr} $$
 [[./assets/imgs/time-delays/invH0_pdf.png]]
 #+ATTR_HTML: :class slide-footer
 [[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
+
+#+BEGIN_NOTES
+We can also show the values in inverse Hubble constant values, Hubble
+times, which are proportional to the age of the Universe.
+
+We obtained a value of 13.8 Gyrs.
+#+END_NOTES
+
 #+REVEAL: split
 
 #+ATTR_HTML: :height 810px :style float:right
@@ -541,12 +653,37 @@ $$ H_0^{-1} = 13.8^{+0.7}_{-0.7} \,\mathrm{Gyr} $$
 #+ATTR_HTML: :class slide-footer
 [[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
 
+#+BEGIN_NOTES
+Another form of the Hubble constant is the critical density.  If the
+Universe is roughly isotropic (which tests indicated), and the
+curvature of the Universe is flat (which we also think is the case),
+the critical density is the average density of the Universe.
+
+And this is sort of what the Planck survey actually measures.  So it
+makes more physical sense to compare critical density values to this
+type of measureement.
+
+And we obtained a value which is equivalent to about 5 protons per
+cubic meter.
+#+END_NOTES
 
 ** _Data_ vs synthetic images
 #+ATTR_HTML: :height 90% :width 95% :align left :style float:left :style margin:2px;
 [[./assets/imgs/time-delays/data.png]]
 #+ATTR_HTML: :class slide-footer
 [[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
+
+#+BEGIN_NOTES
+Now, we didn't stop there we also checked whether our models actually
+are good fits to the entire images and not just the quasar images.
+
+This was not always the case, but as soon as we filtered out the bad models.
+We had quite good agreements with the observations.
+
+I will now switch between the fitted images and the observational
+data, always indicated by the underlined part in the title and let you
+see for yourself.
+#+END_NOTES
 
 ** Data vs _synthetic images_
 #+ATTR_HTML: :height 90% :width 95% :align left :style float:left :style margin:2px;
@@ -603,8 +740,27 @@ $$ H_0^{-1} = 13.8^{+0.7}_{-0.7} \,\mathrm{Gyr} $$
 #+ATTR_HTML: :class slide-footer
 [[https://arxiv.org/abs/2007.14398][Denzel et al. (2020b, arxiv:2007.14398)]]
 
+#+BEGIN_NOTES
+By filtering out the bad synthetic fits to the observations, we
+effectively change the distribution of H0 values.
+
+However, you see that the change is not much that the distribution
+more or less remains unchanged.
+
+Which is an indication that no matter how well we fit the imaged data,
+there are intrisic degeneracies remaining, which are hard suppress.
+
+And so far, with any H0 result from lensing I would not be comfortable
+to claim less than 5% precisions without a proper exploration of the
+degeneracies.
+#+END_NOTES
+
 
 * Lensing degeneracies
+
+#+BEGIN_NOTES
+This brings me to the next topic, lensing degeneracies.
+#+END_NOTES
 
 ** One configuration, multiple solutions
 :PROPERTIES:
@@ -625,12 +781,24 @@ $$ H_0^{-1} = 13.8^{+0.7}_{-0.7} \,\mathrm{Gyr} $$
 #+ATTR_HTML: :class slide-footer
 [[https://academic.oup.com/mnras/article-abstract/492/3/3885/5706849?redirectedFrom=fulltext][Denzel et al. (2020)]]
 
+#+BEGIN_NOTES
+As I said before, different mass maps can produce very similar image
+configuration... as you see here.  Each synthetic image is produced by
+the mass model underneath it.
+
+Now, there are slight differences in the images, which suggests that
+we can opitimze our lens model ensembles, by only keeping the mass
+maps with the best-fitting synthetics.
+
+But even then, some degeneracies remain and we have to find ways to
+identify and compare these degenerate models.
+#+END_NOTES
 
 ** The lensing Roche potential
 # #+ATTR_HTML: :height 45% :width 22% :align left :style float:left :style margin:2px;
 \begin{align}
   \tau(\pmb\theta) &= \frac{1}{2} \theta^2 - 2\nabla^{-2} \kappa(\pmb\theta) - \pmb\theta\cdot\pmb\beta = \mathcal{P}(\pmb\theta) - \pmb\theta\cdot\pmb\beta \\
-  \mathcal{P}(\pmb\theta) &= \frac{1}{2} \theta^2 - 2\nabla^{-2} \kappa(\pmb\theta)
+  \mathcal{P}(\pmb\theta) &= 2\nabla^{-2} \left(1-\kappa(\pmb\theta)\right)
 \end{align}
 
 #+ATTR_HTML: :width 33% :style float:left
@@ -652,6 +820,35 @@ $$ H_0^{-1} = 13.8^{+0.7}_{-0.7} \,\mathrm{Gyr} $$
 #+ATTR_HTML: :class slide-footer
 [[https://academic.oup.com/mnras/article-abstract/492/3/3885/5706849?redirectedFrom=fulltext][Denzel et al. (2020)]]
 
+#+BEGIN_NOTES
+And therefore we perfomed some tests with simulated lenses and
+investigated the degeneracies in detail.
+
+Here, you see the description for the so-called arrival time surface,
+which encompasses the modelled mass distribution $\kappa$ and true
+source position $\beta$.
+
+It is not something we can observe everywhere, but the extremal points
+of this surface is where we can detect images in observations.
+
+The most severe case of lensing degeneracy is called the steepness or
+mass-sheet degeneracy.
+It effectively rescales the entire arrival-times surface.
+
+In order to compare different mass maps it's convenient to ignore the
+source position and look at an arrival-time surface with $\beta = 0$.
+
+We labelled it the lensing Roche potential due to it's similarity to
+the Roche potential in binary systems.
+
+The mass-sheet degeneracy also simply rescales the Roche potential and
+therefore different mass models can be compared by comparing their
+lensing Roche potentials, by calculating their normalized inner
+product.
+
+This effectively ignores the mass-sheet degeneracy and compares their
+shapes independent of their steepness.
+#+END_NOTES
 
 ** Synthetic images
 #+ATTR_HTML: :style float:right
@@ -673,8 +870,32 @@ $$ H_0^{-1} = 13.8^{+0.7}_{-0.7} \,\mathrm{Gyr} $$
 #+ATTR_HTML: :class slide-footer
 Denzel et al. (2020d, to be submitted)
 
+#+BEGIN_NOTES
+The Roche potential can also be used to calculate the synthetic
+images, since the gradient of the Roche potential is the source
+position.
+
+By fitting this complicated equation with the data, which in the ideal
+case is $I(\theta)$, we can produce synthetic images and reconstruct
+the source behind the lens.  You see an example, here the synthetic
+and the source here...
+
+All this is implemented in a code I developed... gleam which is
+available on github.
+#+END_NOTES
+
 
 * Lens matching
+
+#+BEGIN_NOTES
+Now, gleam gave us the idea that maybe there is not even need to model
+a galaxy in order to explain the observations.
+
+There are so many galaxy formation simulations which produce galaxies
+which are far superior models compared to lens models.
+
+This gave us the idea of what we called the lens matching technique.
+#+END_NOTES
 
 ** Concept
 
@@ -693,15 +914,16 @@ Galaxy-formation scenario: $F$, observed data: $D$, galaxy properties: $g$ nuisa
 Denzel et al. (2020c, submitted to MNRAS)
 
 #+BEGIN_NOTES
-The situation is... one would like to compare lensing observations
-with galaxy simulations implementing various galaxy formation
-scenarios.
+The concept is the following...
+
+Ideally, one would like to compare lensing observations with galaxy
+simulations implementing various galaxy formation scenarios.
 
 In Bayesian terms, the posterior probability distribution of a
 particular galaxy formation scenario F compared with the data, is
 given by the likelihood of the data given a galaxy formation scenario
 times the prior probability of a galaxy formation scenario and
-normalized by the data marginalized over all possible galaxy fomration
+normalized by the data marginalized over all possible galaxy formation
 scenarios.
 
 Of course this is hard to calculate, but in a comparison of two galaxy
@@ -732,9 +954,11 @@ P(D|g) is optimized.
 # Denzel et al. (2020c, submitted to MNRAS)
 
 
-** Markov-Chain Monte-Carlo simulations
+** Markov-Chain Monte-Carlo marginalization
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="upperlefth" data-background-video="./assets/movies/matching_demo.mp4" data-background-video-muted data-background-size="contain";
+:END:
 
-TODO
 
 #+ATTR_HTML: :class slide-footer
 Denzel et al. (2020c, submitted to MNRAS)
@@ -780,7 +1004,7 @@ Denzel et al. (2020c, submitted to MNRAS)
 
 
 
-** Towards statistically relevant constraints
+** Towards statistically significant constraints
 
 #+ATTR_REVEAL: :frag (appear)
 - Source reconstruction: regularizations, lens subtraction
