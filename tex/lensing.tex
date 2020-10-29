@@ -287,12 +287,15 @@ features of a lens amongst many less important ones.
 In this context, it is very useful to think of an arbitrary surface-density
 distribution in terms of multipoles:
 %
+% \begin{equation}\eqlbl{match:multipoles}%
+%   \kappa(\bm\theta) = \langle\kappa_0(\theta)\rangle_{\phi} 
+%   + \sum^{\infty}_{m=1} \langle\kappa_{m}(\theta)\rangle_{\phi} e^{im\phi}
+% \end{equation}%
 \begin{equation}\eqlbl{match:multipoles}%
-  \kappa(\bm\theta) = \langle\kappa_0(\theta)\rangle_{\phi} 
-  + \sum^{\infty}_{m=1} \langle\kappa_{m}(\theta)\rangle_{\phi} e^{im\phi}
+  \kappa(\bm\theta) = \kappa_0(\theta) + \sum^{\infty}_{m=1} (\kappa_{cm}(\theta)\cos{m\phi} + \kappa_{sm}(\theta)\sin{m\phi})
 \end{equation}%
 %
-where the individual components $\langle\kappa_{m}(\theta)\rangle_{\phi}$ are
+where the individual components $\kappa_{0}$, $\kappa_{cm}(\theta)$, and $\kappa_{sm}(\theta)$ are
 angular amplitudes corresponding to $m$, expressed in polar coordinates.  It
 corresponds much to the idea that galaxies consist of a main body of matter and
 many smaller substructures orbiting around it.  The monopole $\kappa_0$, dipole
