@@ -44,7 +44,7 @@
 	\afterpage{\blankpage}
 	%\afterpage{\blankpage}
 	%\afterpage{\blankpage}
-	\ifthispageodd{%\Ifthispageodd{
+	\Ifthispageodd{%\ifthispageodd{
 		\afterpage{\blankpage}%\addtocounter{page}{-1}
 	}{
 		% \afterpage{\blankpage}%\addtocounter{page}{-1}
