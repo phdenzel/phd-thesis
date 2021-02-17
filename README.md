@@ -23,13 +23,13 @@ The striking features of the class are as follows.
 To build the thesis simply use `make`.
 
 The LaTeX class is exemplified by the thesis of Philipp Denzel
-itself. The repository also includes a `template.tex` which can be
-used to start another project.
-
+itself. The repository includes a `main.tex` which can be
+used to start another project with minor modifications.
+Be sure to replace all submodules for full compatibility.
 
 ## License
 
-This repository contains two independent works. First, the phdbyphd class, consisting of `phdbyphd.cls` and `phdbookbyphd.cls` files plus all of the files listed in the `styles` directory; the second, consisting of all other files, is the thesis by Philipp Denzel.
+This repository contains two independent works. First, the phdbyphd class `phdbyphd.cls` file plus all of the files listed in the `styles` directory; the second, consisting of all other files, is the thesis by Philipp Denzel.
 
 The first work (the LaTeX class `phdbyphd.cls` and all `*.sty` files) is licensed under the LaTeX Project Public License which can be found under [https://www.latex-project.org/lppl.txt](https://www.latex-project.org/lppl.txt).
 
